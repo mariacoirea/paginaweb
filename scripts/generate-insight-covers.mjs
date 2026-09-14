@@ -32,7 +32,7 @@ const covers = [
   ["regenerative-business-restoring-planet-and-society", "Restoration", "planet"],
   ["ancient-tools-modern-performance", "Ancient tools", "breath"],
   ["conscious-leadership-practice", "Presence", "presence"],
-  ["caso-camun-etapa-soil-roles-y-responsabilidades", "Caso Camun · SOIL", "roots"],
+  ["caso-camun-etapa-soil", "Caso Camun · SOIL", "roots"],
 ];
 
 const palettes = [
