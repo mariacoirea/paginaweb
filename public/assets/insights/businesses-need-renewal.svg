@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="788" viewBox="0 0 1400 788" role="img" aria-labelledby="title desc">
+  <title id="title">Businesses need renewal</title>
+  <desc id="desc">Editorial COIREA insight cover for Businesses need renewal: Restoring the operating rhythm.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#173f32"/><stop offset=".55" stop-color="#628348"/><stop offset="1" stop-color="#173f32"/></linearGradient>
+    <radialGradient id="glow" cx=".2" cy=".18" r=".76"><stop offset="0" stop-color="#d0a15b" stop-opacity=".52"/><stop offset=".46" stop-color="#d0a15b" stop-opacity=".14"/><stop offset="1" stop-color="#173f32" stop-opacity="0"/></radialGradient>
+    <filter id="soft"><feGaussianBlur stdDeviation="30"/></filter>
+  </defs>
+  <rect width="1400" height="788" fill="url(#bg)"/>
+  <rect width="1400" height="788" fill="url(#glow)"/>
+  <circle cx="290" cy="220" r="230" fill="#d0a15b" opacity=".16" filter="url(#soft)"/>
+  <circle cx="1030" cy="490" r="285" fill="#f3eadb" opacity=".07" filter="url(#soft)"/>
+  <path d="M-60 115 C170 75, 270 160, 505 120 S835 160, 1055 112 S1235 160, 1465 120" fill="none" stroke="#f3eadb" stroke-width="1" opacity="0.09"/><path d="M-60 195 C170 155, 270 240, 505 200 S835 240, 1055 192 S1235 240, 1465 200" fill="none" stroke="#f3eadb" stroke-width="2" opacity="0.11"/><path d="M-60 275 C170 235, 270 320, 505 280 S835 320, 1055 272 S1235 320, 1465 280" fill="none" stroke="#f3eadb" stroke-width="3" opacity="0.13"/><path d="M-60 355 C170 315, 270 400, 505 360 S835 400, 1055 352 S1235 400, 1465 360" fill="none" stroke="#f3eadb" stroke-width="1" opacity="0.15"/><path d="M-60 435 C170 395, 270 480, 505 440 S835 480, 1055 432 S1235 480, 1465 440" fill="none" stroke="#f3eadb" stroke-width="2" opacity="0.17"/><path d="M-60 515 C170 475, 270 560, 505 520 S835 560, 1055 512 S1235 560, 1465 520" fill="none" stroke="#f3eadb" stroke-width="3" opacity="0.19"/><path d="M-60 595 C170 555, 270 640, 505 600 S835 640, 1055 592 S1235 640, 1465 600" fill="none" stroke="#f3eadb" stroke-width="1" opacity="0.21"/><path d="M-60 675 C170 635, 270 720, 505 680 S835 720, 1055 672 S1235 720, 1465 680" fill="none" stroke="#f3eadb" stroke-width="2" opacity="0.23"/>
+  <g opacity=".9"><path d="M700 560 C694 450 705 350 720 235" fill="none" stroke="#d0a15b" stroke-width="6" stroke-linecap="round" opacity=".72"/><path d="M710 345 C610 320 560 255 535 185 C630 190 695 240 710 345Z" fill="none" stroke="#f3eadb" stroke-width="3" opacity=".32"/><path d="M715 405 C825 385 895 315 920 230 C815 240 740 300 715 405Z" fill="none" stroke="#f3eadb" stroke-width="3" opacity=".32"/><ellipse cx="720" cy="380" rx="120" ry="70" fill="none" stroke="#f3eadb" stroke-width="1.4" opacity="0.12" transform="rotate(0 720 380)"/><ellipse cx="720" cy="380" rx="182" ry="108" fill="none" stroke="#f3eadb" stroke-width="1.4" opacity="0.16" transform="rotate(9 720 380)"/><ellipse cx="720" cy="380" rx="244" ry="146" fill="none" stroke="#f3eadb" stroke-width="1.4" opacity="0.20" transform="rotate(18 720 380)"/><ellipse cx="720" cy="380" rx="306" ry="184" fill="none" stroke="#f3eadb" stroke-width="1.4" opacity="0.24" transform="rotate(27 720 380)"/><ellipse cx="720" cy="380" rx="368" ry="222" fill="none" stroke="#f3eadb" stroke-width="1.4" opacity="0.28" transform="rotate(36 720 380)"/></g>
+  <g opacity=".96">
+    <text x="92" y="116" font-size="18" font-family="Arial, sans-serif" font-weight="800" letter-spacing="5" fill="#d0a15b">COIREA INSIGHT</text>
+    <text x="92" y="592" font-size="50" font-family="Georgia, 'Times New Roman', serif" font-weight="700" fill="#f3eadb" opacity=".96">Businesses need renewal</text>
+    <path d="M92 634H420" stroke="#d0a15b" stroke-width="3" opacity=".72"/>
+    <text x="92" y="684" font-size="20" font-family="Arial, sans-serif" fill="#f3eadb" opacity=".72">Restoring the operating rhythm</text>
+  </g>
+</svg>

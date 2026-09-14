@@ -1,0 +1,17 @@
+{
+  "id": "replace-with-unique-id",
+  "title": "Post title",
+  "slug": "post-title",
+  "cluster": "Systems",
+  "tags": ["organizational evolution", "leadership", "systems"],
+  "featured_image": "/assets/insights/post-title.svg",
+  "preview_snippet": "One or two sentences that describe the insight without sounding like a sales pitch.",
+  "body_content": "<p>Start with the real organizational tension the reader recognizes.</p><p>Develop the idea in short, precise paragraphs.</p><h2>A useful section title</h2><p>Explain how the pattern appears in teams, leadership, strategy, collaboration, or well-being.</p><p>Close by connecting the insight to coherence, visibility, and the possibility of evolution.</p>",
+  "seo_title": "Post title | COIREA Insights",
+  "meta_description": "A concise description of the article for search engines and AI answer engines.",
+  "author": "María José Figueroa",
+  "featured": false,
+  "published": true,
+  "created_at": "2026-07-13",
+  "updated_at": "2026-07-13"
+}

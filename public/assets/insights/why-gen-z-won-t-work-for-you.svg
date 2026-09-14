@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="788" viewBox="0 0 1400 788" role="img" aria-labelledby="title desc">
+  <title id="title">Gen Z at work</title>
+  <desc id="desc">Editorial COIREA insight cover for Gen Z at work: Meaning, trust, and pace.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#17444a"/><stop offset=".55" stop-color="#60734c"/><stop offset="1" stop-color="#17444a"/></linearGradient>
+    <radialGradient id="glow" cx=".2" cy=".18" r=".76"><stop offset="0" stop-color="#d18561" stop-opacity=".52"/><stop offset=".46" stop-color="#d18561" stop-opacity=".14"/><stop offset="1" stop-color="#17444a" stop-opacity="0"/></radialGradient>
+    <filter id="soft"><feGaussianBlur stdDeviation="30"/></filter>
+  </defs>
+  <rect width="1400" height="788" fill="url(#bg)"/>
+  <rect width="1400" height="788" fill="url(#glow)"/>
+  <circle cx="430" cy="220" r="230" fill="#d18561" opacity=".16" filter="url(#soft)"/>
+  <circle cx="898" cy="430" r="285" fill="#f3eadb" opacity=".07" filter="url(#soft)"/>
+  <path d="M-60 115 C170 75, 270 160, 505 120 S835 160, 1055 112 S1235 160, 1465 120" fill="none" stroke="#f3eadb" stroke-width="1" opacity="0.09"/><path d="M-60 195 C170 155, 270 240, 505 200 S835 240, 1055 192 S1235 240, 1465 200" fill="none" stroke="#f3eadb" stroke-width="2" opacity="0.11"/><path d="M-60 275 C170 235, 270 320, 505 280 S835 320, 1055 272 S1235 320, 1465 280" fill="none" stroke="#f3eadb" stroke-width="3" opacity="0.13"/><path d="M-60 355 C170 315, 270 400, 505 360 S835 400, 1055 352 S1235 400, 1465 360" fill="none" stroke="#f3eadb" stroke-width="1" opacity="0.15"/><path d="M-60 435 C170 395, 270 480, 505 440 S835 480, 1055 432 S1235 480, 1465 440" fill="none" stroke="#f3eadb" stroke-width="2" opacity="0.17"/><path d="M-60 515 C170 475, 270 560, 505 520 S835 560, 1055 512 S1235 560, 1465 520" fill="none" stroke="#f3eadb" stroke-width="3" opacity="0.19"/><path d="M-60 595 C170 555, 270 640, 505 600 S835 640, 1055 592 S1235 640, 1465 600" fill="none" stroke="#f3eadb" stroke-width="1" opacity="0.21"/><path d="M-60 675 C170 635, 270 720, 505 680 S835 720, 1055 672 S1235 720, 1465 680" fill="none" stroke="#f3eadb" stroke-width="2" opacity="0.23"/>
+  <g opacity=".9"><circle cx="210" cy="170" r="5" fill="#d18561" opacity="0.34"/><circle cx="383" cy="261" r="7" fill="#f3eadb" opacity="0.42"/><circle cx="556" cy="352" r="9" fill="#f3eadb" opacity="0.50"/><circle cx="729" cy="443" r="11" fill="#d18561" opacity="0.58"/><circle cx="902" cy="534" r="13" fill="#f3eadb" opacity="0.34"/><circle cx="1075" cy="205" r="5" fill="#f3eadb" opacity="0.42"/><circle cx="288" cy="296" r="7" fill="#d18561" opacity="0.50"/><circle cx="461" cy="387" r="9" fill="#f3eadb" opacity="0.58"/><circle cx="634" cy="478" r="11" fill="#f3eadb" opacity="0.34"/><circle cx="807" cy="569" r="13" fill="#d18561" opacity="0.42"/><circle cx="980" cy="240" r="5" fill="#f3eadb" opacity="0.50"/><circle cx="1153" cy="331" r="7" fill="#f3eadb" opacity="0.58"/><circle cx="366" cy="422" r="9" fill="#d18561" opacity="0.34"/><circle cx="539" cy="513" r="11" fill="#f3eadb" opacity="0.42"/><circle cx="712" cy="184" r="13" fill="#f3eadb" opacity="0.50"/><circle cx="885" cy="275" r="5" fill="#d18561" opacity="0.58"/><path d="M210 550 C360 260, 520 590, 690 330 S1000 185, 1170 510" fill="none" stroke="#f3eadb" stroke-width="3" opacity=".28"/><path d="M220 552 C390 320, 560 530, 720 360 S960 250, 1160 505" fill="none" stroke="#d18561" stroke-width="5" opacity=".55"/></g>
+  <g opacity=".96">
+    <text x="92" y="116" font-size="18" font-family="Arial, sans-serif" font-weight="800" letter-spacing="5" fill="#d18561">COIREA INSIGHT</text>
+    <text x="92" y="592" font-size="50" font-family="Georgia, 'Times New Roman', serif" font-weight="700" fill="#f3eadb" opacity=".96">Gen Z at work</text>
+    <path d="M92 634H420" stroke="#d18561" stroke-width="3" opacity=".72"/>
+    <text x="92" y="684" font-size="20" font-family="Arial, sans-serif" fill="#f3eadb" opacity=".72">Meaning, trust, and pace</text>
+  </g>
+</svg>
