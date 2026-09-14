@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="788" viewBox="0 0 1400 788" role="img" aria-labelledby="title desc">
+  <title id="title">Camun decidió mirarse a sí misma</title>
+  <desc id="desc">Abstract COIREA insight cover representing caso camun · soil through living-system lines, nodes, and natural rhythms.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#173728"/>
+      <stop offset=".58" stop-color="#2f6b50"/>
+      <stop offset="1" stop-color="#173728"/>
+    </linearGradient>
+    <radialGradient id="glow" cx=".22" cy=".18" r=".72">
+      <stop offset="0" stop-color="#d2ad68" stop-opacity=".5"/>
+      <stop offset=".42" stop-color="#d2ad68" stop-opacity=".12"/>
+      <stop offset="1" stop-color="#173728" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="soft"><feGaussianBlur stdDeviation="28"/></filter>
+  </defs>
+  <rect width="1400" height="788" fill="url(#bg)"/>
+  <rect width="1400" height="788" fill="url(#glow)"/>
+  <circle cx="340" cy="180" r="210" fill="#d2ad68" opacity=".18" filter="url(#soft)"/>
+  <circle cx="1000" cy="560" r="260" fill="#eef0df" opacity=".08" filter="url(#soft)"/>
+  <path d="M-40 118 C 170 92, 270 144, 480 114 S 770 144, 980 100 S 1210 144, 1460 110" fill="none" stroke="#eef0df" stroke-width="1" opacity="0.16"/><path d="M-40 200 C 170 165, 270 235, 480 196 S 770 235, 980 182 S 1210 235, 1460 192" fill="none" stroke="#eef0df" stroke-width="1" opacity="0.178"/><path d="M-40 282 C 170 238, 270 326, 480 278 S 770 326, 980 264 S 1210 326, 1460 274" fill="none" stroke="#eef0df" stroke-width="1" opacity="0.196"/><path d="M-40 364 C 170 338, 270 390, 480 360 S 770 390, 980 346 S 1210 390, 1460 356" fill="none" stroke="#eef0df" stroke-width="2" opacity="0.214"/><path d="M-40 446 C 170 411, 270 481, 480 442 S 770 481, 980 428 S 1210 481, 1460 438" fill="none" stroke="#eef0df" stroke-width="1" opacity="0.23199999999999998"/><path d="M-40 528 C 170 484, 270 572, 480 524 S 770 572, 980 510 S 1210 572, 1460 520" fill="none" stroke="#eef0df" stroke-width="1" opacity="0.25"/><path d="M-40 610 C 170 584, 270 636, 480 606 S 770 636, 980 592 S 1210 636, 1460 602" fill="none" stroke="#eef0df" stroke-width="1" opacity="0.268"/><path d="M650 280 C 530 210, 530 550, 410 480" fill="none" stroke="#eef0df" stroke-width="1.4" opacity=".24"/><path d="M890 420 C 730 350, 730 370, 570 300" fill="none" stroke="#eef0df" stroke-width="1.4" opacity=".24"/><path d="M190 560 C 460 490, 460 630, 730 560" fill="none" stroke="#eef0df" stroke-width="1.4" opacity=".24"/><path d="M430 260 C 660 190, 660 450, 890 380" fill="none" stroke="#eef0df" stroke-width="1.4" opacity=".24"/><path d="M670 400 C 860 330, 860 270, 1050 200" fill="none" stroke="#eef0df" stroke-width="1.4" opacity=".24"/><path d="M910 540 C 590 470, 590 530, 270 460" fill="none" stroke="#eef0df" stroke-width="1.4" opacity=".24"/><path d="M210 240 C 320 170, 320 350, 430 280" fill="none" stroke="#eef0df" stroke-width="1.4" opacity=".24"/><path d="M450 380 C 520 310, 520 610, 590 540" fill="none" stroke="#eef0df" stroke-width="1.4" opacity=".24"/><path d="M690 520 C 720 450, 720 430, 750 360" fill="none" stroke="#eef0df" stroke-width="1.4" opacity=".24"/><path d="M930 220 C 920 150, 920 250, 910 180" fill="none" stroke="#eef0df" stroke-width="1.4" opacity=".24"/><circle cx="805" cy="330" r="12" fill="#d2ad68" opacity="0.72"/><circle cx="1025" cy="470" r="13" fill="#2f6b50" opacity="0.38"/><circle cx="195" cy="610" r="5" fill="#2f6b50" opacity="0.38"/><circle cx="415" cy="250" r="6" fill="#2f6b50" opacity="0.38"/><circle cx="635" cy="390" r="7" fill="#d2ad68" opacity="0.72"/><circle cx="855" cy="530" r="8" fill="#2f6b50" opacity="0.38"/><circle cx="1075" cy="170" r="9" fill="#2f6b50" opacity="0.38"/><circle cx="245" cy="310" r="10" fill="#2f6b50" opacity="0.38"/><circle cx="465" cy="450" r="11" fill="#d2ad68" opacity="0.72"/><circle cx="685" cy="590" r="12" fill="#2f6b50" opacity="0.38"/><circle cx="905" cy="230" r="13" fill="#2f6b50" opacity="0.38"/><circle cx="1125" cy="370" r="5" fill="#2f6b50" opacity="0.38"/><circle cx="295" cy="510" r="6" fill="#d2ad68" opacity="0.72"/><g transform="translate(835 110)" fill="none" stroke="#d2ad68" stroke-linecap="round" opacity=".76"><path d="M170 70 C138 150 124 205 160 285 C196 365 156 425 118 498" stroke-width="4"/><path d="M158 284 C98 286 64 326 38 382" stroke-width="2"/><path d="M158 285 C218 286 266 326 300 392" stroke-width="2"/><path d="M144 180 C92 164 70 124 48 82" stroke-width="2"/><path d="M154 188 C214 158 250 114 284 58" stroke-width="2"/></g>
+  <g opacity=".92">
+    <text x="92" y="116" font-size="18" font-family="Arial, sans-serif" font-weight="800" letter-spacing="5" fill="#d2ad68">COIREA INSIGHT</text>
+    <text x="92" y="616" font-size="54" font-family="Georgia, 'Times New Roman', serif" font-weight="700" fill="#eef0df" opacity=".94">Caso Camun · SOIL</text>
+  </g>
+  <path d="M92 664H420" stroke="#d2ad68" stroke-width="2" opacity=".72"/>
+  <text x="92" y="714" font-size="18" font-family="Arial, sans-serif" fill="#eef0df" opacity=".7">COIREA Stories</text>
+</svg>
