@@ -33,6 +33,7 @@ const covers = [
   ["ancient-tools-modern-performance", "Ancient tools", "breath"],
   ["conscious-leadership-practice", "Presence", "presence"],
   ["caso-camun-etapa-soil", "Caso Camun · SOIL", "roots"],
+  ["agentes-de-transicion-juan-carlos-guzman", "Transition agents", "human"],
 ];
 
 const palettes = [

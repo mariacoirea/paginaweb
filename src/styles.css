@@ -1401,6 +1401,7 @@ p { line-height: 1.78; }
 .category-tag--leadership-consciousness { background: #1C4D4F; color: var(--paper); }
 .category-tag--people-operating-system { background: #B56D4E; color: var(--paper); }
 .category-tag--stories { background: #E9D4C0; color: #1C4D4F; }
+.category-tag--voices { background: #9BA987; color: #24301F; }
 .insight-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -1527,6 +1528,9 @@ p { line-height: 1.78; }
 }
 .insight-card > .category-tag--stories {
   color: #1C4D4F;
+}
+.insight-card > .category-tag--voices {
+  color: #24301F;
 }
 .insight-card h3 {
   margin: 22px clamp(22px, 2.6vw, 30px) 12px;

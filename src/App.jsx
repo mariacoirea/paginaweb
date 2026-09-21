@@ -458,6 +458,7 @@ const migratedBlogClusters = [
   "Leadership Consciousness",
   "People Operating System",
   "Stories",
+  "COIREA Voices",
 ];
 
 const spanishClusterLabels = {
@@ -466,6 +467,7 @@ const spanishClusterLabels = {
   "Leadership Consciousness": "Liderazgo consciente",
   "People Operating System": "People Operating System",
   Stories: "Historias",
+  "COIREA Voices": "Voces COIREA",
 };
 
 const spanishPostFallbacks = {
@@ -769,6 +771,7 @@ function sanitizeBlogHtml(html = "") {
 
 function displayCluster(cluster = "", title = "") {
   const normalized = `${cluster} ${title}`.toLowerCase();
+  if (normalized.includes("coirea voices")) return "COIREA Voices";
   if (normalized.includes("conscious")) return "Leadership Consciousness";
   if (normalized.includes("stories")) return "Stories";
   if (normalized.includes("business pillars") || normalized.includes("operating system") || normalized.includes("well-being")) return "People Operating System";
@@ -806,6 +809,7 @@ function localizedPosts(posts = [], spanish = isSpanishPath()) {
 
 function clusterClass(cluster = "") {
   const normalized = cluster.toLowerCase();
+  if (normalized.includes("voices")) return "category-tag--voices";
   if (normalized.includes("leadership")) return "category-tag--leadership-consciousness";
   if (normalized.includes("workplace")) return "category-tag--workplace-evolution";
   if (normalized.includes("stories")) return "category-tag--stories";
