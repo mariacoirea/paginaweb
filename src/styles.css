@@ -1812,6 +1812,19 @@ p { line-height: 1.78; }
 .migrated-featured-image--after {
   margin-top: clamp(34px, 5vw, 58px);
 }
+.legacy-article-content .article-portrait {
+  margin: 36px 0;
+  text-align: center;
+}
+.legacy-article-content .article-portrait img {
+  max-width: min(340px, 100%);
+  margin: 0 auto 12px;
+}
+.legacy-article-content .article-portrait figcaption {
+  color: var(--muted);
+  font-size: 14px;
+  letter-spacing: .02em;
+}
 .legacy-article-content {
   color: var(--ink);
   font-size: 17px;
