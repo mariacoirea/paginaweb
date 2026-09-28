@@ -9,6 +9,7 @@ import {
   Radar, RadarChart, PolarGrid, PolarAngleAxis, ResponsiveContainer, Tooltip,
 } from "recharts";
 import "./styles.css";
+import { Analytics } from "@vercel/analytics/react";
 
 const dimensions = [
   {
@@ -3827,6 +3828,7 @@ export function App() {
       <CurrentPage />
       <Footer />
       <Chatbox />
+      <Analytics />
     </>
   );
 }
