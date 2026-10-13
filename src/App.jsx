@@ -2737,6 +2737,8 @@ function InsightsPage() {
 
   const cardPosts = filteredPosts.slice(0, visibleCount);
   const hasMorePosts = filteredPosts.length > visibleCount;
+  const featuredSlug = "caso-camun-etapa-soil";
+  const featuredPost = visiblePosts.find((post) => post.slug === featuredSlug);
 
   useEffect(() => {
     if (loading || error || visiblePosts.length === 0) {
@@ -2768,21 +2770,23 @@ function InsightsPage() {
         variant="insights"
       />
       <section className="insights-page section">
-        <Reveal className="featured-insight">
-          <div className="featured-insight-copy">
-            <span className="eyebrow">{t("Featured", spanish)}</span>
-            <div className="article-meta">
-              <span className="category-tag category-tag--people-operating-system">{t("People Operating System", spanish)}</span>
-              <small>Mar&iacute;a Jos&eacute; Figueroa</small>
+        {featuredPost && (
+          <Reveal className="featured-insight">
+            <div className="featured-insight-copy">
+              <span className="eyebrow">{t("Featured", spanish)}</span>
+              <div className="article-meta">
+                <span className={`category-tag ${clusterClass(featuredPost.cluster)}`}>{localizedCluster(featuredPost.cluster, featuredPost.title, spanish)}</span>
+                <small>{featuredPost.author}</small>
+              </div>
+              <h2>{featuredPost.title}</h2>
+              <p>{featuredPost.preview_snippet}</p>
+              <a className="text-button" href={localizedPath(`/insights/${featuredSlug}`, spanish)}>{t("Read more", spanish)} <ArrowRight /></a>
             </div>
-            <h2>{spanish ? spanishPostFallbacks["five-pillars-regenerative-business"].title : "The Five Pillars of the People Operating System"}</h2>
-            <p>{spanish ? spanishPostFallbacks["five-pillars-regenerative-business"].preview : "A guide to the five dimensions that determine how well your organization functions as a living system, and what to strengthen first."}</p>
-            <a className="text-button" href={localizedPath("/insights/five-pillars-regenerative-business", spanish)}>{t("Read more", spanish)} <ArrowRight /></a>
-          </div>
-          <a className="featured-insight-image" href={localizedPath("/insights/five-pillars-regenerative-business", spanish)} aria-label={`${t("Read more", spanish)} ${spanish ? spanishPostFallbacks["five-pillars-regenerative-business"].title : "The Five Pillars of the People Operating System"}`}>
-            <img src="/assets/insights/five-pillars-regenerative-business.svg" alt="" />
-          </a>
-        </Reveal>
+            <a className="featured-insight-image" href={localizedPath(`/insights/${featuredSlug}`, spanish)} aria-label={`${t("Read more", spanish)} ${featuredPost.title}`}>
+              <img src="/assets/insights/camun-coherence-node-meeting.jpg" alt="" />
+            </a>
+          </Reveal>
+        )}
         <div className="insight-grid">
           <Reveal className="resource-filter">
             <span className="eyebrow">{t("Explore by theme", spanish)}</span>
