@@ -1113,9 +1113,9 @@ const spanishTextMap = {
   "See how it works": "Ver cómo funciona",
   "See the system": "Ver el sistema",
   "The People Operating System": "El People Operating System",
-  "COIREA · The People Operating System": "COIREA · El People Operating System",
-  "The People Operating System for organizations that care.": "El People Operating System para organizaciones que cuidan.",
-  "COIREA helps organizations build cohesive teams, because growth should increase coherence, not deplete capacity. When the People System is aligned, organizations do not just perform better, they regenerate.": "COIREA ayuda a las organizaciones a construir equipos cohesionados, porque el crecimiento debería aumentar la coherencia, no agotar la capacidad. Cuando el sistema humano está alineado, las organizaciones no solo rinden mejor: se regeneran.",
+  "COIREA · The People Operating System": "COIREA · People Operating System",
+  "The People Operating System for organizations that care.": "Haz visible el sistema humano detrás de tus resultados.",
+  "COIREA helps organizations build cohesive teams, because growth should increase coherence, not deplete capacity. When the People System is aligned, organizations do not just perform better, they regenerate.": "Inteligencia organizacional y acompañamiento humano para organizaciones con propósito que están creciendo. Porque el crecimiento debería aumentar la coherencia, no agotar la capacidad.",
   "AI + Human Wisdom. Grounded in systemic thinking.": "IA + sabiduría humana. Basado en pensamiento sistémico.",
   "Live system view": "Vista viva del sistema",
   "People Operating System": "People Operating System",
@@ -1151,7 +1151,7 @@ const spanishTextMap = {
   "Measure whether the system is changing": "Medir si el sistema está cambiando",
   "OVI shows whether alignment, trust, and execution are improving over time.": "El OVI muestra si la alineación, la confianza y la ejecución mejoran con el tiempo.",
   "COIREA system tour": "Tour del sistema COIREA",
-  "20 sec loop": "Loop de 20 seg",
+  "20 sec loop": "Recorrido de 20 seg",
   "Sense": "Sentir",
   "Survey signals arrive": "Llegan señales de encuestas",
   "Read": "Leer",
@@ -1166,7 +1166,7 @@ const spanishTextMap = {
   "The organization is already talking. COIREA listens for the signals leaders usually hear too late.": "La organización ya está hablando. COIREA escucha las señales que los líderes suelen oír demasiado tarde.",
   "The hidden tension becomes visible.": "La tensión oculta se vuelve visible.",
   "Insight": "Insight",
-  "Psychological safety is fragile at the leadership interface.": "La seguridad psicológica está frágil en la interfaz de liderazgo.",
+  "Psychological safety is fragile at the leadership interface.": "La seguridad psicológica está frágil en la relación con el liderazgo.",
   "GiA connects the signal across collaboration and leadership, separating isolated comments from a real system pattern.": "GiA conecta la señal entre colaboración y liderazgo, separando comentarios aislados de un patrón real del sistema.",
   "The symptom becomes a pattern.": "El síntoma se convierte en patrón.",
   "Next action": "Siguiente acción",
@@ -1180,7 +1180,7 @@ const spanishTextMap = {
   "Suggested actions": "Acciones sugeridas",
   "Manager listening ritual": "Ritual de escucha con managers",
   "Leadership calibration": "Calibración de liderazgo",
-  "Team norms reset": "Reset de acuerdos del equipo",
+  "Team norms reset": "Renovar acuerdos del equipo",
   "High impact": "Alto impacto",
   "Medium impact": "Impacto medio",
   "The business impact": "El impacto en el negocio",
@@ -1223,10 +1223,10 @@ const spanishTextMap = {
   "Keep going": "Sigue avanzando",
   "Questions leaders ask": "Preguntas que hacen los líderes",
   "Clear answers about COIREA and the People Operating System.": "Respuestas claras sobre COIREA y el People Operating System.",
-  "These answers are written for leaders evaluating COIREA, and structured clearly so search engines and AI assistants can understand the concept without guessing.": "Estas respuestas están escritas para líderes que evalúan COIREA y estructuradas para que buscadores y asistentes de IA entiendan el concepto sin adivinar.",
+  "These answers are written for leaders evaluating COIREA, and structured clearly so search engines and AI assistants can understand the concept without guessing.": "Estas respuestas están escritas para líderes que evalúan COIREA.",
   "Read the full People Operating System article": "Leer el artículo completo sobre People Operating System",
   "Is Your Organization Ready to See Itself Clearly?": "¿Está tu organización lista para verse con claridad?",
-  "COIREA is not for every organization. It is for the ones that sense something needs to shift, and are ready to look at it honestly, with the right support alongside them.": "COIREA no es para todas las organizaciones. Es para aquellas que sienten que algo necesita moverse y están listas para mirarlo honestamente, con el apoyo correcto a su lado.",
+  "COIREA is not for every organization. It is for the ones that sense something needs to shift, and are ready to look at it honestly, with the right support alongside them.": "COIREA no es para todas las organizaciones. Es para organizaciones con propósito de 15 a 300 personas que están creciendo, desalineadas o en transición de liderazgo, y que están listas para mirarlo honestamente.",
   "Every organization enters with a Steward. This is not a software subscription. It is an accompanied transformation. Applications are reviewed personally.": "Cada organización entra con un Steward. Esto no es una suscripción de software. Es una transformación acompañada. Las solicitudes se revisan personalmente.",
   "Start with fit, not pressure.": "Empieza con encaje, no con presión.",
   "COIREA is for organizations that sense something needs to shift, and are ready to look at it honestly with the right support alongside them.": "COIREA es para organizaciones que sienten que algo necesita cambiar y están listas para mirarlo honestamente con el apoyo correcto.",
@@ -1366,7 +1366,7 @@ const spanishTextMap = {
   "Your system may already have strong coherence.": "Tu sistema podría tener una coherencia fuerte.",
   "COIREA can help protect that coherence as the organization grows, adds complexity, or enters a new strategic phase.": "COIREA puede ayudar a proteger esa coherencia mientras la organización crece, suma complejidad o entra en una nueva etapa estratégica.",
   "What is COIREA?": "¿Qué es COIREA?",
-  "COIREA is a People Operating System for organizations that care. It helps leaders measure and strengthen the human system behind performance across Vision, Leadership, Strategy, Collaboration, and Well-Being.": "COIREA es un People Operating System para organizaciones que cuidan. Ayuda a los líderes a medir y fortalecer el sistema humano detrás del rendimiento en Visión, Liderazgo, Estrategia, Colaboración y Bienestar.",
+  "COIREA is a People Operating System for organizations that care. It helps leaders measure and strengthen the human system behind performance across Vision, Leadership, Strategy, Collaboration, and Well-Being.": "COIREA es un People Operating System: hace visible el sistema humano detrás de tus resultados para que tu organización crezca sin romperse. Combina una plataforma (OVI y GiA) con el acompañamiento de un Steward certificado.",
   "What is a People Operating System?": "¿Qué es un People Operating System?",
   "A People Operating System is the living structure behind how people make decisions, collaborate, execute strategy, and sustain performance. It makes the invisible patterns of an organization visible enough to improve.": "Un People Operating System es la estructura viva detrás de cómo las personas deciden, colaboran, ejecutan estrategia y sostienen rendimiento. Hace visibles los patrones invisibles de una organización para poder mejorarlos.",
   "Is COIREA a platform or a consultancy?": "¿COIREA es una plataforma o una consultoría?",
@@ -1374,7 +1374,7 @@ const spanishTextMap = {
   "What does COIREA measure?": "¿Qué mide COIREA?",
   "COIREA measures organizational health through five pillars: Vision, Leadership, Strategy, Collaboration, and Well-Being. Together, these pillars show whether the organization is coherent, aligned, and able to perform sustainably.": "COIREA mide la salud organizacional a través de cinco pilares: Visión, Liderazgo, Estrategia, Colaboración y Bienestar. Juntos muestran si la organización está coherente, alineada y puede rendir de forma sostenible.",
   "What is OVI?": "¿Qué es OVI?",
-  "OVI means Organizational Vitality Index. It is COIREA's diagnostic view of how healthy and coherent an organization is across the five pillars of its People Operating System.": "OVI significa Organizational Vitality Index. Es la mirada diagnóstica de COIREA sobre qué tan sana y coherente está una organización en los cinco pilares de su People Operating System.",
+  "OVI means Organizational Vitality Index. It is COIREA's diagnostic view of how healthy and coherent an organization is across the five pillars of its People Operating System.": "OVI significa Organizational Vitality Index. Es la mirada diagnóstica de COIREA sobre qué tan sana y coherente está una organización en los cinco pilares.",
   "What is GiA?": "¿Qué es GiA?",
   "GiA means Guided Intelligence for Alignment. It is COIREA's intelligence layer that turns organizational signals into questions, insights, and suggested next actions for leaders.": "GiA significa Guided Intelligence for Alignment. Es la capa de inteligencia de COIREA que convierte señales organizacionales en preguntas, insights y siguientes acciones sugeridas para líderes.",
   "Show more insights": "Mostrar más insights",
@@ -1405,16 +1405,16 @@ const spanishTextMap = {
   "More essays on leadership, culture, and organizational evolution.": "Más ensayos sobre liderazgo, cultura y evolución organizacional.",
   "The process": "El proceso",
   "Three phases. One continuous system.": "Tres fases. Un sistema continuo.",
-  "Consultation": "Consulta",
+  "Consultation": "SOIL",
   "Diagnose": "Diagnosticar",
-  "The OVI maps the current state of your People Operating System across all five pillars. This is the SOIL phase, where GiA surfaces the first signals and tensions.": "El OVI mapea el estado actual de tu People Operating System en los cinco pilares. Esta es la etapa SOIL, donde GiA hace visibles las primeras señales y tensiones.",
+  "The OVI maps the current state of your People Operating System across all five pillars. This is the SOIL phase, where GiA surfaces the first signals and tensions.": "El OVI mapea el estado actual de tu organización en los cinco pilares. Esta es la etapa SOIL, donde GiA hace visibles las primeras señales y tensiones.",
   "Align and execute": "Alinear y ejecutar",
   "The five pillars are implemented step by step. A certified Steward accompanies the work.": "Los cinco pilares se implementan paso a paso. Un Steward certificado acompaña el trabajo.",
   "Evolve and regenerate": "Evolucionar y regenerar",
   "The organization keeps learning. Capacity grows alongside performance.": "La organización sigue aprendiendo. La capacidad crece junto con el rendimiento.",
   "Signal": "Señal",
   "Difficulty speaking up with managers is appearing across multiple responses.": "La dificultad para hablar con los managers está apareciendo en múltiples respuestas.",
-  "Psychological safety is fragile at the leadership interface. This is a structural gap, not a personal issue.": "La seguridad psicológica está frágil en la interfaz de liderazgo. Esto es una brecha estructural, no un problema personal.",
+  "Psychological safety is fragile at the leadership interface. This is a structural gap, not a personal issue.": "La seguridad psicológica está frágil en la relación con el liderazgo. Esto es una brecha estructural, no un problema personal.",
   "COIREA is a People Operating System, an organizational intelligence platform that helps purpose-driven organizations measure systemic health and align execution across five pillars: Vision, Leadership, Strategy, Collaboration, and Well-Being.": "COIREA es un People Operating System, una plataforma de inteligencia organizacional que ayuda a organizaciones con propósito a medir su salud sistémica y alinear la ejecución en cinco pilares: Visión, Liderazgo, Estrategia, Colaboración y Bienestar.",
   "The Organizational Vitality Index is a 0-100 composite score that maps your organization's state: Systemic Coherence (80-100), Emerging Alignment (60-79), Fragile Stability (40-59), or Structural Risk (0-39). It updates continuously as your organization evolves.": "El Organizational Vitality Index es un puntaje compuesto de 0 a 100 que ubica el estado de tu organización: Coherencia sistémica (80-100), Alineación emergente (60-79), Estabilidad frágil (40-59) o Riesgo estructural (0-39). Se actualiza continuamente a medida que tu organización evoluciona.",
   "GiA stands for Guided Intelligence for Alignment, COIREA's trained organizational AI. Unlike generic tools, GiA learns from your organization's own signals and surfaces them in a Signal, Insight, Question format, built for reflection and action, not just reporting.": "GiA significa Guided Intelligence for Alignment, la IA organizacional entrenada de COIREA. A diferencia de las herramientas genéricas, GiA aprende de las señales propias de tu organización y las presenta en un formato de Señal, Insight, Pregunta, pensado para la reflexión y la acción, no solo para reportar.",
@@ -1743,6 +1743,24 @@ function SEOManager() {
       document.head.appendChild(canonical);
     }
     canonical.setAttribute("href", canonicalHref);
+
+    const enHref = `https://www.coirea.com${route === "/" ? "/" : route}`;
+    const esHref = `https://www.coirea.com/es${route === "/" ? "" : route}`;
+    const alternates = [
+      ["en", enHref],
+      ["es", esHref],
+      ["x-default", enHref],
+    ];
+    alternates.forEach(([hreflang, href]) => {
+      let link = document.head.querySelector(`link[rel="alternate"][hreflang="${hreflang}"]`);
+      if (!link) {
+        link = document.createElement("link");
+        link.setAttribute("rel", "alternate");
+        link.setAttribute("hreflang", hreflang);
+        document.head.appendChild(link);
+      }
+      link.setAttribute("href", href);
+    });
   }, []);
 
   return null;
@@ -1907,7 +1925,7 @@ function HealthDashboard() {
       <div className="dashboard-topline">
         <div>
           <span className="eyebrow">{t("Live system view", spanish)}</span>
-          <h2>{t("People Operating System", spanish)}</h2>
+          <h2>{spanish ? "Tu organización hoy" : "People Operating System"}</h2>
         </div>
         <div className="live-status"><span /> {t("Updated now", spanish)}</div>
       </div>
@@ -2064,7 +2082,7 @@ function Methodology() {
               <small>{t("Explore", spanish)}</small>
             </button>
           ))}
-          <div className="core-pulse"><Leaf size={30} weight="light" /><span>{t("People", spanish)}<br />Operating<br />System</span></div>
+          <div className="core-pulse"><Leaf size={30} weight="light" /><span>{spanish ? <>Tu sistema<br />humano</> : <>People<br />Operating<br />System</>}</span></div>
         </div>
         <div className="pillar-detail">
           <AnimatePresence mode="wait">
