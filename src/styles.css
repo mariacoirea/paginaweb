@@ -981,14 +981,14 @@ p { line-height: 1.78; }
   background-image: url("/assets/coirea-about-mountains.jpg");
   background-position: center 46%;
   background-size: cover;
-  opacity: .62;
-  filter: saturate(.82) contrast(.94) brightness(1.04);
+  opacity: .82;
+  filter: saturate(.9) contrast(.96) brightness(1.02);
   transform: scale(1.03);
 }
 .subpage-hero--about .subpage-scrim {
   background:
-    radial-gradient(ellipse at 50% 46%, color-mix(in oklch, var(--paper) 86%, transparent) 0 36%, color-mix(in oklch, var(--paper) 46%, transparent) 58%, transparent 78%),
-    linear-gradient(90deg, color-mix(in oklch, var(--paper) 98%, transparent) 0%, color-mix(in oklch, var(--paper) 88%, transparent) 34%, color-mix(in oklch, var(--paper) 66%, transparent) 62%, color-mix(in oklch, var(--deep) 30%, transparent) 100%),
+    radial-gradient(ellipse at 50% 46%, color-mix(in oklch, var(--paper) 68%, transparent) 0 36%, color-mix(in oklch, var(--paper) 32%, transparent) 58%, transparent 78%),
+    linear-gradient(90deg, color-mix(in oklch, var(--paper) 82%, transparent) 0%, color-mix(in oklch, var(--paper) 68%, transparent) 34%, color-mix(in oklch, var(--paper) 46%, transparent) 62%, color-mix(in oklch, var(--deep) 22%, transparent) 100%),
     radial-gradient(circle at 82% 22%, color-mix(in oklch, var(--gold) 14%, transparent), transparent 30%);
 }
 .subpage-hero--about .subpage-hero-copy {
