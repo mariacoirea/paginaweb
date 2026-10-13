@@ -1825,6 +1825,18 @@ p { line-height: 1.78; }
   font-size: 14px;
   letter-spacing: .02em;
 }
+.legacy-article-content figure {
+  margin: 32px auto;
+}
+.legacy-article-content figure img {
+  margin-bottom: 12px;
+}
+.legacy-article-content figcaption {
+  text-align: center;
+  color: var(--muted);
+  font-size: 14px;
+  letter-spacing: .02em;
+}
 .legacy-article-content {
   color: var(--ink);
   font-size: 17px;
