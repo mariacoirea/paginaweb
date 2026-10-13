@@ -936,33 +936,6 @@ const platformPillars = [
   ["Strategy & Execution", "Structure and Momentum", "Connects long-term vision to quarterly priorities, ownership, and measurable progress."],
 ];
 
-const platformFeatures = [
-  ["Organizational Health Dashboard", "Real-time visibility into culture, engagement, and team dynamics across the organization."],
-  ["AI-Powered Insights", "Analysis that surfaces what matters most and recommends evidence-based actions."],
-  ["Culture & Leadership Metrics", "Track leadership effectiveness and cultural alignment with validated indicators."],
-  ["Well-Being Signals", "Monitor team health and identify burnout risks before they impact performance and retention."],
-  ["Collaboration Network", "Visualize how teams work together and where connections need strengthening."],
-  ["SDGs Reporting", "Measure how organizational improvements translate into positive social impact."],
-];
-
-const ecosystemTypes = ["NGOs", "Impact Startups", "Regenerative Organizations", "Ecosystems & Networks", "Future of Work", "Educational Organizations"];
-
-const stewardCompass = [
-  ["Diagnose", "Read the organizational state with clarity and without judgment."],
-  ["Map the system", "Identify invisible patterns and dynamics beneath the surface."],
-  ["Challenge", "Name what the team is collectively avoiding."],
-  ["Hold presence", "Remain the steady human anchor through transformation."],
-];
-
-const stewardNames = ["Juan Carlos", "Gabriela", "Tanya", "Marcela"];
-
-const stewardProfiles = [
-  ["Juan Carlos", "Systemic vision", "Accompanying organizations to see what the system already knows about itself before touching anything."],
-  ["Gabriela", "Natural intelligence", "A biologist who reads organizations as ecosystems, from the inside out."],
-  ["Tanya", "Systemic trust", "Holding collective processes with care, especially when something can no longer continue as before."],
-  ["Marcela", "Coherence", "Accompanying leaders and teams back to alignment when doing has outpaced being."],
-];
-
 const foundingStewards = [
   {
     name: "Juan Carlos",
@@ -1023,53 +996,6 @@ const visionValues = [
   ["Coherence at Every Level", "Align purpose, leadership, culture, teams, and decisions across the system."],
   ["Human-Centered Systems", "People are not separate from performance. They are the system."],
   ["Reciprocity as Strategy", "Regeneration begins with how we relate to ourselves, to others, and to the system."],
-];
-
-const regenerativeSteps = [
-  {
-    title: "SOIL",
-    subtitle: "Sense the System",
-    text: "COIREA begins with structured reflection. The platform measures organizational health across five pillars and surfaces hidden tensions using trained AI pattern recognition.",
-    bullets: ["Organizational Vitality Index", "Cross-pillar signals", "Early risk indicators"],
-    closing: "This is where the organization pauses long enough to see itself clearly.",
-  },
-  {
-    title: "GROW",
-    subtitle: "Align & Execute",
-    text: "Insights convert into structured governance and execution. Execution becomes aligned, not reactive.",
-    bullets: ["Clear ownership", "Quarterly priorities", "Strategic drift detection", "Leadership accountability"],
-    closing: "This is where clarity becomes structure.",
-  },
-  {
-    title: "FLOURISH",
-    subtitle: "Learn & Regenerate",
-    text: "The system integrates feedback and strengthens capacity over time. Growth builds resilience instead of depletion.",
-    bullets: ["Well-being pulses", "Innovation map", "Learning loops", "Regenerative capacity signals"],
-    closing: "This is evolutionary and regenerative growth.",
-  },
-];
-
-const giaQuestions = [
-  ["Direction Coherence", "Is our daily work moving in the direction we say matters most?"],
-  ["System Capacity", "Does our system have the energy and space to deliver what we have committed to?"],
-  ["Role Clarity", "Are responsibilities held in ways that allow people to contribute at their best?"],
-  ["Project Contribution", "How are current initiatives strengthening the evolution of the organization?"],
-  ["System Tensions", "Where is the system asking for attention or adaptation?"],
-  ["Next Evolution", "What small structural changes could restore greater coherence?"],
-];
-
-const toolFaqs = [
-  ["What is the Organizational Health Scanner?", "A focused diagnostic that evaluates the organization across purpose, collaboration, leadership, well-being, strategy, and interconnectivity."],
-  ["How long does it take?", "The real scanner is designed to take approximately 5–7 minutes."],
-  ["What do leaders receive?", "An OVI score, pillar breakdown, strongest signal, challenge area, and personalized insights."],
-  ["Is information confidential?", "The current COIREA promise is that assessment responses and results are treated as confidential."],
-];
-
-const visionFaqs = [
-  ["What is COIREA?", "An organizational intelligence platform that helps purpose-driven organizations measure systemic health and align execution across five pillars."],
-  ["What is OVI?", "The Organizational Vitality Index is a 0–100 composite score that maps the organization into coherence, alignment, fragility, or structural risk."],
-  ["What is GiA?", "Guided Intelligence for Alignment, COIREA’s trained organizational pattern-recognition layer."],
-  ["What does COIREA do with our data?", "COIREA’s stated position is that intelligence is generated from inside your own system, not monetized or used for default cross-organization benchmarking."],
 ];
 
 const aboutFaqs = [
@@ -1205,17 +1131,12 @@ const spanishTextMap = {
   "Teams that move without constant realignment": "Equipos que avanzan sin realineación constante",
   "sees itself": "se ve a sí mismo",
   "The system": "El sistema",
-  "How COIREA works": "Cómo funciona COIREA",
-  "From signal to aligned action.": "De señal a acción alineada.",
-  "COIREA does not start by adding more pressure. It starts by helping the organization see itself clearly, then translates that clarity into a rhythm of action, learning, and regeneration.": "COIREA no empieza agregando más presión. Empieza ayudando a la organización a verse con claridad y luego traduce esa claridad en un ritmo de acción, aprendizaje y regeneración.",
   "GiA does not give generic answers. It reads your organization and helps you reflect.": "GiA no entrega respuestas genéricas. Lee tu organización y ayuda a reflexionar.",
   "GiA means Guided Intelligence for Alignment. Instead of external models, it learns from your organization's own signals and turns them into specific, contextual guidance.": "GiA significa Guided Intelligence for Alignment. En lugar de modelos externos, aprende de las señales de tu propia organización y las convierte en orientación específica y contextual.",
   "AI + Human Wisdom": "IA + sabiduría humana",
   "Question": "Pregunta",
   "What environment could you create so people feel safe enough to tell the truth early?": "¿Qué entorno podrías crear para que las personas se sientan lo suficientemente seguras para decir la verdad antes?",
   "Is COIREA for you?": "¿Es COIREA para ti?",
-  "Start with a signal, not a sales pitch.": "Empieza con una señal, no con un discurso de venta.",
-  "Answer three prompts and see which part of your People Operating System may be asking for attention.": "Responde tres preguntas y mira qué parte de tu People Operating System podría estar pidiendo atención.",
   "Starting signal": "Señal inicial",
   "Apply to work with COIREA": "Postular para trabajar con COIREA",
   "Try again": "Intentar de nuevo",
@@ -1278,9 +1199,7 @@ const spanishTextMap = {
   "Loading posts...": "Cargando posts...",
   "insights available.": "insights disponibles.",
   "No insights match that search yet. Try another theme or keyword.": "Todavía no hay insights que coincidan. Prueba otro tema o palabra clave.",
-  "Load more insights": "Cargar más insights",
   "Organizational intelligence for growth that builds capacity.": "Inteligencia organizacional para un crecimiento que construye capacidad.",
-  "Concept prototype. Selected claims and data are illustrative pending owner confirmation.": "Prototipo conceptual. Algunas afirmaciones y datos son ilustrativos hasta confirmación de la dueña.",
   "Ask GiA": "Pregúntale a GiA",
   "Questions, clarity, or a human next step": "Preguntas, claridad o un siguiente paso humano",
   "Friendly guide, not a replacement for a human": "Guía cercana, no reemplazo de una persona",
@@ -1423,14 +1342,6 @@ const spanishTextMap = {
   "COIREA works best with founder-led or mission-driven organizations between 15 and 300 people, typically navigating growth complexity, team misalignment, or a leadership transition. If you're not sure whether it's a fit, the first step is a short, honest conversation.": "COIREA funciona mejor con organizaciones lideradas por sus fundadores o con propósito, de entre 15 y 300 personas, que suelen estar atravesando complejidad de crecimiento, desalineación de equipos o una transición de liderazgo. Si no estás segura de si encaja, el primer paso es una conversación breve y honesta.",
   "How does the SOIL assessment work?": "¿Cómo funciona la evaluación SOIL?",
   "SOIL is COIREA's entry phase. It starts with a diagnostic conversation and an OVI measurement across all five pillars. Within 30 days, you have a clear picture of where your system is strong and where it's leaking energy, and a specific roadmap for what to strengthen first.": "SOIL es la etapa de entrada de COIREA. Empieza con una conversación diagnóstica y una medición OVI en los cinco pilares. En 30 días tenés una imagen clara de dónde tu sistema es fuerte y dónde está perdiendo energía, además de una hoja de ruta concreta de qué fortalecer primero.",
-  "What is the Organizational Health Scanner?": "¿Qué es el Organizational Health Scanner?",
-  "A focused diagnostic that evaluates the organization across purpose, collaboration, leadership, well-being, strategy, and interconnectivity.": "Un diagnóstico enfocado que evalúa la organización en propósito, colaboración, liderazgo, bienestar, estrategia e interconexión.",
-  "How long does it take?": "¿Cuánto tiempo toma?",
-  "The real scanner is designed to take approximately 5–7 minutes.": "El scanner real está diseñado para tomar entre 5 y 7 minutos aproximadamente.",
-  "What do leaders receive?": "¿Qué reciben los líderes?",
-  "An OVI score, pillar breakdown, strongest signal, challenge area, and personalized insights.": "Un puntaje OVI, el desglose por pilar, la señal más fuerte, el área de mayor desafío e insights personalizados.",
-  "Is information confidential?": "¿La información es confidencial?",
-  "The current COIREA promise is that assessment responses and results are treated as confidential.": "El compromiso actual de COIREA es que las respuestas y resultados de la evaluación se tratan de forma confidencial.",
   "Clarity of Purpose": "Claridad de propósito",
   "Design from the inside out, anchored in strategic vision and long-term direction.": "Diseñar desde adentro hacia afuera, anclado en una visión estratégica y una dirección de largo plazo.",
   "Coherence at Every Level": "Coherencia en cada nivel",
@@ -1447,63 +1358,7 @@ const spanishTextMap = {
   "What are the five dimensions?": "¿Cuáles son las cinco dimensiones?",
   "Give me an example": "Dame un ejemplo",
   "Which dimension matters most?": "¿Qué dimensión importa más?",
-  "Organizational Health Dashboard": "Panel de salud organizacional",
-  "Real-time visibility into culture, engagement, and team dynamics across the organization.": "Visibilidad en tiempo real sobre la cultura, el compromiso y la dinámica de los equipos en toda la organización.",
-  "AI-Powered Insights": "Insights impulsados por IA",
-  "Analysis that surfaces what matters most and recommends evidence-based actions.": "Análisis que saca a la luz lo que más importa y recomienda acciones basadas en evidencia.",
-  "Culture & Leadership Metrics": "Métricas de cultura y liderazgo",
-  "Track leadership effectiveness and cultural alignment with validated indicators.": "Monitorea la efectividad del liderazgo y la alineación cultural con indicadores validados.",
-  "Well-Being Signals": "Señales de bienestar",
-  "Monitor team health and identify burnout risks before they impact performance and retention.": "Monitorea la salud del equipo e identifica riesgos de burnout antes de que afecten el rendimiento y la retención.",
-  "Collaboration Network": "Red de colaboración",
-  "Visualize how teams work together and where connections need strengthening.": "Visualiza cómo trabajan juntos los equipos y dónde hay que fortalecer las conexiones.",
-  "SDGs Reporting": "Reportes de ODS",
-  "Measure how organizational improvements translate into positive social impact.": "Mide cómo las mejoras organizacionales se traducen en impacto social positivo.",
-  "Direction Coherence": "Coherencia de dirección",
-  "Is our daily work moving in the direction we say matters most?": "¿Nuestro trabajo diario avanza en la dirección que decimos que más importa?",
-  "System Capacity": "Capacidad del sistema",
-  "Does our system have the energy and space to deliver what we have committed to?": "¿Tiene nuestro sistema la energía y el espacio para cumplir lo que nos comprometimos a entregar?",
-  "Role Clarity": "Claridad de roles",
-  "Are responsibilities held in ways that allow people to contribute at their best?": "¿Las responsabilidades están distribuidas de forma que las personas puedan dar lo mejor de sí?",
-  "Project Contribution": "Aporte de los proyectos",
-  "How are current initiatives strengthening the evolution of the organization?": "¿Cómo están fortaleciendo las iniciativas actuales la evolución de la organización?",
-  "System Tensions": "Tensiones del sistema",
-  "Where is the system asking for attention or adaptation?": "¿Dónde está pidiendo el sistema atención o adaptación?",
-  "Next Evolution": "Próxima evolución",
-  "What small structural changes could restore greater coherence?": "¿Qué pequeños cambios estructurales podrían restaurar mayor coherencia?",
-  "Read the organizational state with clarity and without judgment.": "Leer el estado de la organización con claridad y sin juicio.",
-  "Map the system": "Mapear el sistema",
-  "Identify invisible patterns and dynamics beneath the surface.": "Identificar patrones y dinámicas invisibles debajo de la superficie.",
-  "Challenge": "Desafiar",
-  "Name what the team is collectively avoiding.": "Nombrar lo que el equipo está evitando colectivamente.",
-  "Hold presence": "Sostener la presencia",
-  "Remain the steady human anchor through transformation.": "Ser el ancla humana estable durante la transformación.",
-  "Intention without structure": "Intención sin estructura",
-  "Strong values exist, but the operational architecture to sustain them does not.": "Existen valores fuertes, pero no la arquitectura operativa para sostenerlos.",
-  "People over systems": "Personas por encima de los sistemas",
-  "Organizations depend on individual energy instead of structural coherence.": "Las organizaciones dependen de la energía individual en vez de la coherencia estructural.",
-  "Execution drift": "Deriva en la ejecución",
-  "Daily work disconnects from strategic mission as complexity grows.": "El trabajo diario se desconecta de la misión estratégica a medida que crece la complejidad.",
-  "Invisible burnout": "Burnout invisible",
-  "Unclear ownership and slow governance erode well-being silently.": "La falta de claridad en la responsabilidad y una gobernanza lenta erosionan el bienestar en silencio.",
-  "Align Mission & Execution": "Alinear misión y ejecución",
-  "Connect mission, strategy, and daily execution into one coherent system.": "Conectar misión, estrategia y ejecución diaria en un solo sistema coherente.",
-  "Detect System Tension": "Detectar tensión del sistema",
-  "Identify structural misalignment before it becomes breakdown or burnout.": "Identificar desalineaciones estructurales antes de que se conviertan en colapso o burnout.",
-  "Protect Team Capacity": "Proteger la capacidad del equipo",
-  "Safeguard energy and capacity while scaling impact.": "Resguardar la energía y la capacidad mientras se escala el impacto.",
-  "Structure with Humanity": "Estructura con humanidad",
-  "Build governance and ownership structures without losing the human element.": "Construir estructuras de gobernanza y responsabilidad sin perder el elemento humano.",
-  "Not answers": "No respuestas",
-  "A Steward asks the questions the system needs to hear.": "Un Steward hace las preguntas que el sistema necesita escuchar.",
   "Presence": "Presencia",
-  "They stay in the room when those questions land.": "Se quedan en la sala cuando esas preguntas aterrizan.",
-  "Practice": "Práctica",
-  "Each Steward brings their own purpose, background, and inner practice to the work.": "Cada Steward aporta su propio propósito, trayectoria y práctica interior al trabajo.",
-  "An organizational intelligence platform that helps purpose-driven organizations measure systemic health and align execution across five pillars.": "Una plataforma de inteligencia organizacional que ayuda a organizaciones con propósito a medir su salud sistémica y alinear la ejecución en cinco pilares.",
-  "The Organizational Vitality Index is a 0–100 composite score that maps the organization into coherence, alignment, fragility, or structural risk.": "El Organizational Vitality Index es un puntaje compuesto de 0 a 100 que ubica a la organización en coherencia, alineación, fragilidad o riesgo estructural.",
-  "Guided Intelligence for Alignment, COIREA’s trained organizational pattern-recognition layer.": "Guided Intelligence for Alignment, la capa de reconocimiento de patrones organizacionales entrenada de COIREA.",
-  "COIREA’s stated position is that intelligence is generated from inside your own system, not monetized or used for default cross-organization benchmarking.": "La posición declarada de COIREA es que la inteligencia se genera desde dentro de tu propio sistema, sin monetizarse ni usarse por defecto para comparar entre organizaciones.",
 };
 
 function escapeRegExp(value) {
@@ -2857,314 +2712,6 @@ function PageHero({ eyebrow, title, text, variant = "" }) {
   );
 }
 
-function PlatformPage() {
-  return (
-    <main>
-      <PageHero
-        eyebrow="Platform"
-        title="The Organizational Intelligence Platform."
-        text="COIREA replaces fragmented management tools with one integrated system for execution clarity. It measures organizational health across five pillars, detects misalignment early, and translates signals into clear ownership and strategic focus."
-      />
-      <section className="process-cycle section">
-        <Reveal className="section-heading">
-          <span className="eyebrow">The regenerative execution cycle</span>
-          <h2>How COIREA Works.</h2>
-          <p>COIREA helps organizations achieve strategic goals while increasing systemic coherence and long-term capacity.</p>
-        </Reveal>
-        <div className="cycle-grid">
-          {regenerativeSteps.map((step, index) => (
-            <Reveal className="cycle-card" delay={index * 0.1} key={step.title}>
-              <span>0{index + 1}</span>
-              <h3>{step.title}</h3>
-              <strong>{step.subtitle}</strong>
-              <p>{step.text}</p>
-              <ul>
-                {step.bullets.map((item) => <li key={item}>{item}</li>)}
-              </ul>
-              <small>{step.closing}</small>
-            </Reveal>
-          ))}
-        </div>
-      </section>
-      <section className="detail-page section">
-        <Reveal className="detail-intro">
-          <span className="eyebrow">What COIREA measures</span>
-          <h2>The five pillars of organizational intelligence.</h2>
-          <p>All captured in one system, interpreted by GiA, and supported by Stewards when the organization needs human accompaniment.</p>
-        </Reveal>
-        <div className="detail-grid detail-grid--five">
-          {platformPillars.map(([title, subtitle, text], index) => (
-            <Reveal className="detail-card" delay={index * 0.06} key={title}>
-              <span>0{index + 1}</span>
-              <h3>{title}</h3>
-              <strong>{subtitle}</strong>
-              <p>{text}</p>
-            </Reveal>
-          ))}
-        </div>
-      </section>
-      <section className="platform section page-product-panel">
-        <Reveal className="platform-copy">
-          <span className="eyebrow">Evolution Dashboard</span>
-          <h2>System-level clarity in one dashboard.</h2>
-          <p>COIREA centralizes signals across vision, culture, leadership, collaboration, well-being, and strategy, then uses trained Organizational AI to interpret how those dimensions affect your goals.</p>
-        </Reveal>
-        <Reveal className="signal-board" delay={0.08}>
-          <div className="dashboard-reel" aria-label="Animated platform demo"><span /><span /><span /><p>OVI + GiA live preview</p></div>
-          <div className="focus-board">
-            <div className="focus-header"><div><Brain size={20} /> <strong>GiA</strong></div><button type="button">System intelligence <ArrowRight /></button></div>
-            {[
-              ["Execution drift", 62, "High"], ["Ownership unclear", 58, "Medium"],
-              ["Capacity thinning", 54, "High"], ["Alignment strengthening", 72, "Low"],
-            ].map(([label, value, impact], index) => (
-              <div className="focus-row" key={label}>
-                <span>{label}</span>
-                <AnimatedFocusBar value={value} delay={0.15 + index * 0.08} />
-                <small className={`impact impact--${impact.toLowerCase()}`}>{impact}</small>
-              </div>
-            ))}
-          </div>
-        </Reveal>
-      </section>
-      <section className="gia-questions section">
-        <Reveal className="section-heading">
-          <span className="eyebrow">Meet GiA</span>
-          <h2>What GiA makes visible.</h2>
-          <p>GiA is not a generic chatbot. It interprets patterns within your organization’s own data and turns them into contextual questions.</p>
-        </Reveal>
-        <div className="question-grid">
-          {giaQuestions.map(([title, question], index) => (
-            <Reveal className="question-card" delay={index * 0.06} key={title}>
-              <span>0{index + 1}</span>
-              <h3>{title}</h3>
-              <p>{question}</p>
-            </Reveal>
-          ))}
-        </div>
-      </section>
-      <section className="detail-page section">
-        <Reveal className="detail-intro">
-          <span className="eyebrow">Platform features</span>
-          <h2>Everything needed to understand and transform the organization.</h2>
-          <p>The original Platform page contains a broader feature layer. This section brings those product promises into the new design format.</p>
-        </Reveal>
-        <div className="detail-grid">
-          {platformFeatures.map(([title, text], index) => (
-            <Reveal className="detail-card" delay={index * 0.05} key={title}>
-              <span>0{index + 1}</span>
-              <h3>{title}</h3>
-              <p>{text}</p>
-            </Reveal>
-          ))}
-        </div>
-      </section>
-      {false && (
-      <section className="about-system section" hidden>
-        <Reveal className="gia-card-large">
-          <div className="gia-card-header">
-            <div className="gia-avatar"><UsersThree size={20} weight="fill" /></div>
-            <div><strong>The human layer</strong><span>Platform + Steward</span></div>
-          </div>
-          <h2>The system works because people hold it.</h2>
-          <p>COIREA is not a self-service tool. Every organization that enters the system is accompanied by a Steward, a trained facilitator who reads what data alone cannot tell you and stays present through the moments that matter most.</p>
-        </Reveal>
-        <Reveal className="steward-panel" delay={0.1}>
-          <span className="eyebrow">Responsible AI</span>
-          <h3>Not a disclaimer. A design choice.</h3>
-          <p>GiA is used deliberately, in service of reflection, and only where it adds something a human alone could not see as easily. The rest of the system is designed around people, presence, relationships, and response.</p>
-        </Reveal>
-      </section>
-      )}
-      <Closing />
-    </main>
-  );
-}
-
-function EcosystemPage() {
-  return (
-    <main>
-      <PageHero
-        eyebrow="Ecosystem"
-        title="Built for organizations driven by purpose."
-        text="COIREA helps mission-driven organizations align their systems, strengthen execution, and scale impact without burning out their people or losing coherence."
-      />
-      <section className="detail-page section">
-        <Reveal className="detail-intro">
-          <span className="eyebrow">Who this is for</span>
-          <h2>Different missions. Same structural challenge.</h2>
-          <p>Mission-driven organizations rarely struggle with purpose. They struggle with the systems designed to carry it.</p>
-        </Reveal>
-        <div className="detail-grid">
-          {ecosystemTypes.map((type, index) => (
-            <Reveal className="detail-card" delay={index * 0.06} key={type}>
-              <span>0{index + 1}</span>
-              <h3>{type}</h3>
-              <p>Purpose-led teams navigating growth, complexity, coordination, and the need for healthier execution.</p>
-            </Reveal>
-          ))}
-        </div>
-      </section>
-      <section className="about-story section">
-        <Reveal className="about-manifesto">
-          <span className="eyebrow">The real problem</span>
-          <h2>The challenge is not purpose. It is building a system that can sustain it.</h2>
-        </Reveal>
-        <Reveal className="about-principles" delay={0.1}>
-          {[
-            ["Intention without structure", "Strong values exist, but the operational architecture to sustain them does not."],
-            ["People over systems", "Organizations depend on individual energy instead of structural coherence."],
-            ["Execution drift", "Daily work disconnects from strategic mission as complexity grows."],
-            ["Invisible burnout", "Unclear ownership and slow governance erode well-being silently."],
-          ].map(([title, text], index) => (
-            <div key={title}><span>0{index + 1}</span><h3>{title}</h3><p>{text}</p></div>
-          ))}
-        </Reveal>
-      </section>
-      <section className="ecosystem-response section">
-        <Reveal className="section-heading">
-          <span className="eyebrow">COIREA response</span>
-          <h2>Regenerative execution starts with system intelligence.</h2>
-        </Reveal>
-        <div className="detail-grid">
-          {[
-            ["Align Mission & Execution", "Connect mission, strategy, and daily execution into one coherent system."],
-            ["Detect System Tension", "Identify structural misalignment before it becomes breakdown or burnout."],
-            ["Protect Team Capacity", "Safeguard energy and capacity while scaling impact."],
-            ["Structure with Humanity", "Build governance and ownership structures without losing the human element."],
-          ].map(([title, text], index) => (
-            <Reveal className="detail-card" delay={index * 0.07} key={title}>
-              <span>0{index + 1}</span>
-              <h3>{title}</h3>
-              <p>{text}</p>
-            </Reveal>
-          ))}
-        </div>
-      </section>
-      <section className="diagnostic section">
-        <Reveal className="diagnostic-intro">
-          <span className="eyebrow">Start here</span>
-          <h2>How healthy is your organization?</h2>
-          <p>Before transformation, leaders need to understand where the system stands. COIREA’s diagnostic tools give immediate clarity on health, leadership coherence, and structural alignment.</p>
-        </Reveal>
-        <Reveal className="diagnostic-panel" delay={0.1}>
-          <div className="result-state">
-            <div className="result-check"><Check size={25} weight="bold" /></div>
-            <span className="eyebrow">Free diagnostic tools</span>
-            <h3>Organizational Health Score, Conscious Leadership Assessment, and Health Scanner.</h3>
-            <p>This section preserves the original Ecosystem pathway into the tools and assessment experience.</p>
-          </div>
-        </Reveal>
-      </section>
-      <section className="gia-section section">
-        <Reveal className="gia-card-large">
-          <div className="gia-card-header">
-            <div className="gia-avatar"><Brain size={20} weight="fill" /></div>
-            <div><strong>GiA</strong><span>Intelligence that understands your system</span></div>
-          </div>
-          <h2>No generic benchmarks. Only insight grounded in your reality.</h2>
-          <p>For mission-driven organizations, GiA helps leaders see where the system is misaligned, overloaded, fragmented, or ready to evolve.</p>
-        </Reveal>
-        <Reveal className="gia-example" delay={0.1}>
-          {["Misaligned", "Overloaded", "Fragmented", "Ready to evolve"].map((item) => (
-            <motion.div key={item} whileHover={{ x: 8 }} transition={{ duration: 0.22 }}>
-              <span>System state</span>
-              <p>{item}</p>
-            </motion.div>
-          ))}
-        </Reveal>
-      </section>
-      <section className="ecosystem-response section">
-        <Reveal className="section-heading">
-          <span className="eyebrow">Regenerative impact</span>
-          <h2>From organizational coherence to regenerative impact.</h2>
-          <p>Organizations shape systems. Systems shape outcomes. When organizations operate coherently, without extraction, they create the conditions for regenerative impact at scale.</p>
-        </Reveal>
-      </section>
-      <Closing />
-    </main>
-  );
-}
-
-function StewardsPage() {
-  return (
-    <main>
-      <PageHero
-        eyebrow="Stewards"
-        title="The human presence behind the COIREA system."
-        text="Stewards do not simply apply a method. They hold a living process, walking alongside organizations through moments of tension, reflection, and transformation."
-      />
-      <section className="detail-page section">
-        <Reveal className="detail-intro">
-          <span className="eyebrow">What a Steward does</span>
-          <h2>They help the system see what it already knows.</h2>
-          <p>Stewards accompany leaders and teams through the implementation of the organizational OS, translating insight into presence, rhythm, and action.</p>
-        </Reveal>
-        <div className="detail-grid">
-          {stewardCompass.map(([title, text], index) => (
-            <Reveal className="detail-card" delay={index * 0.08} key={title}>
-              <span>0{index + 1}</span>
-              <h3>{title}</h3>
-              <p>{text}</p>
-            </Reveal>
-          ))}
-        </div>
-      </section>
-      <section className="stewards-strip section">
-        <Reveal className="section-heading">
-          <span className="eyebrow">Meet the Stewards</span>
-          <h2>The people holding the system.</h2>
-        </Reveal>
-        <div className="steward-grid">
-          {stewardProfiles.map(([name, role, text], index) => (
-            <Reveal className="steward-tile" delay={index * 0.08} key={name}>
-              <span>Founding Steward</span>
-              <h3>{name}</h3>
-              <strong>{role}</strong>
-              <p>{text}</p>
-            </Reveal>
-          ))}
-        </div>
-      </section>
-      <section className="about-story section">
-        <Reveal className="about-manifesto">
-          <span className="eyebrow">The container</span>
-          <h2>COIREA was conceived as a container to trust.</h2>
-          <p>A space where reflection precedes intervention, where patterns are named without assigning blame, and where organizational intelligence is allowed to emerge from within.</p>
-        </Reveal>
-        <Reveal className="about-principles" delay={0.1}>
-          {[
-            ["Not answers", "A Steward asks the questions the system needs to hear."],
-            ["Presence", "They stay in the room when those questions land."],
-            ["Practice", "Each Steward brings their own purpose, background, and inner practice to the work."],
-          ].map(([title, text], index) => (
-            <div key={title}><span>0{index + 1}</span><h3>{title}</h3><p>{text}</p></div>
-          ))}
-        </Reveal>
-      </section>
-      <section className="steward-apply section">
-        <Reveal className="section-heading">
-          <span className="eyebrow">For facilitators & coaches</span>
-          <h2>Do you feel the call to become a Steward?</h2>
-          <p>COIREA Stewards are not hired, they are recognized. The original page invites practitioners with real accompaniment experience and personal practice to apply.</p>
-        </Reveal>
-        <div className="apply-criteria">
-          {[
-            "Real experience accompanying human or organizational processes",
-            "An active personal practice: coaching, meditation, somatic work, or similar",
-            "A desire to operate from a system that integrates purpose, structure, and well-being",
-          ].map((item, index) => (
-            <Reveal className="impact-row" delay={index * 0.08} key={item}>
-              <span>0{index + 1}</span>
-              <strong>{item}</strong>
-            </Reveal>
-          ))}
-        </div>
-      </section>
-      <Closing />
-    </main>
-  );
-}
-
 function InsightsPage() {
   const { posts, loading, error } = useMigratedBlogPosts();
   const spanish = isSpanishPath();
@@ -3752,65 +3299,6 @@ function AboutContact() {
         <p>If there is a genuine fit, COIREA will reach out within 5 business days.</p>
       </Reveal>
     </section>
-  );
-}
-
-function ToolsPage() {
-  return (
-    <main>
-      <PageHero
-        eyebrow="Tools"
-        title="Organizational health tools for seeing the system clearly."
-        text="COIREA’s tools help leaders diagnose organizational health, leadership coherence, and structural alignment before beginning deeper transformation."
-      />
-      <section className="detail-page section">
-        <Reveal className="detail-intro">
-          <span className="eyebrow">Organizational Health Scanner</span>
-          <h2>A focused diagnostic across the dimensions that shape vitality.</h2>
-          <p>The current COIREA scanner is designed as a short diagnostic that gives leaders an OVI score, pillar breakdown, and personalized insights.</p>
-        </Reveal>
-        <div className="detail-grid">
-          {["Purpose & Culture", "Collaboration", "Leadership & Self-Leadership", "Well-Being", "Strategy & Interconnectivity"].map((item, index) => (
-            <Reveal className="detail-card" delay={index * 0.06} key={item}>
-              <span>0{index + 1}</span>
-              <h3>{item}</h3>
-              <p>Part of the diagnostic lens used to understand where the organization is coherent, strained, or ready to evolve.</p>
-            </Reveal>
-          ))}
-        </div>
-      </section>
-      <section className="faq-section section">
-        <Reveal className="section-heading">
-          <span className="eyebrow">Assessment FAQ</span>
-          <h2>What leaders need to know before using the scanner.</h2>
-        </Reveal>
-        <div className="faq-grid">
-          {toolFaqs.map(([question, answer], index) => (
-            <Reveal className="faq-item" delay={index * 0.06} key={question}>
-              <span>0{index + 1}</span>
-              <h3>{question}</h3>
-              <p>{answer}</p>
-            </Reveal>
-          ))}
-        </div>
-      </section>
-      <section className="diagnostic section">
-        <Reveal className="diagnostic-intro">
-          <span className="eyebrow">Assessment promise</span>
-          <h2>From reflection to a usable signal.</h2>
-          <p>In the full implementation, leaders complete the scanner and receive an instant vitality reading with recommended areas for attention.</p>
-        </Reveal>
-        <Reveal className="diagnostic-panel" delay={0.1}>
-          <div className="result-state">
-            <div className="result-check"><Check size={25} weight="bold" /></div>
-            <span className="eyebrow">Prototype tool preview</span>
-            <h3>25 questions. OVI score. Pillar breakdown. Personalized insights.</h3>
-            <p>This page preserves the original Tools intent while presenting it in the new COIREA visual system.</p>
-          </div>
-        </Reveal>
-      </section>
-      <Closing />
-    </main>
   );
 }
 
