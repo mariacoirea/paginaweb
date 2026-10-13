@@ -398,7 +398,7 @@ const platformBenefits = [
 const aiSeoFaqs = [
   [
     "What is COIREA?",
-    "COIREA is a People Operating System for organizations that care. It helps leaders measure and strengthen the human system behind performance across Vision, Leadership, Strategy, Collaboration, and Well-Being.",
+    "COIREA is a People Operating System: it makes the human system behind your results visible so your organization can grow without breaking. It combines a platform (OVI and GiA) with the guidance of a certified Steward.",
   ],
   [
     "What is a People Operating System?",
@@ -414,7 +414,7 @@ const aiSeoFaqs = [
   ],
   [
     "What is OVI?",
-    "OVI means Organizational Vitality Index. It is COIREA's diagnostic view of how healthy and coherent an organization is across the five pillars of its People Operating System.",
+    "OVI means Organizational Vitality Index. It is COIREA's diagnostic view of how healthy and coherent an organization is across the five pillars.",
   ],
   [
     "What is GiA?",
@@ -1113,9 +1113,9 @@ const spanishTextMap = {
   "See how it works": "Ver cómo funciona",
   "See the system": "Ver el sistema",
   "The People Operating System": "El People Operating System",
-  "COIREA · The People Operating System": "COIREA · People Operating System",
-  "The People Operating System for organizations that care.": "Haz visible el sistema humano detrás de tus resultados.",
-  "COIREA helps organizations build cohesive teams, because growth should increase coherence, not deplete capacity. When the People System is aligned, organizations do not just perform better, they regenerate.": "Inteligencia organizacional y acompañamiento humano para organizaciones con propósito que están creciendo. Porque el crecimiento debería aumentar la coherencia, no agotar la capacidad.",
+  "COIREA · People Operating System": "COIREA · People Operating System",
+  "Make the human system behind your results visible.": "Haz visible el sistema humano detrás de tus resultados.",
+  "Organizational intelligence and human stewardship for purpose-driven organizations that are growing. Because growth should increase coherence, not deplete capacity.": "Inteligencia organizacional y acompañamiento humano para organizaciones con propósito que están creciendo. Porque el crecimiento debería aumentar la coherencia, no agotar la capacidad.",
   "AI + Human Wisdom. Grounded in systemic thinking.": "IA + sabiduría humana. Basado en pensamiento sistémico.",
   "Live system view": "Vista viva del sistema",
   "People Operating System": "People Operating System",
@@ -1223,10 +1223,10 @@ const spanishTextMap = {
   "Keep going": "Sigue avanzando",
   "Questions leaders ask": "Preguntas que hacen los líderes",
   "Clear answers about COIREA and the People Operating System.": "Respuestas claras sobre COIREA y el People Operating System.",
-  "These answers are written for leaders evaluating COIREA, and structured clearly so search engines and AI assistants can understand the concept without guessing.": "Estas respuestas están escritas para líderes que evalúan COIREA.",
+  "These answers are written for leaders evaluating COIREA.": "Estas respuestas están escritas para líderes que evalúan COIREA.",
   "Read the full People Operating System article": "Leer el artículo completo sobre People Operating System",
   "Is Your Organization Ready to See Itself Clearly?": "¿Está tu organización lista para verse con claridad?",
-  "COIREA is not for every organization. It is for the ones that sense something needs to shift, and are ready to look at it honestly, with the right support alongside them.": "COIREA no es para todas las organizaciones. Es para organizaciones con propósito de 15 a 300 personas que están creciendo, desalineadas o en transición de liderazgo, y que están listas para mirarlo honestamente.",
+  "COIREA is not for every organization. It is for purpose-driven organizations of 15 to 300 people that are growing, misaligned, or in a leadership transition, and are ready to look at it honestly.": "COIREA no es para todas las organizaciones. Es para organizaciones con propósito de 15 a 300 personas que están creciendo, desalineadas o en transición de liderazgo, y que están listas para mirarlo honestamente.",
   "Every organization enters with a Steward. This is not a software subscription. It is an accompanied transformation. Applications are reviewed personally.": "Cada organización entra con un Steward. Esto no es una suscripción de software. Es una transformación acompañada. Las solicitudes se revisan personalmente.",
   "Start with fit, not pressure.": "Empieza con encaje, no con presión.",
   "COIREA is for organizations that sense something needs to shift, and are ready to look at it honestly with the right support alongside them.": "COIREA es para organizaciones que sienten que algo necesita cambiar y están listas para mirarlo honestamente con el apoyo correcto.",
@@ -1366,7 +1366,7 @@ const spanishTextMap = {
   "Your system may already have strong coherence.": "Tu sistema podría tener una coherencia fuerte.",
   "COIREA can help protect that coherence as the organization grows, adds complexity, or enters a new strategic phase.": "COIREA puede ayudar a proteger esa coherencia mientras la organización crece, suma complejidad o entra en una nueva etapa estratégica.",
   "What is COIREA?": "¿Qué es COIREA?",
-  "COIREA is a People Operating System for organizations that care. It helps leaders measure and strengthen the human system behind performance across Vision, Leadership, Strategy, Collaboration, and Well-Being.": "COIREA es un People Operating System: hace visible el sistema humano detrás de tus resultados para que tu organización crezca sin romperse. Combina una plataforma (OVI y GiA) con el acompañamiento de un Steward certificado.",
+  "COIREA is a People Operating System: it makes the human system behind your results visible so your organization can grow without breaking. It combines a platform (OVI and GiA) with the guidance of a certified Steward.": "COIREA es un People Operating System: hace visible el sistema humano detrás de tus resultados para que tu organización crezca sin romperse. Combina una plataforma (OVI y GiA) con el acompañamiento de un Steward certificado.",
   "What is a People Operating System?": "¿Qué es un People Operating System?",
   "A People Operating System is the living structure behind how people make decisions, collaborate, execute strategy, and sustain performance. It makes the invisible patterns of an organization visible enough to improve.": "Un People Operating System es la estructura viva detrás de cómo las personas deciden, colaboran, ejecutan estrategia y sostienen rendimiento. Hace visibles los patrones invisibles de una organización para poder mejorarlos.",
   "Is COIREA a platform or a consultancy?": "¿COIREA es una plataforma o una consultoría?",
@@ -1374,7 +1374,7 @@ const spanishTextMap = {
   "What does COIREA measure?": "¿Qué mide COIREA?",
   "COIREA measures organizational health through five pillars: Vision, Leadership, Strategy, Collaboration, and Well-Being. Together, these pillars show whether the organization is coherent, aligned, and able to perform sustainably.": "COIREA mide la salud organizacional a través de cinco pilares: Visión, Liderazgo, Estrategia, Colaboración y Bienestar. Juntos muestran si la organización está coherente, alineada y puede rendir de forma sostenible.",
   "What is OVI?": "¿Qué es OVI?",
-  "OVI means Organizational Vitality Index. It is COIREA's diagnostic view of how healthy and coherent an organization is across the five pillars of its People Operating System.": "OVI significa Organizational Vitality Index. Es la mirada diagnóstica de COIREA sobre qué tan sana y coherente está una organización en los cinco pilares.",
+  "OVI means Organizational Vitality Index. It is COIREA's diagnostic view of how healthy and coherent an organization is across the five pillars.": "OVI significa Organizational Vitality Index. Es la mirada diagnóstica de COIREA sobre qué tan sana y coherente está una organización en los cinco pilares.",
   "What is GiA?": "¿Qué es GiA?",
   "GiA means Guided Intelligence for Alignment. It is COIREA's intelligence layer that turns organizational signals into questions, insights, and suggested next actions for leaders.": "GiA significa Guided Intelligence for Alignment. Es la capa de inteligencia de COIREA que convierte señales organizacionales en preguntas, insights y siguientes acciones sugeridas para líderes.",
   "Show more insights": "Mostrar más insights",
@@ -1405,9 +1405,8 @@ const spanishTextMap = {
   "More essays on leadership, culture, and organizational evolution.": "Más ensayos sobre liderazgo, cultura y evolución organizacional.",
   "The process": "El proceso",
   "Three phases. One continuous system.": "Tres fases. Un sistema continuo.",
-  "Consultation": "SOIL",
   "Diagnose": "Diagnosticar",
-  "The OVI maps the current state of your People Operating System across all five pillars. This is the SOIL phase, where GiA surfaces the first signals and tensions.": "El OVI mapea el estado actual de tu organización en los cinco pilares. Esta es la etapa SOIL, donde GiA hace visibles las primeras señales y tensiones.",
+  "The OVI maps the current state of your organization across all five pillars. This is the SOIL phase, where GiA surfaces the first signals and tensions.": "El OVI mapea el estado actual de tu organización en los cinco pilares. Esta es la etapa SOIL, donde GiA hace visibles las primeras señales y tensiones.",
   "Align and execute": "Alinear y ejecutar",
   "The five pillars are implemented step by step. A certified Steward accompanies the work.": "Los cinco pilares se implementan paso a paso. Un Steward certificado acompaña el trabajo.",
   "Evolve and regenerate": "Evolucionar y regenerar",
@@ -1925,7 +1924,7 @@ function HealthDashboard() {
       <div className="dashboard-topline">
         <div>
           <span className="eyebrow">{t("Live system view", spanish)}</span>
-          <h2>{spanish ? "Tu organización hoy" : "People Operating System"}</h2>
+          <h2>{spanish ? "Tu organización hoy" : "Your organization today"}</h2>
         </div>
         <div className="live-status"><span /> {t("Updated now", spanish)}</div>
       </div>
@@ -2004,12 +2003,12 @@ function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
         >
-          <motion.span className="eyebrow" initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.08, duration: 0.55 }}>COIREA · The People Operating System</motion.span>
-          <motion.h1 initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.16, duration: 0.74, ease: [0.16, 1, 0.3, 1] }}>The People Operating System for organizations that care.</motion.h1>
+          <motion.span className="eyebrow" initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.08, duration: 0.55 }}>COIREA · People Operating System</motion.span>
+          <motion.h1 initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.16, duration: 0.74, ease: [0.16, 1, 0.3, 1] }}>Make the human system behind your results visible.</motion.h1>
           <motion.p initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.26, duration: 0.72, ease: [0.16, 1, 0.3, 1] }}>
-            COIREA helps organizations build cohesive teams, because growth should
-            increase coherence, not deplete capacity. When the People System is aligned,
-            organizations do not just perform better, they regenerate.
+            Organizational intelligence and human stewardship for purpose-driven
+            organizations that are growing. Because growth should increase coherence,
+            not deplete capacity.
           </motion.p>
           <motion.div className="hero-actions" initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.38, duration: 0.62 }}>
             <a className="button button--primary" href="/conversation">
@@ -2082,7 +2081,7 @@ function Methodology() {
               <small>{t("Explore", spanish)}</small>
             </button>
           ))}
-          <div className="core-pulse"><Leaf size={30} weight="light" /><span>{spanish ? <>Tu sistema<br />humano</> : <>People<br />Operating<br />System</>}</span></div>
+          <div className="core-pulse"><Leaf size={30} weight="light" /><span>{spanish ? <>Tu sistema<br />humano</> : <>Your human<br />system</>}</span></div>
         </div>
         <div className="pillar-detail">
           <AnimatePresence mode="wait">
@@ -2434,7 +2433,7 @@ function ImpactShift() {
 
 function Approach() {
   const stages = [
-    { number: "01", name: "Consultation", title: "Diagnose", text: "The OVI maps the current state of your People Operating System across all five pillars. This is the SOIL phase, where GiA surfaces the first signals and tensions.", icon: Pulse },
+    { number: "01", name: "SOIL", title: "Diagnose", text: "The OVI maps the current state of your organization across all five pillars. This is the SOIL phase, where GiA surfaces the first signals and tensions.", icon: Pulse },
     { number: "02", name: "Grow", title: "Align and execute", text: "The five pillars are implemented step by step. A certified Steward accompanies the work.", icon: Lightbulb },
     { number: "03", name: "Flourish", title: "Evolve and regenerate", text: "The organization keeps learning. Capacity grows alongside performance.", icon: Leaf },
   ];
@@ -2676,7 +2675,7 @@ function AnswerEngineFaq() {
       <Reveal className="answer-faq-intro">
         <span className="eyebrow">{t("Questions leaders ask", spanish)}</span>
         <h2>{t("Clear answers about COIREA and the People Operating System.", spanish)}</h2>
-        <p>{t("These answers are written for leaders evaluating COIREA, and structured clearly so search engines and AI assistants can understand the concept without guessing.", spanish)}</p>
+        <p>{t("These answers are written for leaders evaluating COIREA.", spanish)}</p>
       </Reveal>
       <div className="answer-faq-grid">
         {aiSeoFaqs.map(([question, answer], index) => (
@@ -2703,7 +2702,7 @@ function Closing() {
       <Reveal className="conversation-cta-copy">
         <span className="eyebrow">Apply to work with COIREA</span>
         <h2>Is Your Organization Ready to See Itself Clearly?</h2>
-        <p>COIREA is not for every organization. It is for the ones that sense something needs to shift, and are ready to look at it honestly, with the right support alongside them.</p>
+        <p>COIREA is not for every organization. It is for purpose-driven organizations of 15 to 300 people that are growing, misaligned, or in a leadership transition, and are ready to look at it honestly.</p>
         <a className="button button--primary" href="/conversation">Book a conversation <ArrowRight size={17} /></a>
       </Reveal>
     </section>
