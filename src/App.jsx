@@ -1527,7 +1527,7 @@ const spanishSeoByRoute = {
   "/about": {
     title: "Sobre COIREA - People Operating System e historia fundadora",
     description:
-      "Conoce por que existe COIREA y los principios de sistemas vivos detras del People Operating System.",
+      "Conoce por qué existe COIREA y los principios de sistemas vivos detrás del People Operating System.",
   },
   "/insights": {
     title: "Insights - COIREA",
@@ -1535,14 +1535,14 @@ const spanishSeoByRoute = {
       "Ideas para organizaciones listas para evolucionar: liderazgo consciente, cultura, bienestar y sistemas organizacionales.",
   },
   "/conversation": {
-    title: "Agendar una conversacion - COIREA",
+    title: "Agendar una conversación - COIREA",
     description:
-      "Comparte donde tu organizacion siente friccion y solicita una conversacion con un Steward de COIREA.",
+      "Comparte dónde tu organización siente fricción y solicita una conversación con un Steward de COIREA.",
   },
   "/insights/what-is-a-people-operating-system": {
-    title: "Que es un People Operating System? - COIREA",
+    title: "¿Qué es un People Operating System? - COIREA",
     description:
-      "Un People Operating System es la infraestructura humana detras de como una organizacion decide, colabora, ejecuta estrategia y sostiene energia.",
+      "Un People Operating System es la infraestructura humana detrás de cómo una organización decide, colabora, ejecuta estrategia y sostiene energía.",
   },
 };
 

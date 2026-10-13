@@ -12,6 +12,22 @@
       "destination": "/es.html"
     },
     {
+      "source": "/es/about",
+      "destination": "/es-about.html"
+    },
+    {
+      "source": "/es/conversation",
+      "destination": "/es-conversation.html"
+    },
+    {
+      "source": "/es/insights",
+      "destination": "/es-insights.html"
+    },
+    {
+      "source": "/es/insights/what-is-a-people-operating-system",
+      "destination": "/es-insights-what-is-a-people-operating-system.html"
+    },
+    {
       "source": "/es/(.*)",
       "destination": "/es.html"
     },
