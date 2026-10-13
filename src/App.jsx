@@ -3239,13 +3239,15 @@ function AboutPage() {
         </Reveal>
         <Reveal className="about-principles" delay={0.1}>
           <span className="about-principles-label">What we believe</span>
-          {visionValues.map(([title, text], index) => (
-            <div key={title}>
-              <span>0{index + 1}</span>
-              <h3>{title}</h3>
-              <p>{text}</p>
-            </div>
-          ))}
+          <div className="about-principles-grid">
+            {visionValues.map(([title, text], index) => (
+              <div key={title}>
+                <span>0{index + 1}</span>
+                <h3>{title}</h3>
+                <p>{text}</p>
+              </div>
+            ))}
+          </div>
         </Reveal>
       </section>
       <section className="about-system section" hidden>
