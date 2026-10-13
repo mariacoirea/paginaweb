@@ -4364,8 +4364,7 @@ footer small { grid-column: 1 / -1; color: rgba(255,255,255,.48); font-size: 9px
     border-radius: 16px;
   }
   .featured-insight h2,
-  .gia-card-large h2,
-  .about-manifesto h2 {
+  .gia-card-large h2 {
     font-size: clamp(36px, 11vw, 54px);
   }
   .insight-grid { grid-template-columns: 1fr; }
@@ -4422,6 +4421,7 @@ footer small { grid-column: 1 / -1; color: rgba(255,255,255,.48); font-size: 9px
   .scroll-cue { display: none; }
   .section { padding: 74px 18px; }
   .section h2, .closing h2 { font-size: clamp(38px, 12vw, 54px); }
+  .about-manifesto h2 { font-size: clamp(30px, 8.5vw, 46px); }
   .simple-route { display: grid; }
   .methodology {
     gap: 30px;
