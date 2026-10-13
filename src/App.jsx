@@ -3826,7 +3826,6 @@ function Footer() {
         <a href="https://www.linkedin.com/company/coirea" target="_blank" rel="noreferrer">LinkedIn</a>
         <a href="mailto:hello@coirea.com">hello@coirea.com</a>
       </div>
-      <small>Concept prototype. Selected claims and data are illustrative pending owner confirmation.</small>
     </footer>
   );
 }
