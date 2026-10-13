@@ -1936,7 +1936,7 @@ function Methodology() {
               <small>{t("Explore", spanish)}</small>
             </button>
           ))}
-          <div className="core-pulse"><Leaf size={30} weight="light" /><span>{spanish ? <>Tu sistema<br />humano</> : <>Your human<br />system</>}</span></div>
+          <div className="core-pulse"><img src="/assets/coirea-symbol.png" alt="" className="core-pulse-icon" /><span>{spanish ? <>Tu sistema<br />humano</> : <>Your human<br />system</>}</span></div>
         </div>
         <div className="pillar-detail">
           <AnimatePresence mode="wait">

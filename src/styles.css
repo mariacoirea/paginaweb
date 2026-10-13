@@ -427,6 +427,7 @@ p { line-height: 1.78; }
   position: relative;
   aspect-ratio: 1;
   max-width: 600px;
+  container-type: inline-size;
   border: 1px solid color-mix(in oklch, var(--sage) 24%, transparent);
   border-radius: 47% 53% 49% 51%;
   animation: soft-morph 10s ease-in-out infinite alternate;
@@ -434,7 +435,7 @@ p { line-height: 1.78; }
 .pillar-instruction {
   position: absolute;
   left: 50%;
-  top: -18px;
+  top: -40px;
   z-index: 4;
   width: min(88%, 280px);
   transform: translateX(-50%);
@@ -480,9 +481,9 @@ p { line-height: 1.78; }
   min-height: 44px;
   transform:
     translate(-50%, -50%)
-    rotate(calc(var(--i) * 72deg - 90deg))
-    translateX(min(22vw, 230px))
-    rotate(calc((var(--i) * -72deg) + 90deg));
+    rotate(calc(var(--i) * 72deg - 126deg))
+    translateX(min(38cqw, 230px))
+    rotate(calc((var(--i) * -72deg) + 126deg));
   border: 1px solid color-mix(in oklch, var(--paper) 20%, transparent);
   background: color-mix(in oklch, var(--deep) 86%, transparent);
   color: var(--paper);
@@ -567,6 +568,7 @@ p { line-height: 1.78; }
   animation: pulse-ring 3.2s ease-out infinite;
 }
 .core-pulse span { font-size: 11px; line-height: 1.35; }
+.core-pulse-icon { width: 34px; height: 34px; object-fit: contain; margin-bottom: 2px; }
 .pillar-detail {
   padding: 28px;
   border: 1px solid color-mix(in oklch, var(--sage) 24%, transparent);
