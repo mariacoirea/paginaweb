@@ -3266,7 +3266,7 @@ function AboutPage() {
             <div>
               <h3>María José Figueroa</h3>
               <strong>{spanish ? "Fundadora y Arquitecta de Sistemas" : "Founder & Chief Systems Architect"}</strong>
-              <p>{spanish ? "Fundó COIREA tras una década dentro de organizaciones, viendo cómo la estrategia y las personas se desalineaban, y construyó el sistema que hubiera querido tener." : "She founded COIREA after a decade inside organizations, watching strategy and people drift apart, and built the system she wished had existed."}</p>
+              <p>{spanish ? "Tras una década dentro de organizaciones, viendo cómo la estrategia y las personas se desalineaban, construyó el sistema que hubiera querido tener." : "After a decade inside organizations, watching strategy and people drift apart, she built the system she wished had existed."}</p>
             </div>
           </Reveal>
           <Reveal className="about-people-stewards" delay={0.1}>
@@ -3276,7 +3276,7 @@ function AboutPage() {
         </div>
         <Reveal className="about-people-quote" delay={0.15}>
           <p>{spanish ? <>El futuro del trabajo no es una tendencia<br /><em>— es una transformación.</em></> : <>The future of work isn't a trend<br /><em>— it's a transformation.</em></>}</p>
-          <span>{spanish ? "— María José Figueroa, Fundadora de COIREA" : "— María José Figueroa, Founder of COIREA"}</span>
+          <span>— María José Figueroa</span>
         </Reveal>
       </section>
       <section className="about-system section" hidden>
