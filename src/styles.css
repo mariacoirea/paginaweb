@@ -2248,7 +2248,9 @@ p { line-height: 1.78; }
   grid-template-columns: .9fr 1.1fr;
   gap: clamp(32px, 6vw, 90px);
   align-items: start;
-  background: var(--paper);
+  background:
+    radial-gradient(circle at 88% 16%, color-mix(in oklch, var(--gold) 18%, transparent), transparent 30%),
+    var(--paper);
 }
 .about-contact-copy {
   max-width: 640px;
