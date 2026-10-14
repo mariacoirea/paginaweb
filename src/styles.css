@@ -2300,6 +2300,71 @@ p { line-height: 1.78; }
 .about-contact-form button {
   justify-self: start;
 }
+.about-people-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: clamp(28px, 4vw, 56px);
+  max-width: 980px;
+  margin: 0 auto;
+}
+.about-people-founder {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 20px;
+}
+.about-people-founder img {
+  width: 92px;
+  height: 92px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 10px 30px color-mix(in oklch, var(--forest) 16%, transparent);
+}
+.about-people-founder div { flex: 1; min-width: 200px; }
+.about-people-founder h3,
+.about-people-stewards h3 {
+  margin: 0 0 6px;
+  font-family: "Manrope";
+  font-size: 19px;
+  color: var(--deep);
+}
+.about-people-founder strong {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--gold);
+  font-family: "Manrope";
+  font-size: 12px;
+  letter-spacing: .04em;
+}
+.about-people-founder p,
+.about-people-stewards p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 15px;
+}
+.about-people-quote {
+  max-width: 760px;
+  margin: clamp(48px, 7vw, 80px) auto 0;
+  text-align: center;
+}
+.about-people-quote p {
+  margin: 0;
+  font-family: "Bodoni Moda", Georgia, serif;
+  font-size: clamp(26px, 3vw, 38px);
+  line-height: 1.3;
+  color: var(--deep);
+}
+.about-people-quote p em {
+  color: var(--forest);
+  font-style: italic;
+}
+.about-people-quote span {
+  display: block;
+  margin-top: 16px;
+  color: var(--muted);
+  font-size: 14px;
+}
 .about-stewards {
   background:
     radial-gradient(circle at 78% 12%, color-mix(in oklch, var(--gold) 14%, transparent), transparent 30%),

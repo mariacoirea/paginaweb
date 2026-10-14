@@ -3161,6 +3161,7 @@ function MigratedBlogPostPage({ slug }) {
 }
 
 function AboutPage() {
+  const spanish = isSpanishPath();
   return (
     <main>
       <PageHero
@@ -3252,6 +3253,30 @@ function AboutPage() {
               </div>
             ))}
           </div>
+        </Reveal>
+      </section>
+      <section className="about-people section">
+        <Reveal className="section-heading section-heading--center">
+          <span className="eyebrow">{spanish ? "Las personas detrás del sistema" : "The people behind the system"}</span>
+          <h2>{spanish ? "Una fundadora, y un círculo de Stewards que sostienen el proceso contigo." : "A founder, and a circle of Stewards who hold the process with you."}</h2>
+        </Reveal>
+        <div className="about-people-grid">
+          <Reveal className="about-people-founder" delay={0.05}>
+            <img src="/assets/maria-jose-figueroa.jpg" alt="María José Figueroa, founder of COIREA" />
+            <div>
+              <h3>María José Figueroa</h3>
+              <strong>{spanish ? "Fundadora y Arquitecta de Sistemas" : "Founder & Chief Systems Architect"}</strong>
+              <p>{spanish ? "Fundó COIREA tras una década dentro de organizaciones, viendo cómo la estrategia y las personas se desalineaban, y construyó el sistema que hubiera querido tener." : "She founded COIREA after a decade inside organizations, watching strategy and people drift apart, and built the system she wished had existed."}</p>
+            </div>
+          </Reveal>
+          <Reveal className="about-people-stewards" delay={0.1}>
+            <h3>{spanish ? "Los Stewards" : "The Stewards"}</h3>
+            <p>{spanish ? "Los Stewards son las personas certificadas que acompañan a tu organización durante el proceso. No aplican un método: sostienen el espacio para las preguntas que tu sistema necesita hacerse." : "Stewards are the certified people who accompany your organization through the process. They don't apply a method, they hold space for the questions your system needs to ask."}</p>
+          </Reveal>
+        </div>
+        <Reveal className="about-people-quote" delay={0.15}>
+          <p>{spanish ? <>El futuro del trabajo no es una tendencia<br /><em>— es una transformación.</em></> : <>The future of work isn't a trend<br /><em>— it's a transformation.</em></>}</p>
+          <span>{spanish ? "— María José Figueroa, Fundadora de COIREA" : "— María José Figueroa, Founder of COIREA"}</span>
         </Reveal>
       </section>
       <section className="about-system section" hidden>
