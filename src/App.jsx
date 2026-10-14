@@ -3265,7 +3265,7 @@ function AboutPage() {
             <img src="/assets/maria-jose-figueroa.jpg" alt="María José Figueroa, founder of COIREA" />
             <div>
               <h3>María José Figueroa</h3>
-              <strong>{spanish ? "Fundadora y Arquitecta de Sistemas" : "Founder & Chief Systems Architect"}</strong>
+              <strong>{spanish ? "Fundadora Visionaria y Arquitecta de Sistemas" : "Visionary Founder & System Architect"}</strong>
               <p>{spanish ? "Tras una década dentro de organizaciones, viendo cómo la estrategia y las personas se desalineaban, construyó el sistema que hubiera querido tener." : "After a decade inside organizations, watching strategy and people drift apart, she built the system she wished had existed."}</p>
             </div>
           </Reveal>
