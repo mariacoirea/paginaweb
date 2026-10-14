@@ -34,6 +34,7 @@ const covers = [
   ["conscious-leadership-practice", "Presence", "presence"],
   ["caso-camun-etapa-soil", "Caso Camun · SOIL", "roots"],
   ["agentes-juan-carlos", "Transition agents", "human"],
+  ["feedback-loops", "Feedback loops", "signal"],
 ];
 
 const palettes = [
