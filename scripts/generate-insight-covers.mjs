@@ -35,6 +35,7 @@ const covers = [
   ["caso-camun-etapa-soil", "Caso Camun · SOIL", "roots"],
   ["agentes-juan-carlos", "Transition agents", "human"],
   ["feedback-loops", "Feedback loops", "signal"],
+  ["agentes-gabriela-alarcon", "Transition agents", "human"],
 ];
 
 const palettes = [
