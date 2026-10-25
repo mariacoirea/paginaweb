@@ -1837,6 +1837,44 @@ p { line-height: 1.78; }
   font-size: 14px;
   letter-spacing: .02em;
 }
+.legacy-article-content details {
+  margin: 0;
+  padding: 20px 0;
+  border-top: 1px solid var(--line);
+}
+.legacy-article-content details:last-of-type {
+  border-bottom: 1px solid var(--line);
+}
+.legacy-article-content summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  list-style: none;
+  cursor: pointer;
+  font-family: "Manrope";
+  font-weight: 700;
+  font-size: 17px;
+  color: var(--deep);
+}
+.legacy-article-content summary::-webkit-details-marker {
+  display: none;
+}
+.legacy-article-content summary::after {
+  content: "+";
+  flex-shrink: 0;
+  color: var(--gold);
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1;
+}
+.legacy-article-content details[open] summary::after {
+  content: "\2212";
+}
+.legacy-article-content details p {
+  margin: 14px 0 0;
+  color: var(--muted);
+}
 .legacy-article-content {
   color: var(--ink);
   font-size: 17px;
