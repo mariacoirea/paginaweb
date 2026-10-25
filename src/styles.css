@@ -1372,6 +1372,77 @@ p { line-height: 1.78; }
   transform: scale(1.045);
   filter: saturate(1.06) contrast(1.02);
 }
+.voices-podcast {
+  position: relative;
+  overflow: hidden;
+  margin-bottom: clamp(40px, 6vw, 70px);
+  padding: clamp(36px, 5vw, 64px) clamp(24px, 4.5vw, 52px);
+  border-radius: clamp(24px, 3vw, 36px);
+  background:
+    radial-gradient(circle at 88% 10%, color-mix(in oklch, var(--gold) 20%, transparent), transparent 32%),
+    var(--deep);
+  color: var(--paper);
+}
+.voices-podcast-head {
+  max-width: 620px;
+  margin-bottom: clamp(28px, 4vw, 40px);
+}
+.voices-podcast-head .eyebrow {
+  color: var(--gold);
+}
+.voices-podcast-head h2 {
+  margin: 10px 0 12px;
+  font-size: clamp(30px, 3.2vw, 44px);
+  color: var(--paper);
+}
+.voices-podcast-head p {
+  margin: 0;
+  color: color-mix(in oklch, var(--paper) 72%, transparent);
+}
+.voices-podcast-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 16px;
+}
+.voices-podcast-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 14px;
+  border-radius: 16px;
+  background: color-mix(in oklch, var(--paper) 7%, transparent);
+  border: 1px solid color-mix(in oklch, var(--paper) 14%, transparent);
+  text-decoration: none;
+  transition: background .25s var(--ease), border-color .25s var(--ease), transform .25s var(--ease);
+}
+.voices-podcast-card:hover {
+  background: color-mix(in oklch, var(--paper) 12%, transparent);
+  border-color: color-mix(in oklch, var(--gold) 46%, transparent);
+  transform: translateY(-2px);
+}
+.voices-podcast-card img {
+  width: 60px;
+  height: 60px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid color-mix(in oklch, var(--gold) 50%, transparent);
+}
+.voices-podcast-episode {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--gold);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+.voices-podcast-card h3 {
+  margin: 0;
+  font-family: "Manrope";
+  font-size: 16px;
+  color: var(--paper);
+}
 .article-meta {
   display: flex;
   flex-wrap: wrap;

@@ -2739,6 +2739,11 @@ function InsightsPage() {
   const hasMorePosts = filteredPosts.length > visibleCount;
   const featuredSlug = "caso-camun-etapa-soil";
   const featuredPost = visiblePosts.find((post) => post.slug === featuredSlug);
+  const voicesPosts = useMemo(() => {
+    return visiblePosts
+      .filter((post) => post.cluster === "COIREA Voices")
+      .sort((a, b) => new Date(a.created_at).getTime() - new Date(b.created_at).getTime());
+  }, [visiblePosts]);
 
   useEffect(() => {
     if (loading || error || visiblePosts.length === 0) {
@@ -2785,6 +2790,30 @@ function InsightsPage() {
             <a className="featured-insight-image" href={localizedPath(`/insights/${featuredSlug}`, spanish)} aria-label={`${t("Read more", spanish)} ${featuredPost.title}`}>
               <img src="/assets/insights/camun-coherence-node-meeting.jpg" alt="" />
             </a>
+          </Reveal>
+        )}
+        {voicesPosts.length > 0 && (
+          <Reveal className="voices-podcast">
+            <div className="voices-podcast-head">
+              <span className="eyebrow">{spanish ? "Podcast · Voces de la comunidad" : "Podcast · Community Voices"}</span>
+              <h2>{spanish ? "Agentes de transición" : "Transition Agents"}</h2>
+              <p>{spanish ? "Historias y aprendizajes en el camino hacia la regeneración." : "Stories and lessons from the path toward regeneration."}</p>
+            </div>
+            <div className="voices-podcast-grid">
+              {voicesPosts.map((post, index) => {
+                const photo = extractFirstImage(post.body_content);
+                const guestName = post.title.includes(": ") ? post.title.split(": ").slice(1).join(": ") : post.title;
+                return (
+                  <a className="voices-podcast-card" href={localizedPath(`/insights/${post.slug}`, spanish)} key={post.id}>
+                    {photo && <img src={photo} alt="" loading="lazy" />}
+                    <div>
+                      <span className="voices-podcast-episode">{spanish ? "Episodio" : "Episode"} {index + 1}</span>
+                      <h3>{guestName}</h3>
+                    </div>
+                  </a>
+                );
+              })}
+            </div>
           </Reveal>
         )}
         <div className="insight-grid">
