@@ -2798,6 +2798,13 @@ function InsightsPage() {
               <span className="eyebrow">{spanish ? "Podcast · Voces de la comunidad" : "Podcast · Community Voices"}</span>
               <h2>{spanish ? "Agentes de transición" : "Transition Agents"}</h2>
               <p>{spanish ? "Historias y aprendizajes en el camino hacia la regeneración." : "Stories and lessons from the path toward regeneration."}</p>
+              <div className="voices-podcast-host">
+                <img src="/assets/insights/natalia-pena.png" alt="" loading="lazy" />
+                <div>
+                  <strong>Natalia Peña</strong>
+                  <span>{spanish ? "Conduce" : "Host"}</span>
+                </div>
+              </div>
             </div>
             <div className="voices-podcast-grid">
               {voicesPosts.map((post, index) => {

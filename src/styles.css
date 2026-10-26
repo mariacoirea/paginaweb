@@ -1399,6 +1399,34 @@ p { line-height: 1.78; }
   margin: 0;
   color: color-mix(in oklch, var(--paper) 72%, transparent);
 }
+.voices-podcast-host {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 20px;
+}
+.voices-podcast-host img {
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid color-mix(in oklch, var(--gold) 50%, transparent);
+}
+.voices-podcast-host strong {
+  display: block;
+  font-family: "Manrope";
+  font-size: 14px;
+  color: var(--paper);
+}
+.voices-podcast-host span {
+  display: block;
+  color: var(--gold);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
 .voices-podcast-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
