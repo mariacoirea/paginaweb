@@ -2795,9 +2795,11 @@ function InsightsPage() {
         {voicesPosts.length > 0 && (
           <Reveal className="voices-podcast">
             <div className="voices-podcast-head">
-              <span className="eyebrow">{spanish ? "Podcast · Voces de la comunidad" : "Podcast · Community Voices"}</span>
-              <h2>{spanish ? "Agentes de transición" : "Transition Agents"}</h2>
-              <p>{spanish ? "Historias y aprendizajes en el camino hacia la regeneración." : "Stories and lessons from the path toward regeneration."}</p>
+              <div className="voices-podcast-intro">
+                <span className="eyebrow">{spanish ? "Podcast · Voces de la comunidad" : "Podcast · Community Voices"}</span>
+                <h2>{spanish ? "Agentes de transición" : "Transition Agents"}</h2>
+                <p>{spanish ? "Historias y aprendizajes en el camino hacia la regeneración." : "Stories and lessons from the path toward regeneration."}</p>
+              </div>
               <div className="voices-podcast-host">
                 <img src="/assets/insights/natalia-pena.png" alt="" loading="lazy" />
                 <div>
