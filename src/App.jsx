@@ -1200,6 +1200,7 @@ const spanishTextMap = {
   "insights available.": "insights disponibles.",
   "No insights match that search yet. Try another theme or keyword.": "Todavía no hay insights que coincidan. Prueba otro tema o palabra clave.",
   "The operating system for purpose-driven organizations.": "El sistema operativo de las organizaciones con propósito.",
+  "Events": "Eventos",
   "Ask GiA": "Pregúntale a GiA",
   "Questions, clarity, or a human next step": "Preguntas, claridad o un siguiente paso humano",
   "Friendly guide, not a replacement for a human": "Guía cercana, no reemplazo de una persona",
@@ -3469,7 +3470,7 @@ function Footer() {
       <div>
         <a href="https://www.youtube.com/@coirea" target="_blank" rel="noreferrer">YouTube</a>
         <a href="https://cl.linkedin.com/company/coirea" target="_blank" rel="noreferrer">LinkedIn</a>
-        <a href="https://luma.com/coirea" target="_blank" rel="noreferrer">Luma</a>
+        <a href="https://luma.com/coirea" target="_blank" rel="noreferrer">Events</a>
         <a href="mailto:hello@coirea.com">hello@coirea.com</a>
       </div>
     </footer>
