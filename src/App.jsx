@@ -1199,7 +1199,7 @@ const spanishTextMap = {
   "Loading posts...": "Cargando posts...",
   "insights available.": "insights disponibles.",
   "No insights match that search yet. Try another theme or keyword.": "Todavía no hay insights que coincidan. Prueba otro tema o palabra clave.",
-  "Organizational intelligence for growth that builds capacity.": "Inteligencia organizacional para un crecimiento que construye capacidad.",
+  "The operating system for purpose-driven organizations.": "El sistema operativo de las organizaciones con propósito.",
   "Ask GiA": "Pregúntale a GiA",
   "Questions, clarity, or a human next step": "Preguntas, claridad o un siguiente paso humano",
   "Friendly guide, not a replacement for a human": "Guía cercana, no reemplazo de una persona",
@@ -3465,7 +3465,7 @@ function Footer() {
   return (
     <footer id="resources">
       <BrandMark compact />
-      <p>Organizational intelligence for growth that builds capacity.</p>
+      <p>The operating system for purpose-driven organizations.</p>
       <div>
         <a href={localizedPath("/")}>Home</a>
         <a href={localizedPath("/insights")}>Insights</a>
