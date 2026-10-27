@@ -3467,9 +3467,6 @@ function Footer() {
       <BrandMark compact />
       <p>The operating system for purpose-driven organizations.</p>
       <div>
-        <a href={localizedPath("/")}>Home</a>
-        <a href={localizedPath("/insights")}>Insights</a>
-        <a href={localizedPath("/about")}>About Us</a>
         <a href="https://www.youtube.com/@coirea" target="_blank" rel="noreferrer">YouTube</a>
         <a href="https://cl.linkedin.com/company/coirea" target="_blank" rel="noreferrer">LinkedIn</a>
         <a href="https://luma.com/coirea" target="_blank" rel="noreferrer">Luma</a>
