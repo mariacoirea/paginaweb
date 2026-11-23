@@ -1,6 +1,4 @@
 const REQUIRED_FIELDS = ["name", "email", "organization", "role", "desired_shift", "team_size"];
-// Short "Talk to a Steward" form on the home page.
-const QUICK_REQUIRED_FIELDS = ["name", "email", "organization", "country", "team_size"];
 // "Apply to the Steward network" form on /stewards.
 const STEWARD_REQUIRED_FIELDS = ["name", "email", "country", "experience"];
 const DEFAULT_APPLICATION_RECIPIENTS = ["hello@coirea.com", "mjose.fadaros@gmail.com"];
@@ -64,9 +62,8 @@ export default async function handler(request, response) {
     return response.status(200).json({ ok: true });
   }
 
-  const isQuick = data.form_type === "quick";
   const isSteward = data.form_type === "steward";
-  const requiredFields = isSteward ? STEWARD_REQUIRED_FIELDS : isQuick ? QUICK_REQUIRED_FIELDS : REQUIRED_FIELDS;
+  const requiredFields = isSteward ? STEWARD_REQUIRED_FIELDS : REQUIRED_FIELDS;
   const missing = requiredFields.filter((field) => !String(data[field] || "").trim());
   if (missing.length > 0) {
     return response.status(400).json({ error: "Please complete all required fields." });
@@ -76,7 +73,7 @@ export default async function handler(request, response) {
     return response.status(400).json({ error: "Please enter a valid email address." });
   }
 
-  if (!isQuick && !isSteward && (!Array.isArray(data.friction) || data.friction.length === 0)) {
+  if (!isSteward && (!Array.isArray(data.friction) || data.friction.length === 0)) {
     return response.status(400).json({ error: "Please select at least one friction area." });
   }
 
@@ -110,14 +107,7 @@ export default async function handler(request, response) {
                 fieldRow("Organizations worked with", escapeHtml(data.experience).replace(/\n/g, "<br />")),
               ].join("")
             : fieldRow("Organization", escapeHtml(data.organization))}
-          ${isSteward ? "" : isQuick
-            ? [
-                fieldRow("Form", "Home · Talk to a Steward"),
-                fieldRow("Country", escapeHtml(data.country)),
-                fieldRow("WhatsApp", escapeHtml(data.whatsapp || "-")),
-                fieldRow("Team size", escapeHtml(data.team_size)),
-              ].join("")
-            : [
+          ${isSteward ? "" : [
                 fieldRow("Role", escapeHtml(data.role)),
                 fieldRow("Team size", escapeHtml(data.team_size)),
                 fieldRow("Friction areas", `<ul style="margin:0;padding-left:18px;">${frictionList}</ul>`),

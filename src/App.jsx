@@ -147,7 +147,7 @@ function chatAnswer(text = "") {
   const normalized = normalizeChatInput(text);
   const spanish = isSpanishPath() || isSpanishInput(text);
   const includes = (...words) => words.some((word) => normalized.includes(word));
-  const actionApply = { label: spanish ? "Hablar con un Steward" : "Book a conversation", href: "/conversation" };
+  const actionApply = { label: spanish ? "Habla con un Steward" : "Talk to a Steward", href: localizedPath("/conversation", spanish) };
   const actionInsights = { label: spanish ? "Ver insights" : "Explore insights", href: "/insights" };
   const actionAbout = { label: spanish ? "Conocer la historia" : "Meet COIREA", href: "/about" };
 
@@ -1522,7 +1522,7 @@ const seoByRoute = {
       "Meet the certified COIREA Stewards who accompany organizations in their own country, or apply to join the Steward network.",
   },
   "/conversation": {
-    title: "Book a Conversation - COIREA",
+    title: "Talk to a Steward - COIREA",
     description:
       "Apply to work with COIREA. Share where your organization feels friction and request a conversation with a COIREA Steward.",
   },
@@ -1555,7 +1555,7 @@ const spanishSeoByRoute = {
       "Conoce a los Stewards certificados de COIREA que acompañan a organizaciones en su país, o postula a la red Steward.",
   },
   "/conversation": {
-    title: "Agendar una conversación - COIREA",
+    title: "Habla con un Steward - COIREA",
     description:
       "Comparte dónde tu organización siente fricción y solicita una conversación con un Steward de COIREA.",
   },
@@ -1755,7 +1755,7 @@ function Header() {
         <a href={localizedPath("/about", isEs)} onClick={closeAll}>{isEs ? "Sobre COIREA" : "About COIREA"}</a>
         <a className="language-link" href={languageHref} hrefLang={isEs ? "en" : "es"} onClick={closeAll}>{isEs ? "EN" : "ES"}</a>
       </nav>
-      <a className="button button--primary header-cta" href={`${localizedPath("/", isEs)}#conversation`}>
+      <a className="button button--primary header-cta" href={localizedPath("/conversation", isEs)}>
         {isEs ? "Habla con un Steward" : "Talk to a Steward"}
       </a>
       <button
@@ -1944,7 +1944,7 @@ function Hero() {
             {pains.map((item) => <li key={item}>{item}</li>)}
           </ul>
           <div className="hero-actions">
-            <a className="button button--primary" href="#conversation">
+            <a className="button button--primary" href={localizedPath("/conversation", spanish)}>
               {spanish ? "Habla con un Steward" : "Talk to a Steward"} <ArrowRight size={18} />
             </a>
             <a className="button button--light" href="#methodology">
@@ -2063,7 +2063,7 @@ function PlatformShowcase() {
         <p>{spanish
           ? <><strong>GiA</strong>, la inteligencia de COIREA, lee las respuestas de tu equipo y detecta patrones. Tu Steward te ayuda a convertirlos en decisiones. Tú y tu equipo deciden qué hacer con ellos.</>
           : <><strong>GiA</strong>, COIREA's intelligence, reads your team's responses and detects patterns. Your Steward helps you turn them into decisions. You and your team decide what to do with them.</>}</p>
-        <a className="button button--light" href="#conversation">{spanish ? "Verla en vivo" : "See it live"} <ArrowRight size={17} /></a>
+        <a className="button button--light" href={localizedPath("/conversation", spanish)}>{spanish ? "Verla en vivo" : "See it live"} <ArrowRight size={17} /></a>
         <small className="platform-showcase-label">{spanish ? "Qué vas a lograr" : "What you will achieve"}</small>
         <ul className="platform-showcase-benefits">
           {benefits.map(([title, text]) => (
@@ -2706,7 +2706,7 @@ function FitCheck() {
               <h3>{result.title}</h3>
               <p>{result.text}</p>
               <div className="result-actions">
-                <a className="button button--primary" href={localizedPath("/conversation", spanish)}>{t("Apply to work with COIREA", spanish)} <ArrowRight size={17} /></a>
+                <a className="button button--primary" href={localizedPath("/conversation", spanish)}>{spanish ? "Habla con un Steward" : "Talk to a Steward"} <ArrowRight size={17} /></a>
                 <button className="text-button" onClick={restart} type="button">{t("Try again", spanish)} <ArrowRight /></button>
               </div>
             </motion.div>
@@ -2779,100 +2779,6 @@ function AnswerEngineFaq() {
   );
 }
 
-function QuickContactForm() {
-  const spanish = isSpanishPath();
-  const [status, setStatus] = useState("idle");
-  const [message, setMessage] = useState("");
-  const countries = stewardCountries[spanish ? "es" : "en"];
-
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-    const form = event.currentTarget;
-    const formData = new FormData(form);
-    const value = (key) => formData.get(key)?.toString().trim() || "";
-    const payload = {
-      form_type: "quick",
-      name: value("name"),
-      email: value("email"),
-      organization: value("organization"),
-      country: value("country"),
-      whatsapp: value("whatsapp"),
-      team_size: value("team_size"),
-      website: value("website"),
-    };
-    setStatus("submitting");
-    setMessage("");
-    try {
-      const response = await fetch("/api/apply", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
-      });
-      const result = await response.json().catch(() => ({}));
-      if (!response.ok) throw new Error(result.error || "error");
-      form.reset();
-      setStatus("success");
-      setMessage(spanish ? "Gracias. Tu mensaje llegó a COIREA y el Steward de tu país te escribirá pronto." : "Thank you. Your message reached COIREA and the Steward from your country will reach out soon.");
-    } catch {
-      setStatus("error");
-      setMessage(spanish ? "No pudimos enviar el formulario. Escríbenos directamente a hello@coirea.com." : "We couldn't send the form. Please email hello@coirea.com directly.");
-    }
-  };
-
-  return (
-    <form className="quick-form" onSubmit={handleSubmit}>
-      <label className="application-honeypot" aria-hidden="true">
-        <span>Website</span>
-        <input name="website" tabIndex={-1} autoComplete="off" />
-      </label>
-      <div className="quick-form-grid">
-        <label><span>{spanish ? "Nombre" : "Name"}</span><input name="name" type="text" autoComplete="name" required /></label>
-        <label><span>{spanish ? "Organización" : "Organization"}</span><input name="organization" type="text" autoComplete="organization" required /></label>
-        <label><span>Email</span><input name="email" type="email" autoComplete="email" required /></label>
-        <label><span>WhatsApp</span><input name="whatsapp" type="tel" autoComplete="tel" placeholder="+56 9 ..." /></label>
-        <label>
-          <span>{spanish ? "País" : "Country"}</span>
-          <select name="country" required defaultValue={countries[0]}>
-            {countries.map((country) => <option key={country} value={country}>{country}</option>)}
-            <option value={spanish ? "Otro" : "Other"}>{spanish ? "Otro" : "Other"}</option>
-          </select>
-        </label>
-        <label>
-          <span>{spanish ? "Personas en tu equipo" : "Team size"}</span>
-          <select name="team_size" required defaultValue="">
-            <option value="" disabled>{spanish ? "Elige una" : "Select one"}</option>
-            {teamSizeOptions.map((size) => <option value={size} key={size}>{size}</option>)}
-          </select>
-        </label>
-      </div>
-      <button className="button button--primary" type="submit" disabled={status === "submitting"}>
-        {status === "submitting" ? (spanish ? "Enviando..." : "Sending...") : (spanish ? "Quiero conversar" : "Let's talk")} <ArrowRight size={17} />
-      </button>
-      {message && <p className={`application-status application-status--${status}`}>{message}</p>}
-      <p className="quick-form-note">{spanish ? "Tu respuesta llega directo al Steward de tu país. Te escribimos en menos de 5 días hábiles." : "Your message goes straight to the Steward in your country. We reply within 5 business days."}</p>
-    </form>
-  );
-}
-
-function ClosingContact() {
-  const spanish = isSpanishPath();
-  return (
-    <section className="closing-contact section" id="conversation">
-      <div className="closing-image" aria-hidden="true" />
-      <Reveal className="closing-contact-copy">
-        <span className="eyebrow">{spanish ? "Habla con un Steward" : "Talk to a Steward"}</span>
-        <h2>{spanish ? "¿Está tu organización lista para verse con claridad?" : "Is your organization ready to see itself clearly?"}</h2>
-        <p>{spanish
-          ? "COIREA es para organizaciones con propósito de 15 a 300 personas que están creciendo, desalineadas o en una transición de liderazgo. Cuéntanos dónde estás y te conectamos con el Steward indicado."
-          : "COIREA is for purpose-driven organizations of 15 to 300 people that are growing, misaligned or in a leadership transition. Tell us where you are and we'll connect you with the right Steward."}</p>
-      </Reveal>
-      <Reveal className="closing-contact-form" delay={0.1}>
-        <QuickContactForm />
-      </Reveal>
-    </section>
-  );
-}
-
 const PODCAST_YOUTUBE_URL = "https://www.youtube.com/@coirea";
 // Pega aquí el enlace del podcast en Spotify; mientras esté vacío, el botón no aparece.
 const PODCAST_SPOTIFY_URL = "";
@@ -2889,7 +2795,7 @@ function Closing() {
         <p>{spanish
           ? "COIREA es para organizaciones con propósito de 15 a 300 personas que están creciendo, desalineadas o en transición de liderazgo."
           : "COIREA is for purpose-driven organizations of 15 to 300 people that are growing, misaligned or in a leadership transition."}</p>
-        <a className="button button--primary" href={`${localizedPath("/", spanish)}#conversation`}>{spanish ? "Habla con un Steward" : "Talk to a Steward"} <ArrowRight size={17} /></a>
+        <a className="button button--primary" href={localizedPath("/conversation", spanish)}>{spanish ? "Habla con un Steward" : "Talk to a Steward"} <ArrowRight size={17} /></a>
       </Reveal>
     </section>
   );
@@ -3008,17 +2914,18 @@ function ApplicationForm() {
 }
 
 function ConversationPage() {
+  const spanish = isSpanishPath();
   return (
     <main>
       <PageHero
-        eyebrow="Book a conversation"
-        title="Is Your Organization Ready to See Itself Clearly?"
+        eyebrow={spanish ? "Habla con un Steward" : "Talk to a Steward"}
+        title={spanish ? "¿Está tu organización lista para verse con claridad?" : "Is your organization ready to see itself clearly?"}
         text="Every organization enters with a Steward. This is not a software subscription. It is an accompanied transformation. Applications are reviewed personally."
         variant="conversation"
       />
       <section className="application-section application-section--page section">
         <Reveal className="application-copy">
-          <span className="eyebrow">Apply to work with COIREA</span>
+          <span className="eyebrow">{spanish ? "Habla con un Steward" : "Talk to a Steward"}</span>
           <h2>Start with fit, not pressure.</h2>
           <p>COIREA is for organizations that sense something needs to shift, and are ready to look at it honestly with the right support alongside them.</p>
           <p>Complete the application below. If there is a genuine fit, COIREA will reach out within 5 business days.</p>
@@ -3315,7 +3222,7 @@ function InsightArticlePage() {
               <li>The goal is not more control. The goal is more coherence.</li>
             </ul>
           </div>
-          <a className="button button--primary" href="/conversation">Book a conversation <ArrowRight /></a>
+          <a className="button button--primary" href={localizedPath("/conversation")}>{isSpanishPath() ? "Habla con un Steward" : "Talk to a Steward"} <ArrowRight /></a>
         </Reveal>
       </article>
       <AnswerEngineFaq />
@@ -3697,7 +3604,7 @@ function AboutContact() {
         <p>{spanish
           ? "Cada organización entra con un Steward. Las solicitudes se revisan personalmente para que la primera conversación comience con contexto, cuidado y honestidad."
           : "Every organization enters with a Steward. Applications are reviewed personally so the first conversation begins with context, care, and honesty."}</p>
-        <a className="button button--primary" href={`${localizedPath("/", spanish)}#conversation`}>{spanish ? "Habla con un Steward" : "Talk to a Steward"} <ArrowRight size={17} /></a>
+        <a className="button button--primary" href={localizedPath("/conversation", spanish)}>{spanish ? "Habla con un Steward" : "Talk to a Steward"} <ArrowRight size={17} /></a>
       </Reveal>
       <Reveal className="about-contact-card" delay={0.1}>
         <span>01</span>
@@ -3914,7 +3821,7 @@ function StewardsPage() {
                 <span>{steward.country[lang]}{steward.city ? ` · ${steward.city}` : ""}</span>
                 <h3>{steward.name}</h3>
                 <p>{steward.text[lang]}</p>
-                <a href={`${localizedPath("/", spanish)}#conversation`}>{spanish ? `Conversar con ${steward.firstName}` : `Talk with ${steward.firstName}`} <ArrowRight size={13} /></a>
+                <a href={localizedPath("/conversation", spanish)}>{spanish ? `Conversar con ${steward.firstName}` : `Talk with ${steward.firstName}`} <ArrowRight size={13} /></a>
               </div>
             </Reveal>
           ))}
@@ -4113,7 +4020,7 @@ function HomePage() {
       <StewardsSection />
       <FitCheck />
       <AnswerEngineFaq />
-      <ClosingContact />
+      <Closing />
     </main>
   );
 }
