@@ -3618,8 +3618,8 @@ function AboutContact() {
 // Datos que faltan confirmar en la página Stewards: reemplaza los textos entre corchetes.
 const stewardPagePending = {
   organizationsAccompanied: "[X]",
-  nextCertificationEs: "[Fecha]",
-  nextCertificationEn: "[Date]",
+  nextCertificationEs: "22 de enero de 2027",
+  nextCertificationEn: "January 22, 2027",
   certificationFormatEs: "[Duración y formato]",
   certificationFormatEn: "[Length and format]",
   monthlyIncome: "[CLP X]",
@@ -3695,8 +3695,14 @@ function StewardApplicationForm() {
           name: value("name"),
           email: value("email"),
           country: value("country"),
+          city: value("city"),
           linkedin: value("linkedin"),
+          current_role: value("current_role"),
+          years: value("years"),
+          motivation: value("motivation"),
           experience: value("experience"),
+          availability: value("availability"),
+          referral: value("referral"),
           website: value("website"),
         }),
       });
@@ -3717,20 +3723,51 @@ function StewardApplicationForm() {
         <span>Website</span>
         <input name="website" tabIndex={-1} autoComplete="off" />
       </label>
+      <p className="steward-form-step">{spanish ? "1 · Sobre ti" : "1 · About you"}</p>
       <div className="quick-form-grid">
-        <label><span>{spanish ? "Nombre" : "Name"}</span><input name="name" type="text" autoComplete="name" required /></label>
+        <label><span>{spanish ? "Nombre completo" : "Full name"}</span><input name="name" type="text" autoComplete="name" required /></label>
+        <label><span>Email</span><input name="email" type="email" autoComplete="email" required /></label>
         <label>
           <span>{spanish ? "País" : "Country"}</span>
           <select name="country" required defaultValue={countries[0]}>
             {countries.map((country) => <option key={country} value={country}>{country}</option>)}
           </select>
         </label>
-        <label><span>Email</span><input name="email" type="email" autoComplete="email" required /></label>
-        <label><span>{spanish ? "Perfil de LinkedIn" : "LinkedIn profile"}</span><input name="linkedin" type="url" placeholder="https://linkedin.com/in/..." /></label>
-        <label className="quick-form-wide">
-          <span>{spanish ? "¿Con qué organizaciones has trabajado?" : "Which organizations have you worked with?"}</span>
-          <textarea name="experience" rows={4} required />
+        <label><span>{spanish ? "Ciudad" : "City"}</span><input name="city" type="text" autoComplete="address-level2" /></label>
+        <label className="quick-form-wide"><span>{spanish ? "Perfil de LinkedIn" : "LinkedIn profile"}</span><input name="linkedin" type="url" placeholder="https://linkedin.com/in/..." /></label>
+      </div>
+
+      <p className="steward-form-step">{spanish ? "2 · Tu experiencia" : "2 · Your experience"}</p>
+      <div className="quick-form-grid">
+        <label><span>{spanish ? "Profesión o rol actual" : "Profession or current role"}</span><input name="current_role" type="text" placeholder={spanish ? "Ej: consultora, coach, facilitador..." : "e.g. consultant, coach, facilitator..."} required /></label>
+        <label>
+          <span>{spanish ? "Años acompañando organizaciones" : "Years accompanying organizations"}</span>
+          <select name="years" required defaultValue="">
+            <option value="" disabled>{spanish ? "Elige una" : "Select one"}</option>
+            {(spanish ? ["Menos de 3", "3 a 5", "6 a 10", "Más de 10"] : ["Less than 3", "3 to 5", "6 to 10", "More than 10"]).map((item) => <option key={item} value={item}>{item}</option>)}
+          </select>
         </label>
+        <label className="quick-form-wide">
+          <span>{spanish ? "Cuéntanos tu experiencia" : "Tell us about your experience"}</span>
+          <small className="quick-form-help">{spanish ? "Con qué organizaciones has trabajado (empresas, sector público u ONG), qué tipo de procesos has acompañado y qué resultados lograron." : "Which organizations you have worked with (companies, public sector or NGOs), what kind of processes you have accompanied and what they achieved."}</small>
+          <textarea name="experience" rows={5} required />
+        </label>
+      </div>
+
+      <p className="steward-form-step">{spanish ? "3 · Por qué COIREA" : "3 · Why COIREA"}</p>
+      <div className="quick-form-grid">
+        <label className="quick-form-wide">
+          <span>{spanish ? "¿Por qué te gustaría ser Steward de COIREA?" : "Why would you like to become a COIREA Steward?"}</span>
+          <textarea name="motivation" rows={4} required />
+        </label>
+        <label>
+          <span>{spanish ? `¿Puedes participar en la formación del ${stewardPagePending.nextCertificationEs}?` : `Can you join the ${stewardPagePending.nextCertificationEn} training?`}</span>
+          <select name="availability" required defaultValue="">
+            <option value="" disabled>{spanish ? "Elige una" : "Select one"}</option>
+            {(spanish ? ["Sí", "No, prefiero una próxima fecha", "Aún no lo sé"] : ["Yes", "No, I'd prefer a later date", "Not sure yet"]).map((item) => <option key={item} value={item}>{item}</option>)}
+          </select>
+        </label>
+        <label><span>{spanish ? "¿Cómo conociste COIREA?" : "How did you hear about COIREA?"}</span><input name="referral" type="text" /></label>
       </div>
       <button className="button button--primary" type="submit" disabled={status === "submitting"}>
         {status === "submitting" ? (spanish ? "Enviando..." : "Sending...") : (spanish ? "Enviar postulación" : "Send application")} <ArrowRight size={17} />
@@ -3888,7 +3925,7 @@ function StewardsPage() {
       <section className="closing-contact stewards-apply section" id="postula">
         <div className="closing-image" aria-hidden="true" />
         <Reveal className="closing-contact-copy">
-          <span className="eyebrow">{spanish ? `Próxima certificación · ${stewardPagePending.nextCertificationEs}` : `Next certification · ${stewardPagePending.nextCertificationEn}`}</span>
+          <span className="eyebrow">{spanish ? `Próxima formación · ${stewardPagePending.nextCertificationEs}` : `Next training · ${stewardPagePending.nextCertificationEn}`}</span>
           <h2>{spanish ? "Postula a la red Steward." : "Apply to the Steward network."}</h2>
           <p>{spanish ? "Te respondemos personalmente para conversar sobre el calce." : "We reply personally to talk about fit."}</p>
         </Reveal>

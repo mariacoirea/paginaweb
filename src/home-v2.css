@@ -713,6 +713,19 @@
   resize: vertical;
 }
 .quick-form-wide { grid-column: 1 / -1; }
+.steward-form-step {
+  margin: 4px 0 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid color-mix(in oklch, var(--forest) 14%, var(--line));
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+.steward-form .quick-form-grid + .steward-form-step { margin-top: 8px; }
+.steward-form .quick-form-grid { align-items: end; }
+.quick-form-help { font-size: 11px; line-height: 1.5; color: var(--muted); }
 
 /* Blog y podcast */
 .subpage-hero--insights .eyebrow { color: color-mix(in oklch, var(--paper) 80%, transparent); }

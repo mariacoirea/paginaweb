@@ -1,6 +1,6 @@
 const REQUIRED_FIELDS = ["name", "email", "organization", "role", "desired_shift", "team_size"];
 // "Apply to the Steward network" form on /stewards.
-const STEWARD_REQUIRED_FIELDS = ["name", "email", "country", "experience"];
+const STEWARD_REQUIRED_FIELDS = ["name", "email", "country", "current_role", "years", "experience", "motivation", "availability"];
 const DEFAULT_APPLICATION_RECIPIENTS = ["hello@coirea.com", "mjose.fadaros@gmail.com"];
 
 function escapeHtml(value = "") {
@@ -102,9 +102,14 @@ export default async function handler(request, response) {
           ${isSteward
             ? [
                 fieldRow("Form", "Stewards · Apply to the network"),
-                fieldRow("Country", escapeHtml(data.country)),
+                fieldRow("Country / city", `${escapeHtml(data.country)}${data.city ? ` · ${escapeHtml(data.city)}` : ""}`),
                 fieldRow("LinkedIn", escapeHtml(data.linkedin || "-")),
-                fieldRow("Organizations worked with", escapeHtml(data.experience).replace(/\n/g, "<br />")),
+                fieldRow("Profession / role", escapeHtml(data.current_role)),
+                fieldRow("Years accompanying organizations", escapeHtml(data.years)),
+                fieldRow("Experience", escapeHtml(data.experience).replace(/\n/g, "<br />")),
+                fieldRow("Why COIREA", escapeHtml(data.motivation).replace(/\n/g, "<br />")),
+                fieldRow("Can join next training", escapeHtml(data.availability)),
+                fieldRow("How they heard about COIREA", escapeHtml(data.referral || "-")),
               ].join("")
             : fieldRow("Organization", escapeHtml(data.organization))}
           ${isSteward ? "" : [
