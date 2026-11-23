@@ -616,6 +616,35 @@
 .stewards-hero-stats strong.is-accent { color: color-mix(in oklch, var(--gold) 80%, var(--paper)); }
 .stewards-hero-stats span { font-size: 11px; color: color-mix(in oklch, var(--paper) 72%, transparent); }
 
+.stewards-podcast {
+  padding: clamp(22px, 2.6vw, 34px);
+  background: color-mix(in oklch, var(--deep) 94%, transparent);
+  border-radius: 14px;
+  color: var(--paper);
+  box-shadow: 0 30px 80px color-mix(in oklch, var(--deep) 30%, transparent);
+}
+.stewards-podcast-eyebrow { font-size: 10px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: color-mix(in oklch, var(--gold) 80%, var(--paper)); }
+.stewards-v2 .stewards-podcast h2 { margin: 8px 0 8px; font-size: clamp(28px, 2.6vw, 38px); color: var(--paper); }
+.stewards-podcast > p { font-size: 13px; line-height: 1.6; color: color-mix(in oklch, var(--paper) 74%, transparent); margin-bottom: 16px; }
+.stewards-podcast-episodes { display: grid; gap: 10px; }
+.stewards-podcast-episodes a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  border: 1px solid color-mix(in oklch, var(--paper) 16%, transparent);
+  border-radius: 10px;
+  background: color-mix(in oklch, var(--paper) 6%, transparent);
+  transition: background .2s var(--ease), transform .2s var(--ease);
+}
+.stewards-podcast-episodes a:hover { background: color-mix(in oklch, var(--paper) 12%, transparent); transform: translateX(3px); }
+.stewards-podcast-episodes img { width: 42px; height: 42px; border-radius: 50%; object-fit: cover; flex-shrink: 0; border: 2px solid color-mix(in oklch, var(--gold) 50%, transparent); }
+.stewards-podcast-episodes span { flex: 1; display: grid; }
+.stewards-podcast-episodes small { font-size: 10px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: color-mix(in oklch, var(--gold) 80%, var(--paper)); }
+.stewards-podcast-episodes strong { font-size: 14px; }
+.stewards-podcast-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; margin-top: 18px; }
+.stewards-podcast-actions .button { min-height: 40px; font-size: 12px; }
+.stewards-podcast-all { display: inline-flex; align-items: center; gap: 5px; font-size: 12px; font-weight: 800; border-bottom: 1px solid color-mix(in oklch, var(--paper) 40%, transparent); }
 .stewards-directory-head {
   display: flex;
   flex-wrap: wrap;

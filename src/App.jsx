@@ -3617,7 +3617,6 @@ function AboutContact() {
 
 // Datos que faltan confirmar en la página Stewards: reemplaza los textos entre corchetes.
 const stewardPagePending = {
-  organizationsAccompanied: "[X]",
   nextCertificationEs: "22 de enero de 2027",
   nextCertificationEn: "January 22, 2027",
   certificationFormatEs: "[Duración y formato]",
@@ -3783,6 +3782,10 @@ function StewardsPage() {
   const [country, setCountry] = useState("all");
   const countryList = useMemo(() => [...new Set(stewardDirectory.map((s) => s.country[lang]))], [lang]);
   const visibleStewards = country === "all" ? stewardDirectory : stewardDirectory.filter((s) => s.country[lang] === country);
+  const { posts } = useMigratedBlogPosts();
+  const podcastEpisodes = useMemo(() => localizedPosts(posts, spanish)
+    .filter((post) => post.cluster === "COIREA Voices")
+    .sort((a, b) => new Date(a.created_at).getTime() - new Date(b.created_at).getTime()), [posts, spanish]);
   const benefits = spanish
     ? [
         ["La metodología", "Cinco pilares y las fases SOIL, GROW y FLOURISH, con guías para cada sesión."],
@@ -3828,11 +3831,30 @@ function StewardsPage() {
               <a className="button button--light" href="#postula">{spanish ? "Quiero ser Steward" : "Become a Steward"}</a>
             </div>
           </Reveal>
-          <Reveal className="stewards-hero-stats" delay={0.1}>
-            <div><strong>{countryList.length}</strong><span>{spanish ? "países" : "countries"}</span></div>
-            <div><strong>{stewardDirectory.length}</strong><span>{spanish ? "Stewards fundadores" : "founding Stewards"}</span></div>
-            <div><strong>{stewardPagePending.organizationsAccompanied}</strong><span>{spanish ? "organizaciones acompañadas" : "organizations accompanied"}</span></div>
-            <div><strong className="is-accent">{spanish ? "9 de 10" : "9 in 10"}</strong><span>{spanish ? "llegaron por temas de estrategia" : "came because of strategy issues"}</span></div>
+          <Reveal className="stewards-podcast" delay={0.1}>
+            <span className="stewards-podcast-eyebrow">{spanish ? "Podcast · Voces de la comunidad" : "Podcast · Community Voices"}</span>
+            <h2>{spanish ? "Agentes de transición" : "Transition Agents"}</h2>
+            <p>{spanish ? "Conversaciones con Stewards de COIREA sobre cómo acompañan a las organizaciones y lo que han aprendido en el camino." : "Conversations with COIREA Stewards about how they accompany organizations and what they have learned along the way."}</p>
+            <div className="stewards-podcast-episodes">
+              {podcastEpisodes.map((post, index) => {
+                const photo = extractFirstImage(post.body_content);
+                const guest = post.title.includes(": ") ? post.title.split(": ").slice(1).join(": ") : post.title;
+                return (
+                  <a href={localizedPath(`/insights/${post.slug}`, spanish)} key={post.id}>
+                    {photo && <img src={photo} alt="" loading="lazy" />}
+                    <span>
+                      <small>{spanish ? "Episodio" : "Episode"} {index + 1}</small>
+                      <strong>{guest}</strong>
+                    </span>
+                    <ArrowRight size={15} />
+                  </a>
+                );
+              })}
+            </div>
+            <div className="stewards-podcast-actions">
+              <a className="button button--light" href={PODCAST_YOUTUBE_URL} target="_blank" rel="noreferrer">{spanish ? "Escuchar en YouTube" : "Listen on YouTube"}</a>
+              <a className="stewards-podcast-all" href={`${localizedPath("/insights", spanish)}#podcast`}>{spanish ? "Ver la serie" : "See the series"} <ArrowRight size={13} /></a>
+            </div>
           </Reveal>
         </div>
       </section>
