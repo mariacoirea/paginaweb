@@ -1,4 +1,6 @@
 const REQUIRED_FIELDS = ["name", "email", "organization", "role", "desired_shift", "team_size"];
+// Short "Talk to a Steward" form on the home page.
+const QUICK_REQUIRED_FIELDS = ["name", "email", "organization", "country", "team_size"];
 const DEFAULT_APPLICATION_RECIPIENTS = ["hello@coirea.com", "mjose.fadaros@gmail.com"];
 
 function escapeHtml(value = "") {
@@ -60,7 +62,9 @@ export default async function handler(request, response) {
     return response.status(200).json({ ok: true });
   }
 
-  const missing = REQUIRED_FIELDS.filter((field) => !String(data[field] || "").trim());
+  const isQuick = data.form_type === "quick";
+  const requiredFields = isQuick ? QUICK_REQUIRED_FIELDS : REQUIRED_FIELDS;
+  const missing = requiredFields.filter((field) => !String(data[field] || "").trim());
   if (missing.length > 0) {
     return response.status(400).json({ error: "Please complete all required fields." });
   }
@@ -69,7 +73,7 @@ export default async function handler(request, response) {
     return response.status(400).json({ error: "Please enter a valid email address." });
   }
 
-  if (!Array.isArray(data.friction) || data.friction.length === 0) {
+  if (!isQuick && (!Array.isArray(data.friction) || data.friction.length === 0)) {
     return response.status(400).json({ error: "Please select at least one friction area." });
   }
 
@@ -82,7 +86,7 @@ export default async function handler(request, response) {
   const configuredRecipients = parseRecipients(process.env.APPLICATION_TO_EMAIL);
   const recipients = configuredRecipients.length > 0 ? configuredRecipients : DEFAULT_APPLICATION_RECIPIENTS;
   const from = process.env.RESEND_FROM_EMAIL || "COIREA <onboarding@resend.dev>";
-  const frictionList = data.friction.map((item) => `<li>${escapeHtml(item)}</li>`).join("");
+  const frictionList = (Array.isArray(data.friction) ? data.friction : []).map((item) => `<li>${escapeHtml(item)}</li>`).join("");
   const submittedAt = new Date().toISOString();
 
   const html = `
@@ -96,10 +100,19 @@ export default async function handler(request, response) {
           ${fieldRow("Name", escapeHtml(data.name))}
           ${fieldRow("Email", `<a href="mailto:${escapeHtml(data.email)}" style="color:#143b2a;">${escapeHtml(data.email)}</a>`)}
           ${fieldRow("Organization", escapeHtml(data.organization))}
-          ${fieldRow("Role", escapeHtml(data.role))}
-          ${fieldRow("Team size", escapeHtml(data.team_size))}
-          ${fieldRow("Friction areas", `<ul style="margin:0;padding-left:18px;">${frictionList}</ul>`)}
-          ${fieldRow("What would shift", escapeHtml(data.desired_shift).replace(/\n/g, "<br />"))}
+          ${isQuick
+            ? [
+                fieldRow("Form", "Home · Talk to a Steward"),
+                fieldRow("Country", escapeHtml(data.country)),
+                fieldRow("WhatsApp", escapeHtml(data.whatsapp || "-")),
+                fieldRow("Team size", escapeHtml(data.team_size)),
+              ].join("")
+            : [
+                fieldRow("Role", escapeHtml(data.role)),
+                fieldRow("Team size", escapeHtml(data.team_size)),
+                fieldRow("Friction areas", `<ul style="margin:0;padding-left:18px;">${frictionList}</ul>`),
+                fieldRow("What would shift", escapeHtml(data.desired_shift).replace(/\n/g, "<br />")),
+              ].join("")}
           ${fieldRow("Submitted at", escapeHtml(submittedAt))}
         </table>
         <div style="padding:22px 32px;color:#6c705f;font-size:13px;line-height:1.6;">

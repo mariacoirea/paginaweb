@@ -3,12 +3,13 @@ import { AnimatePresence, animate, motion, useInView, useReducedMotion, useScrol
 import {
   ArrowRight, ArrowUpRight, Brain, ChartLineUp, ChatCircleDots, Check,
   Compass, Heart, Leaf, Lightbulb, List, Pulse, Sparkle, Strategy, BookOpen,
-  UsersThree, X,
+  Play, UsersThree, X,
 } from "@phosphor-icons/react";
 import {
   Radar, RadarChart, PolarGrid, PolarAngleAxis, ResponsiveContainer, Tooltip,
 } from "recharts";
 import "./styles.css";
+import "./home-v2.css";
 
 const dimensions = [
   {
@@ -1729,13 +1730,15 @@ function Header() {
       <ScrollProgress />
       <BrandMark isEs={isEs} />
       <nav className={open ? "nav nav--open" : "nav"} aria-label="Primary navigation">
-        <a href={localizedPath("/", isEs)} onClick={closeAll}>Home</a>
-        <a href={localizedPath("/insights", isEs)} onClick={closeAll}>Insights</a>
-        <a href={localizedPath("/about", isEs)} onClick={closeAll}>About Us</a>
+        <a href={localizedPath("/", isEs)} onClick={closeAll}>{isEs ? "Inicio" : "Home"}</a>
+        <a href={`${localizedPath("/", isEs)}#methodology`} onClick={closeAll}>{isEs ? "Cómo funciona" : "How it works"}</a>
+        <a href={`${localizedPath("/", isEs)}#stewards`} onClick={closeAll}>Stewards</a>
+        <a href={localizedPath("/insights", isEs)} onClick={closeAll}>{isEs ? "Blog y podcast" : "Blog & podcast"}</a>
+        <a href={localizedPath("/about", isEs)} onClick={closeAll}>{isEs ? "Sobre COIREA" : "About COIREA"}</a>
         <a className="language-link" href={languageHref} hrefLang={isEs ? "en" : "es"} onClick={closeAll}>{isEs ? "EN" : "ES"}</a>
       </nav>
-      <a className="button button--outline header-cta" href={localizedPath("/conversation", isEs)}>
-        Book a Conversation
+      <a className="button button--primary header-cta" href={`${localizedPath("/", isEs)}#conversation`}>
+        {isEs ? "Habla con un Steward" : "Talk to a Steward"}
       </a>
       <button
         className="menu-button"
@@ -1847,9 +1850,63 @@ function HealthDashboard() {
   );
 }
 
-function Hero() {
+// Pon aquí el ID del video de YouTube de 2 minutos (lo que va después de "watch?v=").
+// Mientras esté vacío, la tarjeta del hero muestra un espacio reservado.
+const HOME_VIDEO_ID = "";
+
+const stewardCountries = {
+  en: ["Chile", "Peru", "Colombia", "Mexico", "United States"],
+  es: ["Chile", "Perú", "Colombia", "México", "Estados Unidos"],
+};
+
+function HeroVideo({ spanish }) {
+  const [playing, setPlaying] = useState(false);
   return (
-    <section className="hero" id="top">
+    <motion.div
+      className="hero-video"
+      initial={{ opacity: 0, x: 40, scale: 0.97 }}
+      animate={{ opacity: 1, x: 0, scale: 1 }}
+      transition={{ duration: 1, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+    >
+      <div className="hero-video-top">
+        <span>{spanish ? "De qué va COIREA" : "What COIREA is about"}</span>
+        <small>Video · 2 min</small>
+      </div>
+      <div className="hero-video-frame">
+        {HOME_VIDEO_ID && playing ? (
+          <iframe
+            src={`https://www.youtube-nocookie.com/embed/${HOME_VIDEO_ID}?autoplay=1&rel=0`}
+            title={spanish ? "De qué va COIREA" : "What COIREA is about"}
+            allow="autoplay; encrypted-media; picture-in-picture"
+            allowFullScreen
+          />
+        ) : (
+          <button
+            type="button"
+            className="hero-video-play"
+            onClick={() => HOME_VIDEO_ID && setPlaying(true)}
+            aria-label={spanish ? "Reproducir video" : "Play video"}
+            disabled={!HOME_VIDEO_ID}
+          >
+            <span className="hero-video-play-icon"><Play size={22} weight="fill" /></span>
+            {!HOME_VIDEO_ID && <small>{spanish ? "[Video de 2 minutos]" : "[2-minute video]"}</small>}
+          </button>
+        )}
+      </div>
+      <p>{spanish
+        ? "En dos minutos: la plataforma, el Steward y los cinco pilares, y cómo trabajan juntos en tu organización."
+        : "In two minutes: the platform, the Steward and the five pillars, and how they work together in your organization."}</p>
+    </motion.div>
+  );
+}
+
+function Hero() {
+  const spanish = isSpanishPath();
+  const pains = spanish
+    ? ["La estrategia está clara, pero no llega a la operación.", "Las mismas decisiones se postergan una y otra vez.", "Buenas personas se desconectan en silencio."]
+    : ["The strategy is clear, but it doesn't reach day-to-day work.", "The same decisions get postponed again and again.", "Good people quietly disconnect."];
+  return (
+    <section className="hero hero--v2" id="top">
       <div className="hero-image" aria-hidden="true" />
       <div className="hero-scrim" aria-hidden="true" />
       <div className="hero-content">
@@ -1859,29 +1916,159 @@ function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
         >
-          <motion.span className="eyebrow" initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.08, duration: 0.55 }}>COIREA · People Operating System</motion.span>
-          <motion.h1 initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.16, duration: 0.74, ease: [0.16, 1, 0.3, 1] }}>Make the human system behind your results visible.</motion.h1>
-          <motion.p initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.26, duration: 0.72, ease: [0.16, 1, 0.3, 1] }}>
-            Organizational intelligence and human stewardship for purpose-driven
-            organizations that are growing. Because growth should increase coherence,
-            not deplete capacity.
-          </motion.p>
-          <motion.div className="hero-actions" initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.38, duration: 0.62 }}>
-            <a className="button button--primary" href="/conversation">
-              Book a conversation <ArrowRight size={18} />
+          <span className="eyebrow">{spanish ? "COIREA · El sistema operativo de las organizaciones con propósito" : "COIREA · The operating system for purpose-driven organizations"}</span>
+          <h1>{spanish ? "Haz visible el sistema humano detrás de tus resultados." : "Make the human system behind your results visible."}</h1>
+          <p>
+            {spanish ? <>COIREA une una <strong>plataforma con IA</strong> y un <strong>Steward certificado</strong> que acompañan a organizaciones con propósito de 15 a 300 personas a alinear su estrategia con las personas que la sostienen.</>
+              : <>COIREA brings together an <strong>AI-powered platform</strong> and a <strong>certified Steward</strong> who help purpose-driven organizations of 15 to 300 people align their strategy with the people who sustain it.</>}
+          </p>
+          <ul className="hero-pains">
+            {pains.map((item) => <li key={item}>{item}</li>)}
+          </ul>
+          <div className="hero-actions">
+            <a className="button button--primary" href="#conversation">
+              {spanish ? "Habla con un Steward" : "Talk to a Steward"} <ArrowRight size={18} />
             </a>
-            <a className="button button--light" href="#platform">
-              See how it works
+            <a className="button button--light" href="#methodology">
+              {spanish ? "Ver cómo funciona" : "See how it works"}
             </a>
-          </motion.div>
-          <motion.div className="trust-line" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.52, duration: 0.6 }}><Leaf size={17} /> AI + Human Wisdom. Grounded in systemic thinking.</motion.div>
+          </div>
+          <small className="hero-countries">{stewardCountries[spanish ? "es" : "en"].join(" · ")}</small>
         </motion.div>
-        <HealthDashboard />
+        <HeroVideo spanish={spanish} />
       </div>
-      <a className="scroll-cue" href="#methodology" aria-label="Scroll to the COIREA methodology">
-        <span>See the system</span>
-        <ArrowRight size={16} />
-      </a>
+    </section>
+  );
+}
+
+function TrustStrip() {
+  const spanish = isSpanishPath();
+  // Agrega aquí los logos de clientes: { name, src }. Los que no tienen src se muestran como espacio reservado.
+  const logos = [
+    { name: "Camun", src: "/assets/insights/camun-logo.webp" },
+    { name: "Logo" }, { name: "Logo" }, { name: "Logo" }, { name: "Logo" },
+  ];
+  return (
+    <section className="trust-strip" aria-label={spanish ? "Organizaciones que confían en COIREA" : "Organizations that trust COIREA"}>
+      <span>{spanish ? "Organizaciones que confían en COIREA" : "Organizations that trust COIREA"}</span>
+      <div className="trust-logos">
+        {logos.map(({ name, src }, index) => (
+          <div className={`trust-logo ${src ? "" : "trust-logo--empty"}`} key={`${name}-${index}`}>
+            {src ? <img src={src} alt={name} loading="lazy" /> : <small>{name}</small>}
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function ResultsSection() {
+  const spanish = isSpanishPath();
+  const stats = spanish
+    ? [
+        ["9 de 10", "organizaciones llegan a COIREA porque su estrategia no está llegando a la operación."],
+        ["30–45 días", "para tener el diagnóstico completo y saber qué fortalecer primero."],
+        ["100%", "de las organizaciones terminan el diagnóstico con un plan priorizado por pilar."],
+      ]
+    : [
+        ["9 in 10", "organizations come to COIREA because their strategy isn't reaching day-to-day work."],
+        ["30–45 days", "to complete the diagnostic and know what to strengthen first."],
+        ["100%", "of organizations finish the diagnostic with a plan prioritized by pillar."],
+      ];
+  return (
+    <section className="results-section section">
+      <Reveal className="results-copy">
+        <span className="eyebrow">{spanish ? "Resultados" : "Results"}</span>
+        <h2>{spanish ? "Lo que ya vimos en las organizaciones COIREA." : "What we have already seen in COIREA organizations."}</h2>
+        <a className="text-button" href={localizedPath("/insights/caso-camun-etapa-soil", spanish)}>
+          {spanish ? "Leer el caso Camun" : "Read the Camun case"} <ArrowRight />
+        </a>
+      </Reveal>
+      <div className="results-stats">
+        {stats.map(([value, text], index) => (
+          <Reveal className="results-stat" delay={index * 0.08} key={value}>
+            <strong>{value}</strong>
+            <p>{text}</p>
+          </Reveal>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function StewardsSection() {
+  const spanish = isSpanishPath();
+  return (
+    <section className="stewards-home section" id="stewards">
+      <Reveal className="stewards-home-card">
+        <div className="stewards-home-copy">
+          <span className="eyebrow">{spanish ? "Los Stewards" : "The Stewards"}</span>
+          <h2>{spanish ? "Cada organización trabaja con un Steward de su país." : "Every organization works with a Steward from its own country."}</h2>
+          <p>{spanish
+            ? "Consultores, coaches y facilitadores certificados en la metodología COIREA, con experiencia real acompañando organizaciones."
+            : "Consultants, coaches and facilitators certified in the COIREA methodology, with real experience accompanying organizations."}</p>
+          <div className="stewards-home-actions">
+            <a className="button button--primary" href={localizedPath("/about", spanish)}>
+              {spanish ? "Conoce a los Stewards" : "Meet the Stewards"} <ArrowRight size={17} />
+            </a>
+            <a className="button button--light" href={`mailto:hello@coirea.com?subject=${encodeURIComponent(spanish ? "Quiero ser Steward" : "I want to become a Steward")}`}>
+              {spanish ? "Quiero ser Steward" : "Become a Steward"}
+            </a>
+          </div>
+        </div>
+        <ul className="stewards-home-countries">
+          {stewardCountries[spanish ? "es" : "en"].map((country) => <li key={country}>{country}</li>)}
+        </ul>
+      </Reveal>
+    </section>
+  );
+}
+
+function PlatformShowcase() {
+  const spanish = isSpanishPath();
+  const benefits = spanish
+    ? [
+        ["Escuchar antes de que la fricción se vuelva visible", "Encuestas, reflexión y contexto revelan lo que los líderes suelen escuchar tarde."],
+        ["Ver el patrón detrás del síntoma", "GiA conecta las señales entre visión, liderazgo, estrategia, colaboración y bienestar."],
+        ["Avanzar con acompañamiento humano", "Un Steward te ayuda a interpretar la señal y elegir el siguiente paso."],
+        ["Medir si el sistema está cambiando", "El OVI muestra si la alineación, la confianza y la ejecución están mejorando."],
+      ]
+    : platformBenefits.map(({ title, text }) => [title, text]);
+  const steps = spanish
+    ? [["Señal", "La tensión oculta se hace visible."], ["Lectura", "El síntoma se vuelve un patrón."], ["Acción", "Los líderes eligen el siguiente paso."]]
+    : [["Signal", "The hidden tension becomes visible."], ["Insight", "The symptom becomes a pattern."], ["Action", "Leaders choose the next move."]];
+  return (
+    <section className="platform-showcase section" id="platform">
+      <Reveal className="platform-showcase-copy">
+        <span className="eyebrow">{spanish ? "La plataforma" : "The platform"}</span>
+        <h2>{spanish ? "Una plataforma que lee las señales que tu organización ya está enviando." : "A platform that reads the signals your organization is already sending."}</h2>
+        <p>{spanish
+          ? <><strong>GiA</strong>, la inteligencia de COIREA, lee las respuestas de tu equipo y detecta patrones. Tu Steward te ayuda a convertirlos en decisiones. Tú y tu equipo deciden qué hacer con ellos.</>
+          : <><strong>GiA</strong>, COIREA's intelligence, reads your team's responses and detects patterns. Your Steward helps you turn them into decisions. You and your team decide what to do with them.</>}</p>
+        <a className="button button--light" href="#conversation">{spanish ? "Verla en vivo" : "See it live"} <ArrowRight size={17} /></a>
+        <small className="platform-showcase-label">{spanish ? "Qué vas a lograr" : "What you will achieve"}</small>
+        <ul className="platform-showcase-benefits">
+          {benefits.map(([title, text]) => (
+            <li key={title}><strong>{title}</strong><span>{text}</span></li>
+          ))}
+        </ul>
+      </Reveal>
+      <Reveal className="platform-showcase-visual" delay={0.1}>
+        <div className="platform-showcase-frame">
+          <img src="/assets/coirea-platform-soil-preview.jpeg" alt={spanish ? "Plataforma COIREA: salud organizacional SOIL, evaluación OVI e insights de GiA" : "COIREA platform dashboard showing SOIL organizational health, OVI evaluation, and GiA insights"} loading="lazy" />
+          <div className="platform-showcase-steps">
+            {steps.map(([title, text], index) => (
+              <div key={title} className={`platform-showcase-step platform-showcase-step--${index + 1}`}>
+                <strong>{title}</strong>
+                <small>{text}</small>
+              </div>
+            ))}
+          </div>
+        </div>
+        <p>{spanish
+          ? "Dashboard con capturas reales de SOIL: el OVI, las señales por pilar y las preguntas de GiA."
+          : "Dashboard with real SOIL captures: the OVI, the pillar signals and GiA questions."}</p>
+      </Reveal>
     </section>
   );
 }
@@ -1916,7 +2103,18 @@ function Methodology() {
       <Reveal className="methodology-copy">
         <span className="eyebrow">{t("The methodology", spanish)}</span>
         <h2>{t("Five dimensions that determine if your organization can grow without breaking.", spanish)}</h2>
-        <p>{t("The People Operating System is not a framework to read. It is a living structure to measure, align, and strengthen over time.", spanish)}</p>
+        <p>{spanish
+          ? "COIREA es una estructura viva para medir, alinear y fortalecer tu organización en el tiempo: Visión, Liderazgo, Estrategia, Colaboración y Bienestar."
+          : "COIREA is a living structure to measure, align and strengthen your organization over time: Vision, Leadership, Strategy, Collaboration and Well-Being."}</p>
+        <div className="methodology-measure">
+          <small>{spanish ? "Cómo se mide" : "How it is measured"}</small>
+          <ol>
+            {(spanish
+              ? ["Una encuesta breve a tu equipo, por pilar.", "Conversaciones con tu Steward para leer los resultados.", "El resultado: tu OVI, un índice de 0 a 100 por pilar y en total."]
+              : ["A short survey for your team, by pillar.", "Conversations with your Steward to read the results.", "The result: your OVI, an index from 0 to 100 by pillar and overall."]
+            ).map((item, index) => <li key={item}><b>0{index + 1}</b>{item}</li>)}
+          </ol>
+        </div>
       </Reveal>
       <Reveal className="pillar-system" delay={0.1}>
         <div className="pillar-orbit">
@@ -2165,14 +2363,14 @@ function DashboardTour({ activeStep = 0 }) {
   );
 }
 
-function ImpactShift() {
+function ImpactShift({ compact = false }) {
   const reduced = useReducedMotion();
   return (
-    <section className="impact-shift section" id="impact">
+    <section className={`impact-shift section ${compact ? "impact-shift--compact" : ""}`} id="impact">
       <Reveal className="impact-heading">
         <span className="eyebrow">The business impact</span>
         <h2>Turn hidden friction into visible momentum.</h2>
-        <p>Before COIREA, the company may still be moving, but energy leaks through miscommunication, rework, bottlenecks, and invisible capacity strain. COIREA makes those patterns visible, then helps leaders convert them into aligned action.</p>
+        {!compact && <p>Before COIREA, the company may still be moving, but energy leaks through miscommunication, rework, bottlenecks, and invisible capacity strain. COIREA makes those patterns visible, then helps leaders convert them into aligned action.</p>}
       </Reveal>
 
       <Reveal className="transformation-board" delay={0.08}>
@@ -2251,7 +2449,7 @@ function ImpactShift() {
         </div>
       </Reveal>
 
-      <div className="impact-evidence">
+      {!compact && <div className="impact-evidence">
         {impactSignals.map((item, index) => (
           <Reveal className="impact-row" delay={index * 0.08} key={item.before}>
             <span>0{index + 1}</span>
@@ -2260,7 +2458,7 @@ function ImpactShift() {
             <strong>{item.after}</strong>
           </Reveal>
         ))}
-      </div>
+      </div>}
 
       {false && (
       <Reveal className="testimonial-section" delay={0.12}>
@@ -2306,8 +2504,7 @@ function Approach() {
             <motion.div className="stage-icon" whileHover={{ rotate: 4, scale: 1.04 }} transition={{ duration: 0.25 }}>
               <Icon size={34} weight="light" />
             </motion.div>
-            <div className="stage-number">{number}</div>
-            <h3>{name}</h3>
+            <div className="stage-number">{number} · {name}</div>
             <strong>{title}</strong>
             <p>{text}</p>
           </Reveal>
@@ -2507,44 +2704,152 @@ function FitCheck() {
   );
 }
 
+const homeFaqs = {
+  en: [
+    ["What is COIREA?", "COIREA is the operating system for purpose-driven organizations: it makes the human system behind your results visible so your organization can grow without breaking. It combines a platform (OVI and GiA) with the guidance of a certified Steward."],
+    ["Is COIREA a platform or a consultancy?", "Both. The platform measures the health of your organization, and a certified Steward helps leaders interpret the signals and turn them into action."],
+    ["What does COIREA measure?", "Five pillars: Vision, Leadership, Strategy, Collaboration and Well-Being. Together they show whether the organization is coherent, aligned and able to perform sustainably."],
+    ["What are OVI and GiA?", "OVI (Organizational Vitality Index) is an index from 0 to 100 of how healthy and coherent your organization is across the five pillars. GiA (Guided Intelligence for Alignment) turns those signals into questions, insights and suggested next steps."],
+    ["Where do you work?", "Chile, Peru, Colombia, Mexico and the United States, in Spanish and English."],
+    ["How much does it cost?", "It depends on the size of your organization and the stage you start with. In the first conversation, your Steward gives you a clear proposal."],
+  ],
+  es: [
+    ["¿Qué es COIREA?", "COIREA es el sistema operativo de las organizaciones con propósito: hace visible el sistema humano detrás de tus resultados para que tu organización pueda crecer sin romperse. Combina una plataforma (OVI y GiA) con el acompañamiento de un Steward certificado."],
+    ["¿Es una plataforma o una consultoría?", "Las dos cosas. La plataforma mide la salud de tu organización y un Steward certificado ayuda a los líderes a interpretar las señales y convertirlas en acción."],
+    ["¿Qué mide COIREA?", "Cinco pilares: Visión, Liderazgo, Estrategia, Colaboración y Bienestar. Juntos muestran si la organización es coherente, está alineada y puede sostener su desempeño."],
+    ["¿Qué son OVI y GiA?", "El OVI (Índice de Vitalidad Organizacional) es un índice de 0 a 100 de qué tan sana y coherente está tu organización en los cinco pilares. GiA (Inteligencia Guiada para la Alineación) convierte esas señales en preguntas, aprendizajes y próximos pasos sugeridos."],
+    ["¿En qué países trabajan?", "Chile, Perú, Colombia, México y Estados Unidos, en español e inglés."],
+    ["¿Cuánto cuesta?", "Depende del tamaño de tu organización y de la etapa con la que empiezas. En la primera conversación, tu Steward te entrega una propuesta clara."],
+  ],
+};
+
 function AnswerEngineFaq() {
   const spanish = isSpanishPath();
+  const faqs = homeFaqs[spanish ? "es" : "en"];
   useEffect(() => {
     upsertJsonLd("coirea-faqpage", {
       "@context": "https://schema.org",
       "@type": "FAQPage",
       "@id": "https://www.coirea.com/#faq",
-      mainEntity: aiSeoFaqs.map(([question, answer]) => ({
+      mainEntity: faqs.map(([question, answer]) => ({
         "@type": "Question",
-        name: t(question, spanish),
+        name: question,
         acceptedAnswer: {
           "@type": "Answer",
-          text: t(answer, spanish),
+          text: answer,
         },
       })),
     });
     return () => removeJsonLd("coirea-faqpage");
-  }, [spanish]);
+  }, [faqs]);
 
   return (
     <section className="answer-faq section" id="faq">
       <Reveal className="answer-faq-intro">
-        <span className="eyebrow">{t("Questions leaders ask", spanish)}</span>
-        <h2>{t("Clear answers about COIREA and the People Operating System.", spanish)}</h2>
-        <p>{t("These answers are written for leaders evaluating COIREA.", spanish)}</p>
+        <span className="eyebrow">{spanish ? "Preguntas que hacen los líderes" : "Questions leaders ask"}</span>
+        <h2>{spanish ? "Respuestas claras sobre COIREA." : "Clear answers about COIREA."}</h2>
       </Reveal>
       <div className="answer-faq-grid">
-        {aiSeoFaqs.map(([question, answer], index) => (
+        {faqs.map(([question, answer], index) => (
           <Reveal className="answer-faq-card" delay={index * 0.05} key={question}>
-            <h3>{t(question, spanish)}</h3>
-            <p>{t(answer, spanish)}</p>
+            <h3>{question}</h3>
+            <p>{answer}</p>
           </Reveal>
         ))}
       </div>
-      <Reveal className="answer-faq-link" delay={0.12}>
-        <a className="text-button" href={localizedPath("/insights/what-is-a-people-operating-system", spanish)}>
-          {t("Read the full People Operating System article", spanish)} <ArrowRight />
-        </a>
+    </section>
+  );
+}
+
+function QuickContactForm() {
+  const spanish = isSpanishPath();
+  const [status, setStatus] = useState("idle");
+  const [message, setMessage] = useState("");
+  const countries = stewardCountries[spanish ? "es" : "en"];
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+    const value = (key) => formData.get(key)?.toString().trim() || "";
+    const payload = {
+      form_type: "quick",
+      name: value("name"),
+      email: value("email"),
+      organization: value("organization"),
+      country: value("country"),
+      whatsapp: value("whatsapp"),
+      team_size: value("team_size"),
+      website: value("website"),
+    };
+    setStatus("submitting");
+    setMessage("");
+    try {
+      const response = await fetch("/api/apply", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+      const result = await response.json().catch(() => ({}));
+      if (!response.ok) throw new Error(result.error || "error");
+      form.reset();
+      setStatus("success");
+      setMessage(spanish ? "Gracias. Tu mensaje llegó a COIREA y el Steward de tu país te escribirá pronto." : "Thank you. Your message reached COIREA and the Steward from your country will reach out soon.");
+    } catch {
+      setStatus("error");
+      setMessage(spanish ? "No pudimos enviar el formulario. Escríbenos directamente a hello@coirea.com." : "We couldn't send the form. Please email hello@coirea.com directly.");
+    }
+  };
+
+  return (
+    <form className="quick-form" onSubmit={handleSubmit}>
+      <label className="application-honeypot" aria-hidden="true">
+        <span>Website</span>
+        <input name="website" tabIndex={-1} autoComplete="off" />
+      </label>
+      <div className="quick-form-grid">
+        <label><span>{spanish ? "Nombre" : "Name"}</span><input name="name" type="text" autoComplete="name" required /></label>
+        <label><span>{spanish ? "Organización" : "Organization"}</span><input name="organization" type="text" autoComplete="organization" required /></label>
+        <label><span>Email</span><input name="email" type="email" autoComplete="email" required /></label>
+        <label><span>WhatsApp</span><input name="whatsapp" type="tel" autoComplete="tel" placeholder="+56 9 ..." /></label>
+        <label>
+          <span>{spanish ? "País" : "Country"}</span>
+          <select name="country" required defaultValue={countries[0]}>
+            {countries.map((country) => <option key={country} value={country}>{country}</option>)}
+            <option value={spanish ? "Otro" : "Other"}>{spanish ? "Otro" : "Other"}</option>
+          </select>
+        </label>
+        <label>
+          <span>{spanish ? "Personas en tu equipo" : "Team size"}</span>
+          <select name="team_size" required defaultValue="">
+            <option value="" disabled>{spanish ? "Elige una" : "Select one"}</option>
+            {teamSizeOptions.map((size) => <option value={size} key={size}>{size}</option>)}
+          </select>
+        </label>
+      </div>
+      <button className="button button--primary" type="submit" disabled={status === "submitting"}>
+        {status === "submitting" ? (spanish ? "Enviando..." : "Sending...") : (spanish ? "Quiero conversar" : "Let's talk")} <ArrowRight size={17} />
+      </button>
+      {message && <p className={`application-status application-status--${status}`}>{message}</p>}
+      <p className="quick-form-note">{spanish ? "Tu respuesta llega directo al Steward de tu país. Te escribimos en menos de 5 días hábiles." : "Your message goes straight to the Steward in your country. We reply within 5 business days."}</p>
+    </form>
+  );
+}
+
+function ClosingContact() {
+  const spanish = isSpanishPath();
+  return (
+    <section className="closing-contact section" id="conversation">
+      <div className="closing-image" aria-hidden="true" />
+      <Reveal className="closing-contact-copy">
+        <span className="eyebrow">{spanish ? "Habla con un Steward" : "Talk to a Steward"}</span>
+        <h2>{spanish ? "¿Está tu organización lista para verse con claridad?" : "Is your organization ready to see itself clearly?"}</h2>
+        <p>{spanish
+          ? "COIREA es para organizaciones con propósito de 15 a 300 personas que están creciendo, desalineadas o en una transición de liderazgo. Cuéntanos dónde estás y te conectamos con el Steward indicado."
+          : "COIREA is for purpose-driven organizations of 15 to 300 people that are growing, misaligned or in a leadership transition. Tell us where you are and we'll connect you with the right Steward."}</p>
+      </Reveal>
+      <Reveal className="closing-contact-form" delay={0.1}>
+        <QuickContactForm />
       </Reveal>
     </section>
   );
@@ -3479,16 +3784,18 @@ function Footer() {
 
 function HomePage() {
   return (
-    <main>
+    <main className="home-v2">
       <Hero />
+      <TrustStrip />
+      <ResultsSection />
       <Methodology />
-      <Platform />
-      <ImpactShift />
+      <PlatformShowcase />
+      <ImpactShift compact />
       <Approach />
-      <GiaSection />
+      <StewardsSection />
       <FitCheck />
       <AnswerEngineFaq />
-      <Closing />
+      <ClosingContact />
     </main>
   );
 }
