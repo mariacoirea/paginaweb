@@ -1,6 +1,8 @@
 const REQUIRED_FIELDS = ["name", "email", "organization", "role", "desired_shift", "team_size"];
 // Short "Talk to a Steward" form on the home page.
 const QUICK_REQUIRED_FIELDS = ["name", "email", "organization", "country", "team_size"];
+// "Apply to the Steward network" form on /stewards.
+const STEWARD_REQUIRED_FIELDS = ["name", "email", "country", "experience"];
 const DEFAULT_APPLICATION_RECIPIENTS = ["hello@coirea.com", "mjose.fadaros@gmail.com"];
 
 function escapeHtml(value = "") {
@@ -63,7 +65,8 @@ export default async function handler(request, response) {
   }
 
   const isQuick = data.form_type === "quick";
-  const requiredFields = isQuick ? QUICK_REQUIRED_FIELDS : REQUIRED_FIELDS;
+  const isSteward = data.form_type === "steward";
+  const requiredFields = isSteward ? STEWARD_REQUIRED_FIELDS : isQuick ? QUICK_REQUIRED_FIELDS : REQUIRED_FIELDS;
   const missing = requiredFields.filter((field) => !String(data[field] || "").trim());
   if (missing.length > 0) {
     return response.status(400).json({ error: "Please complete all required fields." });
@@ -73,7 +76,7 @@ export default async function handler(request, response) {
     return response.status(400).json({ error: "Please enter a valid email address." });
   }
 
-  if (!isQuick && (!Array.isArray(data.friction) || data.friction.length === 0)) {
+  if (!isQuick && !isSteward && (!Array.isArray(data.friction) || data.friction.length === 0)) {
     return response.status(400).json({ error: "Please select at least one friction area." });
   }
 
@@ -93,14 +96,21 @@ export default async function handler(request, response) {
     <div style="margin:0;padding:32px;background:#f7f1e8;font-family:Inter,Arial,sans-serif;color:#183b2c;">
       <div style="max-width:680px;margin:0 auto;background:#fffaf2;border:1px solid #e8dfd2;border-radius:22px;overflow:hidden;">
         <div style="padding:28px 32px;background:#143b2a;color:#fffaf2;">
-          <p style="margin:0 0 8px;color:#d5aa62;font-size:12px;text-transform:uppercase;letter-spacing:.12em;font-weight:700;">New COIREA application</p>
-          <h1 style="margin:0;font-family:Georgia,serif;font-size:34px;font-weight:400;line-height:1.08;">${escapeHtml(data.organization)} wants to work with COIREA</h1>
+          <p style="margin:0 0 8px;color:#d5aa62;font-size:12px;text-transform:uppercase;letter-spacing:.12em;font-weight:700;">${isSteward ? "New Steward application" : "New COIREA application"}</p>
+          <h1 style="margin:0;font-family:Georgia,serif;font-size:34px;font-weight:400;line-height:1.08;">${isSteward ? `${escapeHtml(data.name)} wants to join the Steward network` : `${escapeHtml(data.organization)} wants to work with COIREA`}</h1>
         </div>
         <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="border-collapse:collapse;">
           ${fieldRow("Name", escapeHtml(data.name))}
           ${fieldRow("Email", `<a href="mailto:${escapeHtml(data.email)}" style="color:#143b2a;">${escapeHtml(data.email)}</a>`)}
-          ${fieldRow("Organization", escapeHtml(data.organization))}
-          ${isQuick
+          ${isSteward
+            ? [
+                fieldRow("Form", "Stewards · Apply to the network"),
+                fieldRow("Country", escapeHtml(data.country)),
+                fieldRow("LinkedIn", escapeHtml(data.linkedin || "-")),
+                fieldRow("Organizations worked with", escapeHtml(data.experience).replace(/\n/g, "<br />")),
+              ].join("")
+            : fieldRow("Organization", escapeHtml(data.organization))}
+          ${isSteward ? "" : isQuick
             ? [
                 fieldRow("Form", "Home · Talk to a Steward"),
                 fieldRow("Country", escapeHtml(data.country)),
@@ -132,7 +142,7 @@ export default async function handler(request, response) {
       from,
       to: recipients,
       reply_to: data.email,
-      subject: `New COIREA application - ${data.organization}`,
+      subject: isSteward ? `New Steward application - ${data.name}` : `New COIREA application - ${data.organization}`,
       html,
     }),
   });

@@ -23,6 +23,7 @@ const routeToFile = {
   "/about": "es-about.html",
   "/conversation": "es-conversation.html",
   "/insights": "es-insights.html",
+  "/stewards": "es-stewards.html",
   "/insights/what-is-a-people-operating-system": "es-insights-what-is-a-people-operating-system.html",
 };
 

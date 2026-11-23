@@ -417,3 +417,333 @@
   .home-v2 .diagnostic--journey { margin: 0 12px; }
   .home-v2 .hero--v2 h1 { font-size: clamp(40px, 11vw, 54px); }
 }
+
+/* =========================================================
+   Sobre COIREA v2
+   ========================================================= */
+.about-founder {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: clamp(28px, 5vw, 70px);
+  align-items: center;
+  max-width: 1180px;
+  margin: 0 auto;
+}
+.about-founder-photo img {
+  width: clamp(160px, 18vw, 230px);
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 24px 60px color-mix(in oklch, var(--forest) 18%, transparent);
+}
+.about-v2 .about-founder h2 { font-size: clamp(30px, 3vw, 46px); margin-bottom: 16px; }
+.about-founder-copy > p { font-size: 15px; color: var(--ink); max-width: 70ch; }
+.about-founder-sign { display: flex; flex-wrap: wrap; gap: 6px 14px; align-items: baseline; }
+.about-founder-sign strong { font-size: 13px; color: var(--deep); }
+.about-founder-sign span { font-size: 11px; color: var(--gold); font-weight: 700; }
+
+.about-nature {
+  display: grid;
+  grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
+  gap: clamp(32px, 5vw, 80px);
+  align-items: center;
+  padding-top: 0;
+}
+.about-v2 .about-nature h2 { font-size: clamp(34px, 3.4vw, 52px); margin-bottom: 18px; }
+.about-v2 .about-nature .eyebrow { color: var(--gold); }
+.about-nature-intro p { font-size: 14px; color: var(--muted); max-width: 52ch; }
+.about-nature-cards { display: grid; gap: 14px; }
+.about-nature-card {
+  padding: clamp(18px, 2.2vw, 28px);
+  background: var(--white);
+  border: 1px solid color-mix(in oklch, var(--forest) 14%, var(--line));
+  border-radius: 10px;
+  box-shadow: 0 18px 50px color-mix(in oklch, var(--forest) 7%, transparent);
+}
+.about-nature-card span { font-size: 10px; color: var(--gold); font-weight: 800; letter-spacing: .1em; }
+.about-nature-card h3 { margin: 6px 0 8px; font-family: "Manrope", sans-serif; font-size: 18px; font-weight: 600; color: var(--deep); }
+.about-nature-card p { margin: 0; font-size: 13px; line-height: 1.6; color: var(--muted); }
+
+.about-why { background: var(--deep); color: var(--paper); }
+.about-why-head {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr);
+  gap: clamp(28px, 5vw, 80px);
+  align-items: end;
+  margin-bottom: clamp(34px, 4vw, 56px);
+}
+.about-v2 .about-why h2 { color: var(--paper); font-size: clamp(34px, 3.6vw, 56px); margin: 0; }
+.about-why .eyebrow { color: color-mix(in oklch, var(--sage) 85%, var(--paper)); }
+.about-why-head p { margin: 0; font-size: 14px; color: color-mix(in oklch, var(--paper) 78%, transparent); }
+.about-why-label,
+.stewards-join-label {
+  display: block;
+  margin-bottom: 14px;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+.about-model { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
+.about-model-card,
+.stewards-benefit {
+  padding: clamp(18px, 2vw, 26px);
+  border: 1px solid color-mix(in oklch, var(--paper) 16%, transparent);
+  border-radius: 8px;
+  background: color-mix(in oklch, var(--paper) 6%, transparent);
+}
+.about-model-card span { font-size: 10px; color: var(--gold); font-weight: 800; }
+.about-model-card h3,
+.stewards-benefit h3 { margin: 8px 0; font-size: 22px; font-weight: 400; color: var(--paper); }
+.about-model-card p,
+.stewards-benefit p { font-size: 12px; line-height: 1.6; color: color-mix(in oklch, var(--paper) 72%, transparent); margin: 0 0 12px; }
+.about-model-card a {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  font-weight: 800;
+  color: var(--paper);
+  border-bottom: 1px solid color-mix(in oklch, var(--paper) 40%, transparent);
+}
+
+.about-beliefs { padding-bottom: clamp(50px, 6vw, 90px); }
+.about-v2 .about-beliefs .eyebrow { color: var(--gold); }
+.about-beliefs-row {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  background: var(--white);
+  border: 1px solid color-mix(in oklch, var(--forest) 14%, var(--line));
+  border-radius: 8px;
+  overflow: hidden;
+}
+.about-belief { position: relative; padding: clamp(18px, 2.2vw, 28px); }
+.about-belief + .about-belief { border-left: 1px solid color-mix(in oklch, var(--forest) 12%, var(--line)); }
+.about-belief i {
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  font-family: "Bodoni Moda", Georgia, serif;
+  font-style: normal;
+  font-size: 48px;
+  line-height: 1;
+  color: color-mix(in oklch, var(--gold) 22%, transparent);
+}
+.about-belief h3 { position: relative; margin: 0 0 10px; font-family: "Manrope", sans-serif; font-size: 15px; font-weight: 600; color: var(--deep); max-width: 15ch; }
+.about-belief p { position: relative; margin: 0; font-size: 12px; line-height: 1.6; color: var(--muted); }
+
+.about-quote {
+  position: relative;
+  padding: clamp(80px, 10vw, 140px) 24px;
+  text-align: center;
+  overflow: hidden;
+  isolation: isolate;
+}
+.about-quote-image {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: url("/assets/coirea-about-mountains.jpg") center 60% / cover no-repeat;
+  opacity: .32;
+  filter: saturate(.4) brightness(1.15);
+}
+.about-quote p {
+  max-width: 24ch;
+  margin: 0 auto 12px;
+  font-family: "Bodoni Moda", Georgia, serif;
+  font-size: clamp(28px, 3vw, 44px);
+  line-height: 1.2;
+  color: var(--deep);
+}
+.about-quote span { font-size: 11px; color: var(--muted); }
+
+.about-faq {
+  display: grid;
+  grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr);
+  gap: clamp(28px, 5vw, 80px);
+  align-items: start;
+}
+.about-v2 .about-faq h2 { font-size: clamp(34px, 3.4vw, 52px); }
+.about-faq-list { display: grid; gap: 10px; }
+.about-faq-list details {
+  background: var(--white);
+  border: 1px solid color-mix(in oklch, var(--forest) 14%, var(--line));
+  border-radius: 8px;
+  padding: 16px 20px;
+}
+.about-faq-list summary { cursor: pointer; font-size: 14px; font-weight: 700; color: var(--deep); }
+.about-faq-list details p { margin: 10px 0 0; font-size: 13px; line-height: 1.65; color: var(--muted); }
+
+/* =========================================================
+   Stewards
+   ========================================================= */
+.stewards-hero {
+  position: relative;
+  padding: clamp(120px, 12vw, 160px) clamp(24px, 6vw, 96px) clamp(60px, 7vw, 100px);
+  overflow: hidden;
+  isolation: isolate;
+}
+.stewards-hero-image {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    linear-gradient(90deg, var(--paper) 0%, color-mix(in oklch, var(--paper) 92%, transparent) 40%, color-mix(in oklch, var(--paper) 20%, transparent) 70%, transparent 100%),
+    url("/assets/coirea-about-mountains.jpg") 80% 40% / cover no-repeat;
+}
+.stewards-hero-inner {
+  max-width: 1390px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, .8fr);
+  gap: clamp(28px, 5vw, 80px);
+  align-items: center;
+}
+.stewards-hero h1 { font-size: clamp(42px, 4.6vw, 70px); line-height: 1.02; letter-spacing: -.04em; color: var(--deep); margin-bottom: 20px; }
+.stewards-hero-copy > p { font-size: 15px; color: var(--ink); max-width: 56ch; }
+.stewards-hero-stats {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px 28px;
+  padding: clamp(22px, 2.6vw, 34px);
+  background: color-mix(in oklch, var(--deep) 94%, transparent);
+  border-radius: 14px;
+  color: var(--paper);
+  box-shadow: 0 30px 80px color-mix(in oklch, var(--deep) 30%, transparent);
+}
+.stewards-hero-stats strong { display: block; font-family: "Bodoni Moda", Georgia, serif; font-weight: 400; font-size: clamp(34px, 3.2vw, 48px); line-height: 1; }
+.stewards-hero-stats strong.is-accent { color: color-mix(in oklch, var(--gold) 80%, var(--paper)); }
+.stewards-hero-stats span { font-size: 11px; color: color-mix(in oklch, var(--paper) 72%, transparent); }
+
+.stewards-directory-head {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: end;
+  gap: 18px;
+  margin-bottom: clamp(24px, 3vw, 36px);
+}
+.stewards-v2 .stewards-directory h2 { font-size: clamp(34px, 3.4vw, 52px); margin: 0; }
+.stewards-filter { display: flex; flex-wrap: wrap; gap: 8px; }
+.stewards-filter button {
+  padding: 8px 14px;
+  border: 1px solid color-mix(in oklch, var(--forest) 22%, var(--line));
+  border-radius: 4px;
+  background: var(--white);
+  color: var(--deep);
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.stewards-filter button.is-active { background: var(--forest); border-color: var(--forest); color: var(--white); }
+.stewards-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; }
+.steward-card {
+  background: var(--white);
+  border: 1px solid color-mix(in oklch, var(--forest) 14%, var(--line));
+  border-radius: 8px;
+  overflow: hidden;
+}
+.steward-card-photo { aspect-ratio: 4 / 3.4; background: color-mix(in oklch, var(--warm) 60%, var(--paper)); }
+.steward-card-photo img { width: 100%; height: 100%; object-fit: cover; }
+.steward-card-body { padding: 18px; }
+.steward-card-body > span { font-size: 10px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: var(--gold); }
+.steward-card-body h3 { margin: 6px 0 8px; font-size: 22px; font-weight: 400; color: var(--deep); }
+.steward-card-body p { margin: 0 0 12px; font-size: 12px; line-height: 1.6; color: var(--muted); }
+.steward-card-body a { display: inline-flex; align-items: center; gap: 5px; font-size: 11px; font-weight: 800; color: var(--forest); border-bottom: 1px solid currentColor; }
+.stewards-directory-note { margin: 22px 0 0; font-size: 12px; color: var(--muted); }
+
+.stewards-join { background: var(--deep); color: var(--paper); }
+.stewards-join-head {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(28px, 5vw, 80px);
+  align-items: center;
+  margin-bottom: clamp(30px, 4vw, 50px);
+}
+.stewards-v2 .stewards-join h2 { color: var(--paper); font-size: clamp(34px, 3.6vw, 56px); }
+.stewards-join .eyebrow { color: color-mix(in oklch, var(--sage) 85%, var(--paper)); }
+.stewards-join-head p { font-size: 14px; color: color-mix(in oklch, var(--paper) 78%, transparent); max-width: 54ch; }
+.stewards-join-quote blockquote {
+  margin: 0 0 12px;
+  font-family: "Bodoni Moda", Georgia, serif;
+  font-style: italic;
+  font-size: clamp(19px, 1.7vw, 25px);
+  line-height: 1.4;
+  color: var(--paper);
+}
+.stewards-join-quote span { font-size: 11px; color: color-mix(in oklch, var(--paper) 66%, transparent); }
+.stewards-benefits { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 12px; }
+.stewards-join-bottom {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(28px, 5vw, 80px);
+  margin-top: clamp(34px, 4vw, 56px);
+  align-items: start;
+}
+.stewards-earnings {
+  padding: clamp(20px, 2.4vw, 30px);
+  background: var(--paper);
+  border-radius: 12px;
+  color: var(--ink);
+}
+.stewards-earnings small,
+.stewards-steps small { display: block; margin-bottom: 14px; font-size: 10px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: var(--moss); }
+.stewards-steps small { color: var(--gold); }
+.stewards-earnings-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; padding-bottom: 14px; border-bottom: 1px solid var(--line); }
+.stewards-earnings span { display: block; font-size: 11px; color: var(--muted); }
+.stewards-earnings strong { display: block; font-family: "Bodoni Moda", Georgia, serif; font-weight: 400; font-size: 34px; color: var(--deep); }
+.stewards-earnings-income { padding-top: 14px; }
+.stewards-earnings-income strong { color: var(--gold); font-size: 42px; }
+.stewards-earnings p { margin: 6px 0 0; font-size: 11px; color: var(--muted); }
+.stewards-steps ol { list-style: none; margin: 0 0 16px; padding: 0; display: grid; gap: 12px; }
+.stewards-steps li { display: flex; gap: 14px; font-size: 13px; color: color-mix(in oklch, var(--paper) 82%, transparent); }
+.stewards-steps li b { color: var(--gold); font-size: 11px; padding-top: 2px; }
+.stewards-steps li strong { color: var(--paper); }
+.stewards-steps > p { font-size: 12px; color: color-mix(in oklch, var(--paper) 68%, transparent); }
+.quick-form textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid color-mix(in oklch, var(--forest) 22%, var(--line));
+  border-radius: 4px;
+  background: color-mix(in oklch, var(--paper) 50%, var(--white));
+  color: var(--ink);
+  font: inherit;
+  font-size: 14px;
+  resize: vertical;
+}
+.quick-form-wide { grid-column: 1 / -1; }
+
+/* Blog y podcast */
+.subpage-hero--insights .eyebrow { color: color-mix(in oklch, var(--paper) 80%, transparent); }
+.voices-podcast-host { flex-wrap: wrap; max-width: 300px; }
+.voices-podcast-listen { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 6px; flex-basis: 100%; }
+.voices-podcast-listen .button { min-height: 38px; padding: 0 14px; font-size: 12px; }
+.voices-podcast-listen .button--outline { color: var(--paper); border-color: color-mix(in oklch, var(--paper) 45%, transparent); }
+
+@media (max-width: 1100px) {
+  .about-founder,
+  .about-nature,
+  .about-why-head,
+  .about-faq,
+  .stewards-hero-inner,
+  .stewards-join-head,
+  .stewards-join-bottom { grid-template-columns: 1fr; }
+  .about-founder { justify-items: start; }
+  .stewards-hero-image {
+    background:
+      linear-gradient(180deg, color-mix(in oklch, var(--paper) 94%, transparent) 0%, color-mix(in oklch, var(--paper) 82%, transparent) 60%, color-mix(in oklch, var(--paper) 40%, transparent) 100%),
+      url("/assets/coirea-about-mountains.jpg") 70% 40% / cover no-repeat;
+  }
+  .about-model,
+  .about-beliefs-row,
+  .stewards-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .about-belief + .about-belief { border-left: 0; }
+  .stewards-benefits { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 760px) {
+  .about-model,
+  .about-beliefs-row,
+  .stewards-grid,
+  .stewards-benefits { grid-template-columns: 1fr; }
+}
