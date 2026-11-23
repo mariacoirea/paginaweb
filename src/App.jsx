@@ -3950,6 +3950,15 @@ function StewardsPage() {
           <span className="eyebrow">{spanish ? `Próxima formación · ${stewardPagePending.nextCertificationEs}` : `Next training · ${stewardPagePending.nextCertificationEn}`}</span>
           <h2>{spanish ? "Postula a la red Steward." : "Apply to the Steward network."}</h2>
           <p>{spanish ? "Te respondemos personalmente para conversar sobre el calce." : "We reply personally to talk about fit."}</p>
+          <div className="stewards-apply-next">
+            <small>{spanish ? "Qué pasa después" : "What happens next"}</small>
+            <ol>
+              {(spanish
+                ? ["Leemos tu postulación con calma.", "Te invitamos a una conversación para conocernos y ver el calce.", `Si hay calce, te sumas a la formación del ${stewardPagePending.nextCertificationEs}.`]
+                : ["We read your application carefully.", "We invite you to a conversation to get to know each other and see the fit.", `If there is a fit, you join the ${stewardPagePending.nextCertificationEn} training.`]
+              ).map((item, index) => <li key={item}><b>0{index + 1}</b>{item}</li>)}
+            </ol>
+          </div>
         </Reveal>
         <Reveal className="closing-contact-form" delay={0.1}>
           <StewardApplicationForm />
