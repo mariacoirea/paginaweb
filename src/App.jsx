@@ -3585,7 +3585,7 @@ function AboutPage() {
 
       <section className="about-founder section">
         <Reveal className="about-founder-photo">
-          <img src="/assets/maria-jose-figueroa.jpg" alt={spanish ? "María José Figueroa, fundadora de COIREA" : "María José Figueroa, founder of COIREA"} />
+          <img src="/assets/maria-jose-figueroa-hd.jpg" alt={spanish ? "María José Figueroa, fundadora de COIREA" : "María José Figueroa, founder of COIREA"} />
         </Reveal>
         <Reveal className="about-founder-copy" delay={0.08}>
           <span className="eyebrow">{spanish ? "La historia detrás de COIREA" : "The story behind COIREA"}</span>
