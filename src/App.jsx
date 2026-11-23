@@ -3648,28 +3648,18 @@ const stewardDirectory = [
       en: "Economist and consultant in sustainability and regeneration. Territories, institutions and regenerative models.",
     },
   },
-  {
-    name: "Tanya",
-    firstName: "Tanya",
-    country: { es: "Chile", en: "Chile" },
-    city: "Valparaíso",
-    photo: "/assets/stewards/tanya.jpeg",
-    text: {
-      es: "Acompaña procesos de transición, conversaciones difíciles y cierres necesarios. Diversidad e inclusión.",
-      en: "Accompanies transition processes, difficult conversations and necessary closures. Diversity and inclusion.",
-    },
-  },
-  {
-    name: "Marcela",
-    firstName: "Marcela",
-    country: { es: "Argentina", en: "Argentina" },
+  // Espacios reservados: completa country, city, photo y text cuando tengas los datos.
+  ...["Mariana", "Ivonne", "Nadia"].map((name) => ({
+    name,
+    firstName: name,
+    country: { es: "", en: "" },
     city: "",
-    photo: "/assets/stewards/marcela.jpeg",
+    photo: "",
     text: {
-      es: "Dos décadas en organizaciones latinoamericanas, sobre todo del sector financiero. Líderes y equipos en transformación.",
-      en: "Two decades in Latin American organizations, especially in the financial sector. Leaders and teams in transformation.",
+      es: "[Profesión] · [Con qué organizaciones trabaja]",
+      en: "[Profession] · [Organizations she works with]",
     },
-  },
+  })),
 ];
 
 function StewardApplicationForm() {
@@ -3780,7 +3770,7 @@ function StewardsPage() {
   const spanish = isSpanishPath();
   const lang = spanish ? "es" : "en";
   const [country, setCountry] = useState("all");
-  const countryList = useMemo(() => [...new Set(stewardDirectory.map((s) => s.country[lang]))], [lang]);
+  const countryList = useMemo(() => [...new Set(stewardDirectory.map((s) => s.country[lang]).filter(Boolean))], [lang]);
   const visibleStewards = country === "all" ? stewardDirectory : stewardDirectory.filter((s) => s.country[lang] === country);
   const { posts } = useMigratedBlogPosts();
   const podcastEpisodes = useMemo(() => localizedPosts(posts, spanish)
@@ -3875,9 +3865,11 @@ function StewardsPage() {
         <div className="stewards-grid">
           {visibleStewards.map((steward, index) => (
             <Reveal className="steward-card" delay={index * 0.05} key={steward.name}>
-              <div className="steward-card-photo"><img src={steward.photo} alt={steward.name} loading="lazy" /></div>
+              <div className={`steward-card-photo ${steward.photo ? "" : "steward-card-photo--empty"}`}>
+                {steward.photo ? <img src={steward.photo} alt={steward.name} loading="lazy" /> : <span aria-hidden="true">{steward.name.charAt(0)}</span>}
+              </div>
               <div className="steward-card-body">
-                <span>{steward.country[lang]}{steward.city ? ` · ${steward.city}` : ""}</span>
+                <span>{steward.country[lang] || (spanish ? "[País]" : "[Country]")}{steward.city ? ` · ${steward.city}` : ""}</span>
                 <h3>{steward.name}</h3>
                 <p>{steward.text[lang]}</p>
                 <a href={localizedPath("/conversation", spanish)}>{spanish ? `Conversar con ${steward.firstName}` : `Talk with ${steward.firstName}`} <ArrowRight size={13} /></a>
