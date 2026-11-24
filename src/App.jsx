@@ -1969,18 +1969,20 @@ function Hero() {
 
 function TrustStrip() {
   const spanish = isSpanishPath();
-  // Agrega aquí los logos de clientes: { name, src }. Los que no tienen src se muestran como espacio reservado.
+  // Logos del ecosistema (PNG sin fondo en public/assets/partners). `height` ajusta el tamaño visual de cada uno.
   const logos = [
-    { name: "Camun", src: "/assets/insights/camun-logo.webp" },
-    { name: "Logo" }, { name: "Logo" }, { name: "Logo" }, { name: "Logo" },
+    { name: "Camun", src: "/assets/partners/camun.png", height: 36 },
+    { name: "BeSpark", src: "/assets/partners/bespark.png", height: 54 },
+    { name: "Estuary", src: "/assets/partners/estuary.png", height: 30 },
+    { name: "Ivonne Zucco", src: "/assets/partners/ivonne.png", height: 38 },
   ];
   return (
     <section className="trust-strip" aria-label={spanish ? "Ecosistema COIREA" : "COIREA ecosystem"}>
       <span>{spanish ? "Ecosistema COIREA" : "COIREA ecosystem"}</span>
-      <div className="trust-logos">
-        {logos.map(({ name, src }, index) => (
-          <div className={`trust-logo ${src ? "" : "trust-logo--empty"}`} key={`${name}-${index}`}>
-            {src ? <img src={src} alt={name} loading="lazy" /> : <small>{name}</small>}
+      <div className="trust-logos trust-logos--partners">
+        {logos.map(({ name, src, height }) => (
+          <div className="trust-logo trust-logo--partner" key={name}>
+            <img src={src} alt={name} loading="lazy" style={{ height }} />
           </div>
         ))}
       </div>
