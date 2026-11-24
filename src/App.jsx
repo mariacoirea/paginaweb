@@ -1868,9 +1868,11 @@ function HealthDashboard() {
   );
 }
 
-// Pon aquí el ID del video de YouTube de 2 minutos (lo que va después de "watch?v=").
-// Mientras esté vacío, la tarjeta del hero muestra un espacio reservado.
-const HOME_VIDEO_ID = "";
+// Video del hero, uno por idioma (archivos en public/assets/video).
+const HOME_VIDEO = {
+  es: { src: "/assets/video/coirea-video-es.mp4", poster: "/assets/video/coirea-video-es-poster.jpg" },
+  en: { src: "/assets/video/coirea-video-en.mp4", poster: "/assets/video/coirea-video-en-poster.jpg" },
+};
 
 const stewardCountries = {
   en: ["Chile", "Peru", "Colombia", "Mexico", "United States"],
@@ -1879,6 +1881,12 @@ const stewardCountries = {
 
 function HeroVideo({ spanish }) {
   const [playing, setPlaying] = useState(false);
+  const video = HOME_VIDEO[spanish ? "es" : "en"];
+  const videoRef = useRef(null);
+  const play = () => {
+    setPlaying(true);
+    videoRef.current?.play().catch(() => {});
+  };
   return (
     <motion.div
       className="hero-video"
@@ -1888,32 +1896,33 @@ function HeroVideo({ spanish }) {
     >
       <div className="hero-video-top">
         <span>{spanish ? "De qué va COIREA" : "What COIREA is about"}</span>
-        <small>Video · 2 min</small>
+        <small>Video · 1 min</small>
       </div>
       <div className="hero-video-frame">
-        {HOME_VIDEO_ID && playing ? (
-          <iframe
-            src={`https://www.youtube-nocookie.com/embed/${HOME_VIDEO_ID}?autoplay=1&rel=0`}
-            title={spanish ? "De qué va COIREA" : "What COIREA is about"}
-            allow="autoplay; encrypted-media; picture-in-picture"
-            allowFullScreen
-          />
-        ) : (
+        <video
+          key={video.src}
+          ref={videoRef}
+          src={video.src}
+          poster={video.poster}
+          preload="none"
+          playsInline
+          controls={playing}
+          title={spanish ? "De qué va COIREA" : "What COIREA is about"}
+        />
+        {!playing && (
           <button
             type="button"
             className="hero-video-play"
-            onClick={() => HOME_VIDEO_ID && setPlaying(true)}
+            onClick={play}
             aria-label={spanish ? "Reproducir video" : "Play video"}
-            disabled={!HOME_VIDEO_ID}
           >
             <span className="hero-video-play-icon"><Play size={22} weight="fill" /></span>
-            {!HOME_VIDEO_ID && <small>{spanish ? "[Video de 2 minutos]" : "[2-minute video]"}</small>}
           </button>
         )}
       </div>
       <p>{spanish
-        ? "En dos minutos: la plataforma, el Steward y los cinco pilares, y cómo trabajan juntos en tu organización."
-        : "In two minutes: the platform, the Steward and the five pillars, and how they work together in your organization."}</p>
+        ? "En un minuto: la plataforma, el Steward y los cinco pilares, y cómo trabajan juntos en tu organización."
+        : "In one minute: the platform, the Steward and the five pillars, and how they work together in your organization."}</p>
     </motion.div>
   );
 }
