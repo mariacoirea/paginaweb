@@ -1063,7 +1063,6 @@ const spanishTextMap = {
   "Strategy": "Estrategia",
   "Collaboration": "Colaboración",
   "Well-Being": "Bienestar",
-  "The methodology": "La metodología",
   "Five dimensions that determine if your organization can grow without breaking.": "Cinco dimensiones que determinan si tu organización puede crecer sin romperse.",
   "The People Operating System is not a framework to read. It is a living structure to measure, align, and strengthen over time.": "El People Operating System no es un marco para leer. Es una estructura viva para medir, alinear y fortalecer con el tiempo.",
   "Explore the system": "Explora el sistema",
@@ -2032,8 +2031,8 @@ function StewardsSection() {
           <span className="eyebrow">{spanish ? "Los Stewards" : "The Stewards"}</span>
           <h2>{spanish ? "Cada organización trabaja con un Steward de su país." : "Every organization works with a Steward from its own country."}</h2>
           <p>{spanish
-            ? "Consultores, coaches y facilitadores certificados en la metodología COIREA, con experiencia real acompañando organizaciones."
-            : "Consultants, coaches and facilitators certified in the COIREA methodology, with real experience accompanying organizations."}</p>
+            ? "Consultores, coaches y facilitadores certificados en el marco COIREA, con experiencia real acompañando organizaciones."
+            : "Consultants, coaches and facilitators certified in the COIREA framework, with real experience accompanying organizations."}</p>
           <div className="stewards-home-actions">
             <a className="button button--primary" href={localizedPath("/stewards", spanish)}>
               {spanish ? "Conoce a los Stewards" : "Meet the Stewards"} <ArrowRight size={17} />
@@ -2128,7 +2127,7 @@ function Methodology() {
   return (
     <section className="methodology section" id="methodology">
       <Reveal className="methodology-copy">
-        <span className="eyebrow">{t("The methodology", spanish)}</span>
+        <span className="eyebrow">{spanish ? "El marco" : "The framework"}</span>
         <h2>{t("Five dimensions that determine if your organization can grow without breaking.", spanish)}</h2>
         <p>{spanish
           ? "COIREA es una estructura viva para medir, alinear y fortalecer tu organización en el tiempo: Visión, Liderazgo, Estrategia, Colaboración y Bienestar."
@@ -3873,14 +3872,14 @@ function StewardsPage() {
     .sort((a, b) => new Date(a.created_at).getTime() - new Date(b.created_at).getTime()), [posts, spanish]);
   const benefits = spanish
     ? [
-        ["La metodología", "Cinco pilares y las fases SOIL, GROW y FLOURISH, con guías para cada sesión."],
+        ["El marco", "Cinco pilares y las fases SOIL, GROW y FLOURISH, con guías para cada sesión."],
         ["La plataforma", "Diagnóstico, dashboard e informes listos para entregar, con GiA."],
         ["Organizaciones", "Apareces en este directorio y COIREA te conecta con organizaciones de tu país."],
         ["Comunidad", "Encuentros, comunidades de práctica y retiros con Stewards de otros países."],
         ["Libertad", "Defines tus horarios, tus clientes y los talleres que sumas."],
       ]
     : [
-        ["The methodology", "Five pillars and the SOIL, GROW and FLOURISH phases, with guides for every session."],
+        ["The framework", "Five pillars and the SOIL, GROW and FLOURISH phases, with guides for every session."],
         ["The platform", "Diagnostic, dashboard and ready-to-deliver reports, with GiA."],
         ["Organizations", "You appear in this directory and COIREA connects you with organizations in your country."],
         ["Community", "Gatherings, communities of practice and retreats with Stewards from other countries."],
@@ -4008,8 +4007,8 @@ function StewardsPage() {
             <span className="eyebrow">{spanish ? "Para consultores, coaches y facilitadores" : "For consultants, coaches and facilitators"}</span>
             <h2>{spanish ? "Acompaña organizaciones con un sistema que ya funciona." : "Accompany organizations with a system that already works."}</h2>
             <p>{spanish
-              ? "Como Steward trabajas de forma independiente, con una metodología probada, una plataforma con IA y una red que te respalda en Latinoamérica."
-              : "As a Steward you work independently, with a proven methodology, an AI platform and a network that backs you across Latin America."}</p>
+              ? "Como Steward trabajas de forma independiente, con un marco probado, una plataforma con IA y una red que te respalda en Latinoamérica."
+              : "As a Steward you work independently, with a proven framework, an AI platform and a network that backs you across Latin America."}</p>
           </Reveal>
           <Reveal className="stewards-join-quote" delay={0.08}>
             <blockquote>{spanish
