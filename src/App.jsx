@@ -2814,10 +2814,37 @@ function Closing() {
   );
 }
 
+// If /api/apply fails, the forms offer a pre-written email with everything the person typed, so no application is lost.
+const FORM_FALLBACK_EMAIL = "hello@coirea.com";
+
+function buildFallbackMailto(subject, rows) {
+  const body = rows
+    .filter(([, value]) => value && String(value).trim())
+    .map(([label, value]) => `${label}:\n${value}`)
+    .join("\n\n");
+  return `mailto:${FORM_FALLBACK_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+}
+
+function FormFallback({ href, spanish }) {
+  if (!href) return null;
+  return (
+    <div className="application-fallback">
+      <p>{spanish
+        ? "No te preocupes, no perdiste lo que escribiste. Ábrelo como correo ya redactado y envíalo desde tu email:"
+        : "Don't worry, nothing you wrote is lost. Open it as a ready-to-send email and send it from your inbox:"}</p>
+      <a className="button button--primary" href={href}>
+        {spanish ? "Enviar por correo" : "Send by email"} <ArrowRight />
+      </a>
+      <small>{spanish ? `o escríbenos a ${FORM_FALLBACK_EMAIL}` : `or write to ${FORM_FALLBACK_EMAIL}`}</small>
+    </div>
+  );
+}
+
 function ApplicationForm() {
   const spanish = isSpanishPath();
   const [status, setStatus] = useState("idle");
   const [message, setMessage] = useState("");
+  const [fallbackHref, setFallbackHref] = useState("");
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -2836,6 +2863,7 @@ function ApplicationForm() {
 
     setStatus("submitting");
     setMessage("");
+    setFallbackHref("");
 
     try {
       const response = await fetch("/api/apply", {
@@ -2845,17 +2873,33 @@ function ApplicationForm() {
       });
       const result = await response.json().catch(() => ({}));
       if (!response.ok) {
-        const errorMessage = result.error === "Email service is not configured yet."
-          ? t("The application form is ready, but the email service still needs to be connected. Please email hello@coirea.com directly for now.", spanish)
-          : t(result.error || "Something went wrong. Please try again.", spanish);
-        throw new Error(errorMessage);
+        // A 400 means the person must fix a field; anything else is our side failing.
+        const error = new Error(response.status === 400 && result.error ? t(result.error, spanish) : "");
+        error.serverSide = response.status !== 400;
+        throw error;
       }
       form.reset();
       setStatus("success");
       setMessage(t("Thank you. Your application was sent to COIREA. A Steward will review it personally.", spanish));
     } catch (error) {
       setStatus("error");
-      setMessage(error.message || t("Something went wrong. Please email hello@coirea.com directly.", spanish));
+      if (error.serverSide !== false) {
+        setMessage(spanish ? "No pudimos enviar el formulario en este momento." : "We couldn't send the form right now.");
+        setFallbackHref(buildFallbackMailto(
+          spanish ? `Habla con un Steward - ${payload.organization || payload.name}` : `Talk to a Steward - ${payload.organization || payload.name}`,
+          [
+            [spanish ? "Nombre" : "Name", payload.name],
+            ["Email", payload.email],
+            [spanish ? "Organización" : "Organization", payload.organization],
+            [spanish ? "Rol" : "Role", payload.role],
+            [spanish ? "Tamaño del equipo" : "Team size", payload.team_size],
+            [spanish ? "Fricciones" : "Friction areas", payload.friction.join(", ")],
+            [spanish ? "Qué les gustaría que cambiara" : "What would shift", payload.desired_shift],
+          ],
+        ));
+      } else {
+        setMessage(error.message);
+      }
     }
   };
 
@@ -2920,6 +2964,7 @@ function ApplicationForm() {
           {status === "submitting" ? t("Sending...", spanish) : t("Send my application", spanish)} <ArrowRight size={17} />
         </button>
         {message && <p className={`application-status application-status--${status}`}>{message}</p>}
+        <FormFallback href={fallbackHref} spanish={spanish} />
         <p className="application-note">{t("A Steward reads every application personally. If there is a genuine fit, we will reach out within 5 business days.", spanish)}</p>
       </form>
     </Reveal>
@@ -3682,6 +3727,7 @@ function StewardApplicationForm() {
   const spanish = isSpanishPath();
   const [status, setStatus] = useState("idle");
   const [message, setMessage] = useState("");
+  const [fallbackHref, setFallbackHref] = useState("");
   const countries = [...stewardCountries[spanish ? "es" : "en"], "Argentina", "Ecuador", spanish ? "Otro" : "Other"];
 
   const handleSubmit = async (event) => {
@@ -3689,36 +3735,55 @@ function StewardApplicationForm() {
     const form = event.currentTarget;
     const formData = new FormData(form);
     const value = (key) => formData.get(key)?.toString().trim() || "";
+    const payload = {
+      form_type: "steward",
+      name: value("name"),
+      email: value("email"),
+      country: value("country"),
+      city: value("city"),
+      linkedin: value("linkedin"),
+      current_role: value("current_role"),
+      years: value("years"),
+      motivation: value("motivation"),
+      experience: value("experience"),
+      availability: value("availability"),
+      referral: value("referral"),
+      website: value("website"),
+    };
     setStatus("submitting");
     setMessage("");
+    setFallbackHref("");
     try {
       const response = await fetch("/api/apply", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          form_type: "steward",
-          name: value("name"),
-          email: value("email"),
-          country: value("country"),
-          city: value("city"),
-          linkedin: value("linkedin"),
-          current_role: value("current_role"),
-          years: value("years"),
-          motivation: value("motivation"),
-          experience: value("experience"),
-          availability: value("availability"),
-          referral: value("referral"),
-          website: value("website"),
-        }),
+        body: JSON.stringify(payload),
       });
       const result = await response.json().catch(() => ({}));
-      if (!response.ok) throw new Error(result.error || "error");
+      if (!response.ok) {
+        setFallbackHref(buildFallbackMailto(
+          spanish ? `Postulación Steward - ${payload.name}` : `Steward application - ${payload.name}`,
+          [
+            [spanish ? "Nombre" : "Name", payload.name],
+            ["Email", payload.email],
+            [spanish ? "País / ciudad" : "Country / city", [payload.country, payload.city].filter(Boolean).join(" · ")],
+            ["LinkedIn", payload.linkedin],
+            [spanish ? "Profesión / rol" : "Profession / role", payload.current_role],
+            [spanish ? "Años acompañando organizaciones" : "Years accompanying organizations", payload.years],
+            [spanish ? "Experiencia" : "Experience", payload.experience],
+            [spanish ? "Por qué quiero ser Steward de COIREA" : "Why I want to be a COIREA Steward", payload.motivation],
+            [spanish ? "Disponibilidad para la próxima formación" : "Available for the next training", payload.availability],
+            [spanish ? "Cómo conocí COIREA" : "How I heard about COIREA", payload.referral],
+          ],
+        ));
+        throw new Error(result.error || "error");
+      }
       form.reset();
       setStatus("success");
       setMessage(spanish ? "Gracias. Recibimos tu postulación y te escribiremos personalmente." : "Thank you. We received your application and will reach out personally.");
     } catch {
       setStatus("error");
-      setMessage(spanish ? "No pudimos enviar la postulación. Escríbenos a hello@coirea.com." : "We couldn't send your application. Please email hello@coirea.com.");
+      setMessage(spanish ? "No pudimos enviar la postulación en este momento." : "We couldn't send your application right now.");
     }
   };
 
@@ -3778,6 +3843,7 @@ function StewardApplicationForm() {
         {status === "submitting" ? (spanish ? "Enviando..." : "Sending...") : (spanish ? "Enviar postulación" : "Send application")} <ArrowRight size={17} />
       </button>
       {message && <p className={`application-status application-status--${status}`}>{message}</p>}
+      <FormFallback href={fallbackHref} spanish={spanish} />
     </form>
   );
 }
