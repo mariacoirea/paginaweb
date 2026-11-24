@@ -1058,3 +1058,16 @@ footer .brand img { filter: brightness(0) invert(1); opacity: .9; }
   background-position: center 55%;
   filter: saturate(.62) sepia(.14) brightness(1.04) contrast(.9);
 }
+
+/* Sobre COIREA: ajuste final de la foto del lago (más nítida, cielo arriba, velo solo al centro) */
+.subpage-hero--about .hero-image {
+  background-position: center 30%;
+  filter: saturate(.82) sepia(.08) brightness(1.02) contrast(.97);
+  transform: none;
+}
+.subpage-hero--about::before {
+  background: radial-gradient(ellipse 58% 62% at 50% 50%, color-mix(in oklch, var(--paper) 90%, transparent) 0%, color-mix(in oklch, var(--paper) 78%, transparent) 50%, color-mix(in oklch, var(--paper) 22%, transparent) 82%, color-mix(in oklch, var(--paper) 6%, transparent) 100%);
+}
+@media (max-width: 760px) {
+  .subpage-hero--about::before { background: color-mix(in oklch, var(--paper) 78%, transparent); }
+}
