@@ -2845,6 +2845,16 @@ function ApplicationForm() {
   const [status, setStatus] = useState("idle");
   const [message, setMessage] = useState("");
   const [fallbackHref, setFallbackHref] = useState("");
+  const frictionRef = useRef(null);
+
+  // At least one friction checkbox is required; the browser shows this message on the first box.
+  const updateFrictionValidity = () => {
+    const boxes = frictionRef.current?.querySelectorAll('input[name="friction"]');
+    if (!boxes?.length) return;
+    const anyChecked = [...boxes].some((box) => box.checked);
+    boxes[0].setCustomValidity(anyChecked ? "" : (spanish ? "Elige al menos una opción." : "Select at least one option."));
+  };
+  useEffect(updateFrictionValidity, [spanish]);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -2879,6 +2889,7 @@ function ApplicationForm() {
         throw error;
       }
       form.reset();
+      updateFrictionValidity();
       setStatus("success");
       setMessage(t("Thank you. Your application was sent to COIREA. A Steward will review it personally.", spanish));
     } catch (error) {
@@ -2910,6 +2921,7 @@ function ApplicationForm() {
           <span>Website</span>
           <input name="website" tabIndex={-1} autoComplete="off" />
         </label>
+        <p className="form-required-note">{spanish ? "Los campos marcados con * son obligatorios." : "Fields marked with * are required."}</p>
         <fieldset>
           <legend>{t("Who you are", spanish)}</legend>
           <div className="application-field-grid">
@@ -2934,8 +2946,8 @@ function ApplicationForm() {
 
         <fieldset>
           <legend>{t("Your system", spanish)}</legend>
-          <p className="field-help">{t("Where does your organization feel the most friction right now? Select what resonates.", spanish)}</p>
-          <div className="friction-options">
+          <p className="field-help field-help--required">{t("Where does your organization feel the most friction right now? Select what resonates.", spanish)}</p>
+          <div className="friction-options" ref={frictionRef} onChange={updateFrictionValidity}>
             {applicationFrictionOptions.map((option) => (
               <label className="choice-card" key={option}>
                 <input name="friction" type="checkbox" value={option} />
@@ -3793,6 +3805,7 @@ function StewardApplicationForm() {
         <span>Website</span>
         <input name="website" tabIndex={-1} autoComplete="off" />
       </label>
+      <p className="form-required-note">{spanish ? "Los campos marcados con * son obligatorios." : "Fields marked with * are required."}</p>
       <p className="steward-form-step">{spanish ? "1 · Sobre ti" : "1 · About you"}</p>
       <div className="quick-form-grid">
         <label><span>{spanish ? "Nombre completo" : "Full name"}</span><input name="name" type="text" autoComplete="name" required /></label>

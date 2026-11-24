@@ -1157,3 +1157,17 @@ footer .brand img { filter: brightness(0) invert(1); opacity: .9; }
 }
 .application-fallback p { margin: 0; font-size: 14px; line-height: 1.55; color: var(--deep); }
 .application-fallback small { font-size: 12px; color: var(--muted); }
+
+/* Required fields: asterisk after the label text of any field with `required` */
+label:has(> [required]) > span:first-child::after,
+label:has(> textarea[required]) > span:first-child::after,
+.field-help--required::after {
+  content: " *";
+  color: var(--clay, #c0623a);
+  font-weight: 700;
+}
+.form-required-note {
+  margin: 0 0 14px;
+  font-size: 12px;
+  color: var(--muted);
+}
