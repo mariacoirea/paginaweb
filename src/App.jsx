@@ -1503,7 +1503,7 @@ const seoByRoute = {
   "/": {
     title: "COIREA - The operating system for purpose-driven organizations",
     description:
-      "COIREA brings together an AI platform and a certified Steward to help purpose-driven organizations of 15 to 300 people align their strategy with the people who sustain it.",
+      "COIREA brings together a platform and a certified Steward to help purpose-driven organizations of 15 to 300 people align their strategy with the people who sustain it.",
   },
   "/about": {
     title: "About COIREA - People Operating System and Founder Story",
@@ -1536,7 +1536,7 @@ const spanishSeoByRoute = {
   "/": {
     title: "COIREA - El sistema operativo de las organizaciones con propósito",
     description:
-      "COIREA une una plataforma con IA y un Steward certificado para que organizaciones con propósito de 15 a 300 personas alineen su estrategia con las personas que la sostienen.",
+      "COIREA une una plataforma y un Steward certificado para que organizaciones con propósito de 15 a 300 personas alineen su estrategia con las personas que la sostienen.",
   },
   "/about": {
     title: "Sobre COIREA - People Operating System e historia fundadora",
@@ -1945,8 +1945,8 @@ function Hero() {
           <span className="eyebrow">{spanish ? "COIREA · El sistema operativo de las organizaciones con propósito" : "COIREA · The operating system for purpose-driven organizations"}</span>
           <h1>{spanish ? "Haz visible el sistema humano detrás de tus resultados." : "Make the human system behind your results visible."}</h1>
           <p>
-            {spanish ? <>COIREA une una <strong>plataforma con IA</strong> y un <strong>Steward certificado</strong> que acompañan a organizaciones con propósito de 15 a 300 personas a alinear su estrategia con las personas que la sostienen.</>
-              : <>COIREA brings together an <strong>AI-powered platform</strong> and a <strong>certified Steward</strong> who help purpose-driven organizations of 15 to 300 people align their strategy with the people who sustain it.</>}
+            {spanish ? <>COIREA une una <strong>plataforma</strong> y un <strong>Steward certificado</strong> que acompañan a organizaciones con propósito de 15 a 300 personas a alinear su estrategia con las personas que la sostienen.</>
+              : <>COIREA brings together a <strong>platform</strong> and a <strong>certified Steward</strong> who help purpose-driven organizations of 15 to 300 people align their strategy with the people who sustain it.</>}
           </p>
           <ul className="hero-pains">
             {pains.map((item) => <li key={item}>{item}</li>)}
