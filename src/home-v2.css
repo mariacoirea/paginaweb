@@ -584,13 +584,35 @@
   overflow: hidden;
   isolation: isolate;
 }
+/* Capa 1: la foto, desaturada para que el celeste no resalte */
 .stewards-hero-image {
+  position: absolute;
+  inset: 0;
+  z-index: -3;
+  background: url("/assets/coirea-stewards-forest.jpg") center 35% / cover no-repeat;
+  filter: saturate(.42) sepia(.22) contrast(.94) brightness(1.04);
+}
+/* Capa 2: baño de color en el verde COIREA (tiñe el cielo hacia tonos cálidos/verdes) */
+.stewards-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background: linear-gradient(160deg, var(--deep), var(--forest));
+  mix-blend-mode: color;
+  opacity: .45;
+  pointer-events: none;
+}
+/* Capa 3: velo papel para el texto y fundido inferior */
+.stewards-hero::after {
+  content: "";
   position: absolute;
   inset: 0;
   z-index: -1;
   background:
-    linear-gradient(90deg, var(--paper) 0%, color-mix(in oklch, var(--paper) 92%, transparent) 40%, color-mix(in oklch, var(--paper) 20%, transparent) 70%, transparent 100%),
-    url("/assets/coirea-stewards-forest.jpg") center 35% / cover no-repeat;
+    linear-gradient(90deg, var(--paper) 0%, color-mix(in oklch, var(--paper) 94%, transparent) 36%, color-mix(in oklch, var(--paper) 55%, transparent) 58%, color-mix(in oklch, var(--paper) 18%, transparent) 100%),
+    linear-gradient(180deg, transparent 70%, var(--paper) 100%);
+  pointer-events: none;
 }
 .stewards-hero-inner {
   max-width: 1390px;
@@ -842,10 +864,8 @@
   .stewards-join-head,
   .stewards-join-bottom { grid-template-columns: 1fr; }
   .about-founder { justify-items: start; }
-  .stewards-hero-image {
-    background:
-      linear-gradient(180deg, color-mix(in oklch, var(--paper) 94%, transparent) 0%, color-mix(in oklch, var(--paper) 82%, transparent) 60%, color-mix(in oklch, var(--paper) 40%, transparent) 100%),
-      url("/assets/coirea-stewards-forest.jpg") center 35% / cover no-repeat;
+  .stewards-hero::after {
+    background: linear-gradient(180deg, color-mix(in oklch, var(--paper) 94%, transparent) 0%, color-mix(in oklch, var(--paper) 84%, transparent) 60%, color-mix(in oklch, var(--paper) 50%, transparent) 100%);
   }
   .about-model,
   .about-beliefs-row,
