@@ -258,7 +258,7 @@ function chatAnswer(text = "") {
   if (includes("after we apply", "after applying", "what happens after", "first conversation", "first step", "prepare", "preparar", "despues de aplicar", "despues de postular", "primer paso")) {
     return {
       text: spanish
-        ? "El primer paso no tiene que ser perfecto. Basta con contar donde sienten friccion y que les gustaria entender mejor. Si hay encaje, un Steward puede continuar la conversacion y ayudar a ver si COIREA es el contenedor correcto."
+        ? "El primer paso no tiene que ser perfecto. Basta con contar donde sienten friccion y que les gustaria entender mejor. Si hay afinidad, un Steward puede continuar la conversacion y ayudar a ver si COIREA es el contenedor correcto."
         : "The first step does not need to be perfect. It is enough to share where you are sensing friction and what you would like to understand more clearly. If there is a fit, a Steward can continue the conversation and help see whether COIREA is the right container.",
       actions: [actionApply],
       prompts: ["What friction should we look for?", "Can I talk to someone?"],
@@ -1157,9 +1157,9 @@ const spanishTextMap = {
   "Is Your Organization Ready to See Itself Clearly?": "¿Está tu organización lista para verse con claridad?",
   "COIREA is not for every organization. It is for purpose-driven organizations of 15 to 300 people that are growing, misaligned, or in a leadership transition, and are ready to look at it honestly.": "COIREA no es para todas las organizaciones. Es para organizaciones con propósito de 15 a 300 personas que están creciendo, desalineadas o en transición de liderazgo, y que están listas para mirarlo honestamente.",
   "Every organization enters with a Steward. This is not a software subscription. It is an accompanied transformation. Applications are reviewed personally.": "Cada organización entra con un Steward. Esto no es una suscripción de software. Es una transformación acompañada. Las solicitudes se revisan personalmente.",
-  "Start with fit, not pressure.": "Empieza con encaje, no con presión.",
+  "Start with fit, not pressure.": "Empieza por conocernos, sin presión.",
   "COIREA is for organizations that sense something needs to shift, and are ready to look at it honestly with the right support alongside them.": "COIREA es para organizaciones que sienten que algo necesita cambiar y están listas para mirarlo honestamente con el apoyo correcto.",
-  "Complete the application below. If there is a genuine fit, COIREA will reach out within 5 business days.": "Completa la solicitud abajo. Si hay un encaje real, COIREA se pondrá en contacto dentro de 5 días hábiles.",
+  "Complete the application below. If there is a genuine fit, COIREA will reach out within 5 business days.": "Completa la solicitud abajo. Si vemos que COIREA es para tu organización, te contactaremos dentro de 5 días hábiles.",
   "Who you are": "Quién eres",
   "Your name": "Tu nombre",
   "Email address": "Correo electrónico",
@@ -1178,7 +1178,7 @@ const spanishTextMap = {
   "Team size": "Tamaño del equipo",
   "Send my application": "Enviar mi solicitud",
   "Sending...": "Enviando...",
-  "A Steward reads every application personally. If there is a genuine fit, we will reach out within 5 business days.": "Un Steward lee cada solicitud personalmente. Si hay un encaje real, responderemos dentro de 5 días hábiles.",
+  "A Steward reads every application personally. If there is a genuine fit, we will reach out within 5 business days.": "Un Steward lee cada solicitud personalmente. Si vemos que COIREA es para tu organización, te responderemos dentro de 5 días hábiles.",
   "About": "Sobre COIREA",
   "Organizations don't fail from lack of strategy. They fail when people can't sustain it.": "Las organizaciones no fallan por falta de estrategia. Fallan cuando las personas no pueden sostenerla.",
   "COIREA was founded to close the gap between how organizations are designed and how people actually experience them. Not through restructuring. Through coherence.": "COIREA nace para cerrar la brecha entre cómo se diseñan las organizaciones y cómo las personas realmente las viven. No a través de reestructuración. A través de coherencia.",
@@ -1196,7 +1196,7 @@ const spanishTextMap = {
   "The concepts behind COIREA, clarified.": "Los conceptos detrás de COIREA, aclarados.",
   "Every organization enters with a Steward. Applications are reviewed personally so the first conversation begins with context, care, and honesty.": "Cada organización entra con un Steward. Las solicitudes se revisan personalmente para que la primera conversación comience con contexto, cuidado y honestidad.",
   "A Steward reads every application personally.": "Un Steward lee cada solicitud personalmente.",
-  "If there is a genuine fit, COIREA will reach out within 5 business days.": "Si hay un encaje real, COIREA responderá dentro de 5 días hábiles.",
+  "If there is a genuine fit, COIREA will reach out within 5 business days.": "Si vemos que COIREA es para tu organización, te responderemos dentro de 5 días hábiles.",
   "Thinking for organizations ready to evolve.": "Ideas para organizaciones listas para evolucionar.",
   "Featured": "Destacado",
   "The Five Pillars of the People Operating System": "Los cinco pilares del People Operating System",
@@ -1327,7 +1327,7 @@ const spanishTextMap = {
   "Something went wrong. Please try again.": "Algo salió mal. Inténtalo nuevamente.",
   "Something went wrong. Please email hello@coirea.com directly.": "Algo salió mal. Por favor escribe directamente a hello@coirea.com.",
   "The core COIREA concept behind organizational coherence.": "El concepto central de COIREA detrás de la coherencia organizacional.",
-  "Apply to explore whether COIREA is the right fit.": "Postula para explorar si COIREA es el encaje correcto.",
+  "Apply to explore whether COIREA is the right fit.": "Postula para explorar si COIREA es para tu organización.",
   "The Organizational Vitality Index across COIREA's five dimensions.": "El Organizational Vitality Index a través de las cinco dimensiones de COIREA.",
   "Guided Intelligence for Alignment turns signals into next actions.": "Guided Intelligence for Alignment convierte señales en siguientes acciones.",
   "More essays on leadership, culture, and organizational evolution.": "Más ensayos sobre liderazgo, cultura y evolución organizacional.",
@@ -3604,7 +3604,7 @@ function AboutContact() {
     <section className="about-contact section" id="conversation">
       <Reveal className="about-contact-copy">
         <span className="eyebrow">{spanish ? "Trabajar con COIREA" : "Work with COIREA"}</span>
-        <h2>{spanish ? "Empieza con encaje, no con presión." : "Start with fit, not pressure."}</h2>
+        <h2>{spanish ? "Empieza por conocernos, sin presión." : "Start with fit, not pressure."}</h2>
         <p>{spanish
           ? "Cada organización entra con un Steward. Las solicitudes se revisan personalmente para que la primera conversación comience con contexto, cuidado y honestidad."
           : "Every organization enters with a Steward. Applications are reviewed personally so the first conversation begins with context, care, and honesty."}</p>
@@ -3613,7 +3613,7 @@ function AboutContact() {
       <Reveal className="about-contact-card" delay={0.1}>
         <span>01</span>
         <h3>{spanish ? "Un Steward lee cada solicitud personalmente." : "A Steward reads every application personally."}</h3>
-        <p>{spanish ? "Si hay un encaje real, COIREA te responde dentro de 5 días hábiles." : "If there is a genuine fit, COIREA will reach out within 5 business days."}</p>
+        <p>{spanish ? "Si vemos que COIREA es para tu organización, te responderemos dentro de 5 días hábiles." : "If there is a genuine fit, COIREA will reach out within 5 business days."}</p>
       </Reveal>
     </section>
   );
