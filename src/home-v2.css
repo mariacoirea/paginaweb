@@ -1042,3 +1042,12 @@ footer .brand img { filter: brightness(0) invert(1); opacity: .9; }
 .subpage-hero--about .eyebrow { color: var(--moss); }
 .subpage-hero--about h1 { color: var(--deep); text-shadow: none; }
 .subpage-hero--about p { color: var(--ink); font-weight: 600; }
+
+/* Stewards: fondo verde profundo, versión más suave */
+.stewards-hero-image { filter: saturate(.8) contrast(1.02) brightness(.98); }
+.stewards-hero::before {
+  background: linear-gradient(90deg, color-mix(in oklch, var(--deep) 82%, transparent) 0%, color-mix(in oklch, var(--deep) 66%, transparent) 42%, color-mix(in oklch, var(--deep) 36%, transparent) 72%, color-mix(in oklch, var(--deep) 20%, transparent) 100%);
+}
+@media (max-width: 1100px) {
+  .stewards-hero::before { background: color-mix(in oklch, var(--deep) 72%, transparent); }
+}
