@@ -1033,3 +1033,12 @@ footer .brand img { filter: brightness(0) invert(1); opacity: .9; }
 }
 .trust-logo--name:hover { border-color: color-mix(in oklch, var(--gold) 55%, var(--line)); transform: translateY(-2px); }
 @media (max-width: 760px) { .trust-logos--names { grid-template-columns: 1fr; } }
+
+/* Sobre COIREA: versión clara con neblina, igual al Inicio */
+.subpage-hero--about .hero-image { filter: saturate(.65) sepia(.12) brightness(1.35) contrast(.85); }
+.subpage-hero--about::before {
+  background: radial-gradient(ellipse at 50% 46%, color-mix(in oklch, var(--paper) 88%, transparent) 0%, color-mix(in oklch, var(--paper) 72%, transparent) 42%, color-mix(in oklch, var(--paper) 30%, transparent) 78%, color-mix(in oklch, var(--paper) 12%, transparent) 100%);
+}
+.subpage-hero--about .eyebrow { color: var(--moss); }
+.subpage-hero--about h1 { color: var(--deep); text-shadow: none; }
+.subpage-hero--about p { color: var(--ink); font-weight: 600; }
