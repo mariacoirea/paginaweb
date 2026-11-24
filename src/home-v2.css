@@ -1085,3 +1085,47 @@ footer .brand img { filter: brightness(0) invert(1); opacity: .9; }
   line-height: 1.45;
   color: var(--deep);
 }
+
+/* Stewards: primera cohorte (foto grupal mientras terminan la certificación) */
+.stewards-cohort {
+  display: grid;
+  grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr);
+  gap: clamp(32px, 5vw, 72px);
+  align-items: center;
+}
+.stewards-v2 .stewards-cohort h2 { font-size: clamp(34px, 3.4vw, 52px); margin-bottom: 16px; }
+.stewards-cohort-copy > p { font-size: 15px; color: var(--ink); max-width: 52ch; }
+.stewards-cohort-countries { list-style: none; margin: 18px 0 20px; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.stewards-cohort-countries li {
+  padding: 8px 14px;
+  border: 1px solid color-mix(in oklch, var(--forest) 28%, var(--line));
+  border-radius: 999px;
+  background: var(--white);
+  font-family: "Bodoni Moda", Georgia, serif;
+  font-size: 15px;
+  color: var(--deep);
+}
+.stewards-cohort-copy > p.stewards-cohort-note { font-size: 13px; color: var(--muted); margin-bottom: 22px; }
+.stewards-cohort-photo {
+  position: relative;
+  padding: clamp(10px, 1.4vw, 16px);
+  background: color-mix(in oklch, var(--warm) 60%, var(--paper));
+  border-radius: 18px;
+  box-shadow: 0 30px 80px color-mix(in oklch, var(--forest) 16%, transparent);
+}
+.stewards-cohort-photo img { width: 100%; border-radius: 10px; display: block; }
+.stewards-cohort-photo span {
+  position: absolute;
+  left: clamp(22px, 2.6vw, 32px);
+  bottom: clamp(22px, 2.6vw, 32px);
+  padding: 7px 12px;
+  border-radius: 999px;
+  background: color-mix(in oklch, var(--deep) 88%, transparent);
+  color: var(--paper);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+@media (max-width: 1100px) { .stewards-cohort { grid-template-columns: 1fr; } }
+.stewards-cohort-photo span { bottom: auto; top: clamp(-14px, -1vw, -10px); left: clamp(22px, 2.6vw, 32px); }

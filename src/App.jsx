@@ -3627,6 +3627,10 @@ const stewardPagePending = {
   certificationFormatEn: "[Length and format]",
 };
 
+// Cuando los Stewards terminen su certificación y tengas foto y descripción de cada uno,
+// cambia esto a true para mostrar el directorio individual (con filtro por país).
+const SHOW_STEWARD_DIRECTORY = false;
+
 // Directorio de Stewards. Agrega aquí nuevos Stewards (con foto en /public/assets/stewards/).
 const stewardDirectory = [
   {
@@ -3852,6 +3856,30 @@ function StewardsPage() {
         </div>
       </section>
 
+      {!SHOW_STEWARD_DIRECTORY ? (
+      <section className="stewards-directory section" id="directorio">
+        <div className="stewards-cohort">
+          <Reveal className="stewards-cohort-copy">
+            <span className="eyebrow">{spanish ? "Para organizaciones" : "For organizations"}</span>
+            <h2>{spanish ? "Encuentra a tu Steward." : "Find your Steward."}</h2>
+            <p>{spanish
+              ? "Nuestra primera cohorte de Stewards está terminando su certificación en el marco COIREA. Acompañan a organizaciones desde distintos países de Latinoamérica y Estados Unidos."
+              : "Our first cohort of Stewards is completing its certification in the COIREA framework. They accompany organizations from different countries across Latin America and the United States."}</p>
+            <ul className="stewards-cohort-countries">
+              {(spanish ? ["Perú", "Colombia", "Chile", "Estados Unidos"] : ["Peru", "Colombia", "Chile", "United States"]).map((item) => <li key={item}>{item}</li>)}
+            </ul>
+            <p className="stewards-cohort-note">{spanish
+              ? "Muy pronto podrás conocer el perfil de cada Steward. Mientras tanto, cuéntanos sobre tu organización y te conectamos con quien mejor la acompañe."
+              : "Soon you'll be able to meet each Steward's profile. In the meantime, tell us about your organization and we'll connect you with the right Steward."}</p>
+            <a className="button button--primary" href={localizedPath("/conversation", spanish)}>{spanish ? "Habla con un Steward" : "Talk to a Steward"} <ArrowRight size={17} /></a>
+          </Reveal>
+          <Reveal className="stewards-cohort-photo" delay={0.08}>
+            <img src="/assets/stewards/cohorte-1.jpg" alt={spanish ? "Primera cohorte de Stewards COIREA en una sesión de formación" : "First cohort of COIREA Stewards in a training session"} loading="lazy" />
+            <span>{spanish ? "Primera cohorte · Formación COIREA 2026" : "First cohort · COIREA training 2026"}</span>
+          </Reveal>
+        </div>
+      </section>
+      ) : (
       <section className="stewards-directory section" id="directorio">
         <div className="stewards-directory-head">
           <Reveal>
@@ -3884,6 +3912,7 @@ function StewardsPage() {
           ? "Cada conversación pasa primero por COIREA, para conectarte con el Steward que mejor calza con tu organización."
           : "Every conversation goes through COIREA first, so we can connect you with the Steward who best fits your organization."}</p>
       </section>
+      )}
 
       <section className="stewards-join section">
         <div className="stewards-join-head">
