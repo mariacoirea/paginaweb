@@ -2730,7 +2730,7 @@ const homeFaqs = {
     ["How does the process start?", "With SOIL, the entry phase: a diagnostic conversation and an OVI measurement across the five pillars. Within 30 days you have a clear picture of where your system is strong, where it loses energy, and what to strengthen first."],
     ["What does COIREA measure?", "Five pillars: Vision, Leadership, Strategy, Collaboration and Well-Being. Together they show whether the organization is coherent, aligned and able to perform sustainably."],
     ["What are OVI and GiA?", "OVI (Organizational Vitality Index) is an index from 0 to 100 of how healthy and coherent your organization is across the five pillars. GiA (Guided Intelligence for Alignment) turns those signals into questions, insights and suggested next steps."],
-    ["Where do you work?", "Chile, Peru, Colombia, Mexico and the United States, in Spanish and English."],
+    ["Where do you work?", "Chile, Peru, Colombia, Mexico and the United States, in Spanish and English. Accompaniment can also be 100% online, and Stewards in each country can complement it with in-person workshops if the organization wishes."],
     ["How much does it cost?", "It depends on the size of your organization and the stage you start with. In the first conversation, your Steward gives you a clear proposal."],
   ],
   es: [
@@ -2740,7 +2740,7 @@ const homeFaqs = {
     ["¿Cómo empieza el proceso?", "Con SOIL, la etapa de entrada: una conversación de diagnóstico y una medición OVI en los cinco pilares. En 30 días tienes una imagen clara de dónde tu sistema es fuerte, dónde pierde energía y qué fortalecer primero."],
     ["¿Qué mide COIREA?", "Cinco pilares: Visión, Liderazgo, Estrategia, Colaboración y Bienestar. Juntos muestran si la organización es coherente, está alineada y puede sostener su desempeño."],
     ["¿Qué son OVI y GiA?", "El OVI (Índice de Vitalidad Organizacional) es un índice de 0 a 100 de qué tan sana y coherente está tu organización en los cinco pilares. GiA (Inteligencia Guiada para la Alineación) convierte esas señales en preguntas, aprendizajes y próximos pasos sugeridos."],
-    ["¿En qué países trabajan?", "Chile, Perú, Colombia, México y Estados Unidos, en español e inglés."],
+    ["¿En qué países trabajan?", "Chile, Perú, Colombia, México y Estados Unidos, en español e inglés. También hacemos acompañamientos 100% online, y los Stewards de cada país pueden complementar el proceso con workshops presenciales si la organización lo desea."],
     ["¿Cuánto cuesta?", "Depende del tamaño de tu organización y de la etapa con la que empiezas. En la primera conversación, tu Steward te entrega una propuesta clara."],
   ],
 };
