@@ -590,7 +590,7 @@
   z-index: -1;
   background:
     linear-gradient(90deg, var(--paper) 0%, color-mix(in oklch, var(--paper) 92%, transparent) 40%, color-mix(in oklch, var(--paper) 20%, transparent) 70%, transparent 100%),
-    url("/assets/coirea-about-mountains.jpg") 80% 40% / cover no-repeat;
+    url("/assets/coirea-stewards-forest.jpg") center 35% / cover no-repeat;
 }
 .stewards-hero-inner {
   max-width: 1390px;
@@ -845,7 +845,7 @@
   .stewards-hero-image {
     background:
       linear-gradient(180deg, color-mix(in oklch, var(--paper) 94%, transparent) 0%, color-mix(in oklch, var(--paper) 82%, transparent) 60%, color-mix(in oklch, var(--paper) 40%, transparent) 100%),
-      url("/assets/coirea-about-mountains.jpg") 70% 40% / cover no-repeat;
+      url("/assets/coirea-stewards-forest.jpg") center 35% / cover no-repeat;
   }
   .about-model,
   .about-beliefs-row,
