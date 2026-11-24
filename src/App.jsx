@@ -4007,10 +4007,10 @@ const stewardPartners = [
     name: "Estuary",
     logo: "",
     url: "",
-    sector: { es: "Marketing y comunicación", en: "Marketing & communication" },
+    sector: { es: "Marketing y comunicación regenerativa", en: "Regenerative marketing & communication" },
     text: {
-      es: "Alianza para organizaciones que, junto al diagnóstico COIREA, quieren un diagnóstico de su marketing y comunicación.",
-      en: "A partnership for organizations that want a marketing and communication diagnostic alongside the COIREA diagnostic.",
+      es: "Alianza para organizaciones que, junto al diagnóstico COIREA, quieren un diagnóstico de su marketing y comunicación desde una mirada regenerativa.",
+      en: "A partnership for organizations that want a regenerative marketing and communication diagnostic alongside the COIREA diagnostic.",
     },
   },
   {
