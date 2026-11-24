@@ -942,3 +942,26 @@ footer .brand img { filter: brightness(0) invert(1); opacity: .9; }
 @media (max-width: 760px) {
   .subpage-hero--about h1 { font-size: clamp(32px, 9vw, 38px); }
 }
+
+/* Sobre COIREA: foto del lago en tonos COIREA (foto suavizada + baño verde + velo papel) */
+.subpage-hero--about .hero-image {
+  background-image: url("/assets/coirea-about-lake.jpg");
+  background-position: center 58%;
+  opacity: 1;
+  filter: saturate(.5) sepia(.18) contrast(.92) brightness(1.06);
+}
+.subpage-hero--about::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background: linear-gradient(160deg, var(--deep), var(--forest));
+  mix-blend-mode: color;
+  opacity: .4;
+  pointer-events: none;
+}
+.subpage-hero--about .subpage-scrim {
+  background:
+    radial-gradient(ellipse at 50% 48%, color-mix(in oklch, var(--paper) 80%, transparent) 0 34%, color-mix(in oklch, var(--paper) 50%, transparent) 58%, color-mix(in oklch, var(--paper) 18%, transparent) 82%),
+    linear-gradient(180deg, color-mix(in oklch, var(--paper) 30%, transparent), transparent 40%);
+}
