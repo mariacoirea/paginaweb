@@ -3916,8 +3916,8 @@ function StewardsPage() {
             <h3>{spanish ? "Personas que ya acompañan organizaciones y quieren hacerlo con un sistema." : "People who already accompany organizations and want to do it with a system."}</h3>
             <ul>
               {(spanish
-                ? ["Experiencia real dentro de organizaciones: empresas, sector público u ONG.", "Ganas de trabajar de forma independiente.", "Afinidad con estas miradas:"]
-                : ["Real experience inside organizations: companies, public sector or NGOs.", "A desire to work independently.", "Affinity with these perspectives:"]
+                ? ["Experiencia real dentro de organizaciones: empresas, sector público u ONG.", "Un camino propio de desarrollo personal.", "Ganas de trabajar de forma independiente.", "Afinidad con estas miradas:"]
+                : ["Real experience inside organizations: companies, public sector or NGOs.", "Your own path of personal development.", "A desire to work independently.", "Affinity with these perspectives:"]
               ).map((item) => <li key={item}>{item}</li>)}
             </ul>
             <div className="stewards-profile-tags">
@@ -3926,6 +3926,11 @@ function StewardsPage() {
                 : ["Systems thinking", "Conscious leadership", "Organizational regeneration"]
               ).map((tag) => <span key={tag}>{tag}</span>)}
             </div>
+            <blockquote className="stewards-profile-quote">
+              {spanish
+                ? "No se puede transformar una organización con la profundidad que COIREA requiere sin haberse transformado a uno mismo."
+                : "You cannot transform an organization with the depth COIREA requires without having transformed yourself."}
+            </blockquote>
           </Reveal>
           <Reveal className="stewards-steps" delay={0.08}>
             <small>{spanish ? "Cómo te sumas" : "How to join"}</small>

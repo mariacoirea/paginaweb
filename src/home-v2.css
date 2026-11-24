@@ -1071,3 +1071,17 @@ footer .brand img { filter: brightness(0) invert(1); opacity: .9; }
 @media (max-width: 760px) {
   .subpage-hero--about::before { background: color-mix(in oklch, var(--paper) 78%, transparent); }
 }
+
+/* Stewards: frase destacada sobre desarrollo personal */
+.stewards-profile-quote {
+  margin: 20px 0 0;
+  padding: 14px 18px;
+  border-left: 3px solid var(--gold);
+  background: color-mix(in oklch, var(--gold) 8%, var(--white));
+  border-radius: 0 8px 8px 0;
+  font-family: "Bodoni Moda", Georgia, serif;
+  font-style: italic;
+  font-size: clamp(17px, 1.4vw, 20px);
+  line-height: 1.45;
+  color: var(--deep);
+}
