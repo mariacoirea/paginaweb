@@ -1051,3 +1051,10 @@ footer .brand img { filter: brightness(0) invert(1); opacity: .9; }
 @media (max-width: 1100px) {
   .stewards-hero::before { background: color-mix(in oklch, var(--deep) 72%, transparent); }
 }
+
+/* Sobre COIREA: foto lago con árboles (clara): filtro suave + velo papel */
+.subpage-hero--about .hero-image {
+  background-image: url("/assets/coirea-about-lakeshore.jpg");
+  background-position: center 55%;
+  filter: saturate(.62) sepia(.14) brightness(1.04) contrast(.9);
+}
