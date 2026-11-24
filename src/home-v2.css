@@ -727,6 +727,20 @@
 .stewards-earnings-income { padding-top: 14px; }
 .stewards-earnings-income strong { color: var(--gold); font-size: 42px; }
 .stewards-earnings p { margin: 6px 0 0; font-size: 11px; color: var(--muted); }
+.stewards-profile h3 { margin: 0 0 14px; font-size: clamp(20px, 1.8vw, 26px); line-height: 1.25; font-weight: 400; color: var(--deep); }
+.stewards-profile ul { margin: 0 0 14px; padding-left: 18px; display: grid; gap: 6px; font-size: 13px; line-height: 1.5; color: var(--ink); }
+.stewards-profile li::marker { color: var(--gold); }
+.stewards-profile-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+.stewards-profile-tags span {
+  padding: 8px 14px;
+  border: 1px solid color-mix(in oklch, var(--forest) 30%, var(--line));
+  border-radius: 999px;
+  font-family: "Bodoni Moda", Georgia, serif;
+  font-size: 15px;
+  color: var(--deep);
+  background: var(--white);
+}
+.stewards-steps .button { margin-top: 4px; min-height: 40px; font-size: 12px; }
 .stewards-steps ol { list-style: none; margin: 0 0 16px; padding: 0; display: grid; gap: 12px; }
 .stewards-steps li { display: flex; gap: 14px; font-size: 13px; color: color-mix(in oklch, var(--paper) 82%, transparent); }
 .stewards-steps li b { color: var(--gold); font-size: 11px; padding-top: 2px; }

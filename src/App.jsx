@@ -3621,7 +3621,6 @@ const stewardPagePending = {
   nextCertificationEn: "January 22, 2027",
   certificationFormatEs: "[Duración y formato]",
   certificationFormatEn: "[Length and format]",
-  monthlyIncome: "[CLP X]",
 };
 
 // Directorio de Stewards. Agrega aquí nuevos Stewards (con foto en /public/assets/stewards/).
@@ -3795,13 +3794,13 @@ function StewardsPage() {
     ? [
         ["Postula.", "Cuéntanos tu experiencia, leemos cada postulación."],
         ["Te certificas.", `Curso de certificación COIREA. ${stewardPagePending.certificationFormatEs}`],
-        ["Entras al directorio", "y empiezas a recibir organizaciones."],
+        ["Entras al directorio.", "Trabajas con tu propia red de contactos y COIREA también puede recomendarte otras organizaciones."],
         ["Creces en comunidad.", "Los Stewards con más experiencia acompañan a los nuevos."],
       ]
     : [
         ["Apply.", "Tell us about your experience; we read every application."],
         ["Get certified.", `COIREA certification course. ${stewardPagePending.certificationFormatEn}`],
-        ["Join the directory", "and start receiving organizations."],
+        ["Join the directory.", "You work with your own network, and COIREA can also recommend other organizations to you."],
         ["Grow in community.", "More experienced Stewards accompany new ones."],
       ];
 
@@ -3908,19 +3907,21 @@ function StewardsPage() {
           ))}
         </div>
         <div className="stewards-join-bottom">
-          <Reveal className="stewards-earnings">
-            <small>{spanish ? "Cuánto puedes ganar" : "What you can earn"}</small>
-            <div className="stewards-earnings-grid">
-              <div><span>{spanish ? "Organizaciones activas" : "Active organizations"}</span><strong>5</strong></div>
-              <div><span>{spanish ? "Horas a la semana" : "Hours per week"}</span><strong>~30</strong></div>
+          <Reveal className="stewards-earnings stewards-profile">
+            <small>{spanish ? "A quién buscamos" : "Who we are looking for"}</small>
+            <h3>{spanish ? "Personas que ya acompañan organizaciones y quieren hacerlo con un sistema." : "People who already accompany organizations and want to do it with a system."}</h3>
+            <ul>
+              {(spanish
+                ? ["Experiencia real dentro de organizaciones: empresas, sector público u ONG.", "Ganas de trabajar de forma independiente.", "Afinidad con estas miradas:"]
+                : ["Real experience inside organizations: companies, public sector or NGOs.", "A desire to work independently.", "Affinity with these perspectives:"]
+              ).map((item) => <li key={item}>{item}</li>)}
+            </ul>
+            <div className="stewards-profile-tags">
+              {(spanish
+                ? ["Pensamiento sistémico", "Liderazgo consciente", "Regeneración organizacional"]
+                : ["Systems thinking", "Conscious leadership", "Organizational regeneration"]
+              ).map((tag) => <span key={tag}>{tag}</span>)}
             </div>
-            <div className="stewards-earnings-income">
-              <span>{spanish ? "Ingreso mensual estimado" : "Estimated monthly income"}</span>
-              <strong>{stewardPagePending.monthlyIncome}</strong>
-            </div>
-            <p>{spanish
-              ? "Tú fijas tu tarifa. COIREA cobra una licencia mensual por organización activa."
-              : "You set your rate. COIREA charges a monthly license per active organization."}</p>
           </Reveal>
           <Reveal className="stewards-steps" delay={0.08}>
             <small>{spanish ? "Cómo te sumas" : "How to join"}</small>
@@ -3929,9 +3930,7 @@ function StewardsPage() {
                 <li key={lead}><b>0{index + 1}</b><span><strong>{lead}</strong> {text}</span></li>
               ))}
             </ol>
-            <p>{spanish
-              ? "Buscamos experiencia real dentro de organizaciones (empresas, sector público u ONG), ganas de trabajar de forma independiente y afinidad con el liderazgo consciente."
-              : "We look for real experience inside organizations (companies, public sector or NGOs), a desire to work independently and an affinity with conscious leadership."}</p>
+            <a className="button button--light" href="#postula">{spanish ? "Quiero postular" : "I want to apply"} <ArrowRight size={16} /></a>
           </Reveal>
         </div>
       </section>
