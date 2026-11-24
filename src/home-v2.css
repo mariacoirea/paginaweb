@@ -1010,3 +1010,14 @@ footer .brand img { filter: brightness(0) invert(1); opacity: .9; }
   .stewards-hero::after { background: linear-gradient(180deg, transparent 84%, color-mix(in oklch, var(--deep) 60%, transparent) 100%); }
   .stewards-hero::before { background: color-mix(in oklch, var(--deep) 84%, transparent); }
 }
+
+/* Sobre COIREA: foto bosque + lago (ya viene oscura y cálida: velo suave) */
+.subpage-hero--about .hero-image {
+  background-image: url("/assets/coirea-about-forest-lake.jpg");
+  background-position: center 62%;
+  filter: saturate(.9) contrast(1.02) brightness(.95);
+}
+.subpage-hero--about::before {
+  background:
+    radial-gradient(ellipse at 50% 46%, color-mix(in oklch, var(--deep) 62%, transparent) 0%, color-mix(in oklch, var(--deep) 38%, transparent) 50%, color-mix(in oklch, var(--deep) 18%, transparent) 100%);
+}
