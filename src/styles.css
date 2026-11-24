@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500;6..96,600&family=Manrope:wght@400;500;600;700;800&display=swap");
+/* Fonts (Bodoni Moda + Manrope) load from <link> tags in index.html so they start downloading in parallel. */
 
 :root {
   font-family: "Manrope", sans-serif;
@@ -161,7 +161,7 @@ p { line-height: 1.78; }
   position: absolute;
   inset: 0;
   z-index: -3;
-  background: url("/assets/coirea-valley.png") center / cover no-repeat;
+  background: url("/assets/coirea-valley.jpg") center / cover no-repeat;
   transform: scale(1.02);
   animation: landscape-drift 18s ease-in-out infinite alternate;
 }
@@ -2537,7 +2537,7 @@ p { line-height: 1.78; }
   content: "";
   position: absolute;
   inset: -6%;
-  background: url("/assets/coirea-valley.png") center 60% / cover;
+  background: url("/assets/coirea-valley.jpg") center 60% / cover;
   opacity: .06;
   filter: saturate(.6);
 }
@@ -2656,7 +2656,7 @@ p { line-height: 1.78; }
     radial-gradient(circle at 84% 20%, color-mix(in oklch, var(--gold) 18%, transparent), transparent 30%),
     var(--paper);
 }
-.approach::before { content: ""; position: absolute; inset: auto -6% -38% -6%; height: 70%; background: url("/assets/coirea-valley.png") center 72% / cover; opacity: .12; filter: saturate(.6); }
+.approach::before { content: ""; position: absolute; inset: auto -6% -38% -6%; height: 70%; background: url("/assets/coirea-valley.jpg") center 72% / cover; opacity: .12; filter: saturate(.6); }
 .section-heading { max-width: 620px; margin-bottom: 70px; position: relative; z-index: 1; }
 .section-heading h2 { margin-bottom: 0; }
 .section-heading--center {

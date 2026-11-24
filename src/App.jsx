@@ -950,7 +950,7 @@ const foundingStewards = [
     role: "Systemic vision",
     contribution: "Systemic gaze",
     location: "Ecuador",
-    photo: "/assets/stewards/juan_carlos.png",
+    photo: "/assets/stewards/juan_carlos.jpg",
     description: "Accompanying organizations to see what the system already knows about itself before touching anything.",
     bio: [
       "From the middle of the world, I have spent more than two decades weaving networks among territories, organizations, and institutions. My work has always been the same, though it has taken different forms: accompanying companies, communities, and leaders to build regenerative models that are not imposed on the territory, but emerge from it.",
@@ -2360,7 +2360,7 @@ function DashboardTour({ activeStep = 0 }) {
         </div>
         <div className="tour-body">
           <div className={`tour-screenshot tour-screenshot--step-${activeStep}`}>
-            <img src="/assets/coirea-platform-soil-preview.jpeg" alt="COIREA platform dashboard showing SOIL organizational health, OVI evaluation, and GiA qualitative insights" />
+            <img src="/assets/coirea-platform-soil-preview.jpeg" alt="COIREA platform dashboard showing SOIL organizational health, OVI evaluation, and GiA qualitative insights" loading="lazy" />
             <span className="tour-scanline" />
             <span className="tour-hotspot tour-hotspot--signal" />
             <span className="tour-hotspot tour-hotspot--insight" />
@@ -3052,7 +3052,7 @@ function InsightsPage() {
                 <p>{spanish ? "Historias y aprendizajes en el camino hacia la regeneración." : "Stories and lessons from the path toward regeneration."}</p>
               </div>
               <div className="voices-podcast-host">
-                <img src="/assets/insights/natalia-pena.png" alt="" loading="lazy" />
+                <img src="/assets/insights/natalia-pena.jpg" alt="" loading="lazy" />
                 <div>
                   <strong>Natalia Peña</strong>
                   <span>{spanish ? "Conduce" : "Host"}</span>
@@ -3505,7 +3505,7 @@ function AboutPage() {
 
       <section className="about-founder section">
         <Reveal className="about-founder-photo">
-          <img src="/assets/maria-jose-figueroa-hd.jpg" alt={spanish ? "María José Figueroa, fundadora de COIREA" : "María José Figueroa, founder of COIREA"} />
+          <img src="/assets/maria-jose-figueroa-hd.jpg" alt={spanish ? "María José Figueroa, fundadora de COIREA" : "María José Figueroa, founder of COIREA"} loading="lazy" />
         </Reveal>
         <Reveal className="about-founder-copy" delay={0.08}>
           <span className="eyebrow">{spanish ? "La historia detrás de COIREA" : "The story behind COIREA"}</span>
@@ -3658,7 +3658,7 @@ const stewardDirectory = [
     firstName: "Juan Carlos",
     country: { es: "Ecuador", en: "Ecuador" },
     city: "",
-    photo: "/assets/stewards/juan_carlos.png",
+    photo: "/assets/stewards/juan_carlos.jpg",
     text: {
       es: "Economista y consultor en sostenibilidad y regeneración. Territorios, instituciones y modelos regenerativos.",
       en: "Economist and consultant in sustainability and regeneration. Territories, institutions and regenerative models.",
