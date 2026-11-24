@@ -2725,7 +2725,9 @@ function FitCheck() {
 const homeFaqs = {
   en: [
     ["What is COIREA?", "COIREA is the operating system for purpose-driven organizations: it makes the human system behind your results visible so your organization can grow without breaking. It combines a platform (OVI and GiA) with the guidance of a certified Steward."],
-    ["Is COIREA a platform or a consultancy?", "Both. The platform measures the health of your organization, and a certified Steward helps leaders interpret the signals and turn them into action."],
+    ["Is COIREA just a platform?", "No. COIREA is a systematized framework: a platform (OVI and GiA) that measures the health of your organization, plus a certified Steward who helps leaders interpret the signals and turn them into action."],
+    ["Who is COIREA for?", "Purpose-driven organizations of 15 to 300 people, often founder-led, that are growing, feel misaligned or are going through a leadership transition."],
+    ["How does the process start?", "With SOIL, the entry phase: a diagnostic conversation and an OVI measurement across the five pillars. Within 30 days you have a clear picture of where your system is strong, where it loses energy, and what to strengthen first."],
     ["What does COIREA measure?", "Five pillars: Vision, Leadership, Strategy, Collaboration and Well-Being. Together they show whether the organization is coherent, aligned and able to perform sustainably."],
     ["What are OVI and GiA?", "OVI (Organizational Vitality Index) is an index from 0 to 100 of how healthy and coherent your organization is across the five pillars. GiA (Guided Intelligence for Alignment) turns those signals into questions, insights and suggested next steps."],
     ["Where do you work?", "Chile, Peru, Colombia, Mexico and the United States, in Spanish and English."],
@@ -2733,7 +2735,9 @@ const homeFaqs = {
   ],
   es: [
     ["¿Qué es COIREA?", "COIREA es el sistema operativo de las organizaciones con propósito: hace visible el sistema humano detrás de tus resultados para que tu organización pueda crecer sin romperse. Combina una plataforma (OVI y GiA) con el acompañamiento de un Steward certificado."],
-    ["¿Es una plataforma o una consultoría?", "Las dos cosas. La plataforma mide la salud de tu organización y un Steward certificado ayuda a los líderes a interpretar las señales y convertirlas en acción."],
+    ["¿COIREA es solo una plataforma?", "No. COIREA es un marco sistematizado: una plataforma (OVI y GiA) que mide la salud de tu organización, más un Steward certificado que ayuda a los líderes a interpretar las señales y convertirlas en acción."],
+    ["¿Para quién es COIREA?", "Para organizaciones con propósito de 15 a 300 personas, muchas veces lideradas por sus fundadores, que están creciendo, sienten desalineación o atraviesan una transición de liderazgo."],
+    ["¿Cómo empieza el proceso?", "Con SOIL, la etapa de entrada: una conversación de diagnóstico y una medición OVI en los cinco pilares. En 30 días tienes una imagen clara de dónde tu sistema es fuerte, dónde pierde energía y qué fortalecer primero."],
     ["¿Qué mide COIREA?", "Cinco pilares: Visión, Liderazgo, Estrategia, Colaboración y Bienestar. Juntos muestran si la organización es coherente, está alineada y puede sostener su desempeño."],
     ["¿Qué son OVI y GiA?", "El OVI (Índice de Vitalidad Organizacional) es un índice de 0 a 100 de qué tan sana y coherente está tu organización en los cinco pilares. GiA (Inteligencia Guiada para la Alineación) convierte esas señales en preguntas, aprendizajes y próximos pasos sugeridos."],
     ["¿En qué países trabajan?", "Chile, Perú, Colombia, México y Estados Unidos, en español e inglés."],
