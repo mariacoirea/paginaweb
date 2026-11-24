@@ -965,3 +965,48 @@ footer .brand img { filter: brightness(0) invert(1); opacity: .9; }
     radial-gradient(ellipse at 50% 48%, color-mix(in oklch, var(--paper) 80%, transparent) 0 34%, color-mix(in oklch, var(--paper) 50%, transparent) 58%, color-mix(in oklch, var(--paper) 18%, transparent) 82%),
     linear-gradient(180deg, color-mix(in oklch, var(--paper) 30%, transparent), transparent 40%);
 }
+
+/* =========================================================
+   Heros con foto: tratamiento verde profundo COIREA
+   (reemplaza el velo claro que dejaba las fotos lechosas)
+   ========================================================= */
+/* --- Stewards --- */
+.stewards-hero-image { filter: saturate(.75) contrast(1.06) brightness(.88); }
+.stewards-hero::before {
+  mix-blend-mode: normal;
+  opacity: 1;
+  background:
+    linear-gradient(90deg, color-mix(in oklch, var(--deep) 94%, transparent) 0%, color-mix(in oklch, var(--deep) 82%, transparent) 42%, color-mix(in oklch, var(--deep) 52%, transparent) 72%, color-mix(in oklch, var(--deep) 38%, transparent) 100%);
+}
+.stewards-hero::after { background: linear-gradient(180deg, transparent 84%, color-mix(in oklch, var(--deep) 60%, transparent) 100%); }
+.stewards-hero .eyebrow { color: color-mix(in oklch, var(--gold) 70%, var(--paper)); }
+.stewards-hero h1 { color: var(--paper); }
+.stewards-hero-copy > p { color: color-mix(in oklch, var(--paper) 86%, transparent); }
+.stewards-hero .button--primary { background: var(--paper); border-color: var(--paper); color: var(--deep); }
+.stewards-hero .button--primary:hover { background: var(--white); }
+.stewards-hero .button--light { background: transparent; border-color: color-mix(in oklch, var(--paper) 55%, transparent); color: var(--paper); }
+.stewards-podcast {
+  background: color-mix(in oklch, var(--paper) 9%, transparent);
+  border: 1px solid color-mix(in oklch, var(--paper) 22%, transparent);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 30px 80px color-mix(in oklch, black 28%, transparent);
+}
+
+/* --- Sobre COIREA --- */
+.subpage-hero--about .hero-image { opacity: 1; filter: saturate(.8) contrast(1.06) brightness(.86); }
+.subpage-hero--about::before {
+  mix-blend-mode: normal;
+  opacity: 1;
+  background:
+    radial-gradient(ellipse at 50% 48%, color-mix(in oklch, var(--deep) 86%, transparent) 0%, color-mix(in oklch, var(--deep) 70%, transparent) 45%, color-mix(in oklch, var(--deep) 50%, transparent) 100%);
+}
+.subpage-hero--about .subpage-scrim { background: none; }
+.subpage-hero--about .eyebrow { color: color-mix(in oklch, var(--gold) 70%, var(--paper)); }
+.subpage-hero--about h1 { color: var(--paper); text-shadow: 0 2px 24px color-mix(in oklch, black 25%, transparent); }
+.subpage-hero--about p { color: color-mix(in oklch, var(--paper) 88%, transparent); font-weight: 500; }
+
+@media (max-width: 1100px) {
+  .stewards-hero::after { background: linear-gradient(180deg, transparent 84%, color-mix(in oklch, var(--deep) 60%, transparent) 100%); }
+  .stewards-hero::before { background: color-mix(in oklch, var(--deep) 84%, transparent); }
+}
