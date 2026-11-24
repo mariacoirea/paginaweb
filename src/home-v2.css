@@ -1021,3 +1021,15 @@ footer .brand img { filter: brightness(0) invert(1); opacity: .9; }
   background:
     radial-gradient(ellipse at 50% 46%, color-mix(in oklch, var(--deep) 62%, transparent) 0%, color-mix(in oklch, var(--deep) 38%, transparent) 50%, color-mix(in oklch, var(--deep) 18%, transparent) 100%);
 }
+
+/* Ecosistema COIREA (franja del Inicio) */
+.trust-logos--names { grid-template-columns: repeat(3, minmax(0, 1fr)); max-width: 760px; }
+.trust-logo--name {
+  font-family: "Bodoni Moda", Georgia, serif;
+  font-size: 22px;
+  color: var(--deep);
+  background: var(--white);
+  transition: border-color .2s var(--ease), transform .2s var(--ease);
+}
+.trust-logo--name:hover { border-color: color-mix(in oklch, var(--gold) 55%, var(--line)); transform: translateY(-2px); }
+@media (max-width: 760px) { .trust-logos--names { grid-template-columns: 1fr; } }
