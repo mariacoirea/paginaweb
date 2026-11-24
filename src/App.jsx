@@ -3959,9 +3959,71 @@ function StewardsPage() {
           <StewardApplicationForm />
         </Reveal>
       </section>
+
+      <section className="stewards-partners section" id="consultoras">
+        <Reveal className="stewards-partners-head">
+          <span className="eyebrow">{spanish ? "Stewards con equipo" : "Stewards with a team"}</span>
+          <h2>{spanish ? "Consultoras aliadas que llevan COIREA a su sector." : "Partner consultancies that bring COIREA to their sector."}</h2>
+          <p>{spanish
+            ? "Además de Stewards independientes, trabajamos con consultoras que llevan COIREA con su propio equipo a sectores específicos."
+            : "Besides independent Stewards, we work with consultancies that bring COIREA, with their own team, to specific sectors."}</p>
+        </Reveal>
+        <div className="stewards-partners-grid">
+          {stewardPartners.map((partner, index) => (
+            <Reveal className="stewards-partner" delay={index * 0.06} key={partner.name}>
+              <div className="stewards-partner-top">
+                {partner.logo ? <img src={partner.logo} alt={partner.name} loading="lazy" /> : <strong>{partner.name}</strong>}
+                <span>{partner.sector[lang]}</span>
+              </div>
+              <p>{partner.text[lang]}</p>
+              {partner.url && (
+                <a href={partner.url} target="_blank" rel="noreferrer">{partner.url.replace(/^https?:\/\/(www\.)?/, "").replace(/\/$/, "")} <ArrowUpRight size={13} /></a>
+              )}
+            </Reveal>
+          ))}
+        </div>
+        <Reveal className="stewards-partners-cta">
+          <p>{spanish ? "¿Tu consultora quiere llevar COIREA a su sector?" : "Does your consultancy want to bring COIREA to its sector?"}</p>
+          <a className="button button--light" href={`mailto:hello@coirea.com?subject=${encodeURIComponent(spanish ? "Consultora aliada COIREA" : "COIREA partner consultancy")}`}>{spanish ? "Escríbenos" : "Write to us"} <ArrowRight size={16} /></a>
+        </Reveal>
+      </section>
     </main>
   );
 }
+
+// Consultoras aliadas (Stewards con equipo). Para agregar un logo, súbelo a /public/assets/partners/ y pon su ruta en "logo".
+const stewardPartners = [
+  {
+    name: "BeSpark",
+    logo: "",
+    url: "https://bespark.cl/",
+    sector: { es: "Educación", en: "Education" },
+    text: {
+      es: "Lleva COIREA a colegios, para que las comunidades educativas midan y fortalezcan su sistema humano.",
+      en: "Brings COIREA to schools, so school communities can measure and strengthen their human system.",
+    },
+  },
+  {
+    name: "Estuary",
+    logo: "",
+    url: "",
+    sector: { es: "Marketing y comunicación", en: "Marketing & communication" },
+    text: {
+      es: "Alianza para organizaciones que, junto al diagnóstico COIREA, quieren un diagnóstico de su marketing y comunicación.",
+      en: "A partnership for organizations that want a marketing and communication diagnostic alongside the COIREA diagnostic.",
+    },
+  },
+  {
+    name: "Camun",
+    logo: "",
+    url: "https://www.camun.org/",
+    sector: { es: "Sector público", en: "Public sector" },
+    text: {
+      es: "Lleva COIREA a municipios y organismos públicos: diagnóstico organizacional más workshops y talleres especializados. Juntos diseñamos C4, una nueva forma de trabajar en la gestión municipal.",
+      en: "Brings COIREA to municipalities and public bodies: organizational diagnostic plus specialized workshops. Together we designed C4, a new way of working in municipal management.",
+    },
+  },
+];
 
 function Chatbox() {
   const [open, setOpen] = useState(false);
