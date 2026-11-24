@@ -3984,7 +3984,7 @@ function StewardsPage() {
         </div>
         <Reveal className="stewards-partners-cta">
           <p>{spanish ? "¿Tu consultora quiere llevar COIREA a su sector?" : "Does your consultancy want to bring COIREA to its sector?"}</p>
-          <a className="button button--light" href={`mailto:hello@coirea.com?subject=${encodeURIComponent(spanish ? "Consultora aliada COIREA" : "COIREA partner consultancy")}`}>{spanish ? "Escríbenos" : "Write to us"} <ArrowRight size={16} /></a>
+          <a className="button button--light" href="#postula">{spanish ? "Postula aquí" : "Apply here"} <ArrowRight size={16} /></a>
         </Reveal>
       </section>
     </main>

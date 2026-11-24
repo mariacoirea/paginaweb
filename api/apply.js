@@ -2,6 +2,8 @@ const REQUIRED_FIELDS = ["name", "email", "organization", "role", "desired_shift
 // "Apply to the Steward network" form on /stewards.
 const STEWARD_REQUIRED_FIELDS = ["name", "email", "country", "current_role", "years", "experience", "motivation", "availability"];
 const DEFAULT_APPLICATION_RECIPIENTS = ["hello@coirea.com", "mjose.fadaros@gmail.com"];
+// Steward applications always go to María José (plus STEWARD_TO_EMAIL if set in Vercel).
+const STEWARD_APPLICATION_RECIPIENTS = ["maria@coirea.com"];
 
 function escapeHtml(value = "") {
   return String(value)
@@ -84,7 +86,9 @@ export default async function handler(request, response) {
   }
 
   const configuredRecipients = parseRecipients(process.env.APPLICATION_TO_EMAIL);
-  const recipients = configuredRecipients.length > 0 ? configuredRecipients : DEFAULT_APPLICATION_RECIPIENTS;
+  const recipients = isSteward
+    ? [...new Set([...STEWARD_APPLICATION_RECIPIENTS, ...parseRecipients(process.env.STEWARD_TO_EMAIL)])]
+    : configuredRecipients.length > 0 ? configuredRecipients : DEFAULT_APPLICATION_RECIPIENTS;
   const from = process.env.RESEND_FROM_EMAIL || "COIREA <onboarding@resend.dev>";
   const frictionList = (Array.isArray(data.friction) ? data.friction : []).map((item) => `<li>${escapeHtml(item)}</li>`).join("");
   const submittedAt = new Date().toISOString();

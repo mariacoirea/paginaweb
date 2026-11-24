@@ -659,7 +659,7 @@
   border: 1px solid color-mix(in oklch, var(--forest) 14%, var(--line));
   border-radius: 10px;
 }
-.stewards-partner-top { display: flex; justify-content: space-between; align-items: center; gap: 12px; min-height: 40px; }
+.stewards-partner-top { display: flex; flex-direction: column; align-items: flex-start; gap: 10px; }
 .stewards-partner-top img { max-height: 34px; max-width: 140px; object-fit: contain; }
 .stewards-partner-top strong { font-family: "Bodoni Moda", Georgia, serif; font-size: 26px; font-weight: 500; color: var(--deep); }
 .stewards-partner-top span {
@@ -671,7 +671,6 @@
   letter-spacing: .08em;
   text-transform: uppercase;
   color: var(--deep);
-  white-space: nowrap;
 }
 .stewards-partner p { margin: 0; flex: 1; font-size: 13px; line-height: 1.65; color: var(--muted); }
 .stewards-partner a { align-self: flex-start; display: inline-flex; align-items: center; gap: 5px; font-size: 12px; font-weight: 800; color: var(--forest); border-bottom: 1px solid currentColor; }
