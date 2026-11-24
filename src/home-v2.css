@@ -859,3 +859,66 @@
   .stewards-grid,
   .stewards-benefits { grid-template-columns: 1fr; }
 }
+
+/* =========================================================
+   Tipografía de títulos: legibilidad (todo el sitio)
+   Bodoni Moda en tamaño grande usa trazos "display" muy finos.
+   Fijamos un corte de óptica más firme, aflojamos el tracking
+   y contenemos los tamaños máximos.
+   ========================================================= */
+:root { font-optical-sizing: none; }
+* { font-variation-settings: "opsz" 20; }
+:is(h1, h2) { letter-spacing: -.012em !important; }
+h3 { letter-spacing: -.005em; }
+
+.section h2,
+.closing h2 { font-size: clamp(34px, 3.6vw, 56px); line-height: 1.08; }
+.subpage-hero h1 { font-size: clamp(44px, 5vw, 76px); line-height: 1.02; }
+.subpage-hero--about h1 { font-size: clamp(40px, 4.2vw, 64px); line-height: 1.06; }
+.subpage-hero--article h1 { font-size: clamp(36px, 4.2vw, 62px); line-height: 1.04; }
+.article-post-heading h1 { line-height: 1.06; }
+.home-v2 .hero--v2 h1 { line-height: 1.04; }
+.stewards-hero h1 { line-height: 1.06; }
+
+@media (max-width: 760px) {
+  .subpage-hero h1 { font-size: clamp(38px, 11vw, 52px); }
+  .section h2,
+  .closing h2 { font-size: clamp(30px, 8.6vw, 40px); }
+}
+
+/* =========================================================
+   Ajustes de diseño (revisión general)
+   ========================================================= */
+/* Títulos en columnas angostas: más ancho y un tamaño acorde al espacio */
+.home-v2 .methodology h2,
+.home-v2 .platform-showcase h2 { font-size: clamp(32px, 3vw, 46px); }
+.home-v2 .methodology { grid-template-columns: minmax(0, 1fr) minmax(0, 1.35fr); }
+.subpage-hero--about h1 { max-width: 22ch; }
+.application-copy h2 { max-width: 18ch; font-size: clamp(34px, 3.6vw, 54px); }
+.conversation-cta-copy h2 { max-width: 20ch; }
+
+/* Hero del formulario: eyebrow visible y texto legible sobre la foto */
+.subpage-hero--conversation .eyebrow { color: color-mix(in oklch, var(--paper) 82%, transparent); }
+.subpage-hero--conversation .subpage-scrim {
+  background:
+    linear-gradient(180deg, color-mix(in oklch, var(--deep) 72%, transparent), color-mix(in oklch, var(--deep) 58%, transparent) 50%, color-mix(in oklch, var(--deep) 82%, transparent));
+}
+.subpage-hero--conversation p { color: color-mix(in oklch, var(--paper) 90%, transparent); }
+
+/* "Tres fases": la textura de montaña se desvanece en vez de cortar en línea recta */
+.home-v2 .approach::before {
+  inset: 0;
+  height: auto;
+  background-position: center 80%;
+  opacity: .1;
+  -webkit-mask-image: linear-gradient(180deg, transparent 0%, black 55%);
+  mask-image: linear-gradient(180deg, transparent 0%, black 55%);
+}
+
+/* Logo del footer visible sobre el verde oscuro */
+footer .brand img { filter: brightness(0) invert(1); opacity: .9; }
+.subpage-hero--conversation h1 { max-width: 18ch; }
+.subpage-hero--conversation { padding-bottom: 120px; }
+@media (max-width: 760px) {
+  .subpage-hero--about h1 { font-size: clamp(32px, 9vw, 38px); }
+}
