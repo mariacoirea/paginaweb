@@ -4122,8 +4122,8 @@ const stewardPartners = [
     url: "https://bespark.cl/",
     sector: { es: "Educación", en: "Education" },
     text: {
-      es: "Lleva COIREA a colegios, para que las comunidades educativas midan y fortalezcan su sistema humano.",
-      en: "Brings COIREA to schools, so school communities can measure and strengthen their human system.",
+      es: "Transformamos las comunidades educativas desde su dimensión humana. Creamos COIREA EdTech, una plataforma especializada que permite a los colegios comprender, medir y fortalecer las dinámicas de sus comunidades.",
+      en: "We transform school communities through their human dimension. We created COIREA EdTech, a specialized platform that helps schools understand, measure and strengthen the dynamics of their communities.",
     },
   },
   {
