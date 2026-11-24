@@ -1961,14 +1961,19 @@ function Hero() {
 
 function TrustStrip() {
   const spanish = isSpanishPath();
-  // Ecosistema COIREA: se muestran en texto (sin logos) hasta tener los logos de todos.
-  const names = stewardPartners.map((partner) => partner.name);
+  // Agrega aquí los logos de clientes: { name, src }. Los que no tienen src se muestran como espacio reservado.
+  const logos = [
+    { name: "Camun", src: "/assets/insights/camun-logo.webp" },
+    { name: "Logo" }, { name: "Logo" }, { name: "Logo" }, { name: "Logo" },
+  ];
   return (
     <section className="trust-strip" aria-label={spanish ? "Ecosistema COIREA" : "COIREA ecosystem"}>
       <span>{spanish ? "Ecosistema COIREA" : "COIREA ecosystem"}</span>
-      <div className="trust-logos trust-logos--names">
-        {names.map((name) => (
-          <a className="trust-logo trust-logo--name" href={`${localizedPath("/stewards", spanish)}#consultoras`} key={name}>{name}</a>
+      <div className="trust-logos">
+        {logos.map(({ name, src }, index) => (
+          <div className={`trust-logo ${src ? "" : "trust-logo--empty"}`} key={`${name}-${index}`}>
+            {src ? <img src={src} alt={name} loading="lazy" /> : <small>{name}</small>}
+          </div>
         ))}
       </div>
     </section>
