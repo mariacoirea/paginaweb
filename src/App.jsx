@@ -4054,11 +4054,6 @@ function StewardsPage() {
                 : ["Systems thinking", "Conscious leadership", "Organizational regeneration"]
               ).map((tag) => <span key={tag}>{tag}</span>)}
             </div>
-            <blockquote className="stewards-profile-quote">
-              {spanish
-                ? "No se puede transformar una organización con la profundidad que COIREA requiere sin haberse transformado a uno mismo."
-                : "You cannot transform an organization with the depth COIREA requires without having transformed yourself."}
-            </blockquote>
           </Reveal>
           <Reveal className="stewards-steps" delay={0.08}>
             <small>{spanish ? "Cómo te sumas" : "How to join"}</small>
