@@ -1196,3 +1196,40 @@ label:has(> textarea[required]) > span:first-child::after,
 @media (max-width: 760px) {
   .trust-logos--partners { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 18px; }
 }
+
+/* Ecosistema COIREA: logos scrolling in a continuous loop */
+.trust-marquee {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent);
+}
+.trust-track {
+  display: flex;
+  width: max-content;
+  animation: trust-scroll 38s linear infinite;
+}
+.trust-marquee:hover .trust-track { animation-play-state: paused; }
+.trust-set {
+  display: flex;
+  align-items: center;
+}
+.trust-set .trust-logo--partner {
+  flex: 0 0 auto;
+  padding: 0 clamp(26px, 3.4vw, 48px);
+}
+@keyframes trust-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .trust-track { animation: none; width: auto; }
+  .trust-set { flex-wrap: wrap; justify-content: center; row-gap: 16px; }
+  .trust-set[aria-hidden="true"] { display: none; }
+}
+@media (max-width: 760px) {
+  .trust-marquee { width: 100%; }
+  .trust-set .trust-logo--partner { padding: 0 22px; }
+  .trust-set .trust-logo--partner img { transform: scale(.88); }
+}

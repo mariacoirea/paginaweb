@@ -1973,18 +1973,28 @@ function TrustStrip() {
   const logos = [
     { name: "Camun", src: "/assets/partners/camun.png", height: 36 },
     { name: "BeSpark", src: "/assets/partners/bespark.png", height: 54 },
+    { name: "Southern Cross School", src: "/assets/partners/southerncross.png", height: 56 },
     { name: "Estuary", src: "/assets/partners/estuary.png", height: 30 },
     { name: "Ivonne Zucco", src: "/assets/partners/ivonne.png", height: 38 },
+    { name: "Mariana Jaramillo", src: "/assets/partners/mariana.png", height: 32 },
+    { name: "Coherencia Organizacional", src: "/assets/partners/coherencia.png", height: 54 },
   ];
+  // The list is rendered twice so the strip can scroll in a seamless loop; the copy is hidden from screen readers.
   return (
     <section className="trust-strip" aria-label={spanish ? "Ecosistema COIREA" : "COIREA ecosystem"}>
       <span>{spanish ? "Ecosistema COIREA" : "COIREA ecosystem"}</span>
-      <div className="trust-logos trust-logos--partners">
-        {logos.map(({ name, src, height }) => (
-          <div className="trust-logo trust-logo--partner" key={name}>
-            <img src={src} alt={name} loading="lazy" style={{ height }} />
-          </div>
-        ))}
+      <div className="trust-marquee">
+        <div className="trust-track">
+          {[0, 1].map((copy) => (
+            <div className="trust-set" key={copy} aria-hidden={copy === 1 ? "true" : undefined}>
+              {logos.map(({ name, src, height }) => (
+                <div className="trust-logo trust-logo--partner" key={name}>
+                  <img src={src} alt={copy === 1 ? "" : name} decoding="async" style={{ height }} />
+                </div>
+              ))}
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
